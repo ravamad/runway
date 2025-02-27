@@ -1,0 +1,26 @@
+[
+    {
+        "country": "France",
+        "code": "FR",
+        "languages": [
+            { "name": "Français", "code": "fr" },
+            { "name": "English", "code": "en" }
+        ]
+    },
+    {
+        "country": "Japan",
+        "code": "JP",
+        "languages": [
+            { "name": "日本語 (Japanese)", "code": "jp" },
+            { "name": "English", "code": "en" }
+        ]
+    },
+    {
+        "country": "Germany",
+        "code": "DE",
+        "languages": [
+            { "name": "Deutsch (German)", "code": "de" },
+            { "name": "English", "code": "en" }
+        ]
+    }
+]

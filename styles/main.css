@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
+  padding-block-start: 0px;
+  padding-block-end: 0px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+body ul {
+  list-style: none;
+  margin-bottom: 0rem;
+}
+
+.page-container .page-content {
+  width: 100vw;
+  position: relative;
+}
+
+.section.fw {
+  width: 100%;
+}
+.section.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.section.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.section.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.section.flex-space-between {
+  justify-content: space-between;
+}
+.section.margin {
+  margin: 3rem auto;
+}
+.section.padding {
+  padding: 2rem;
+}
+
+.component-container.fw {
+  width: 100%;
+}
+
+.component-content {
+  display: flex;
+}
+.component-content.flex-row {
+  flex-direction: row;
+  align-items: center;
+}
+.component-content.flex-column {
+  flex-direction: column;
+}
+.component-content.flex-center {
+  justify-content: center;
+}
+.component-content.flex-space-between {
+  justify-content: space-between;
+}
+.component-content.fw {
+  width: 100%;
+}
+.component-content.padding {
+  padding: 2rem 1rem;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform ease-in-out 0.15s;
+}
+button:hover {
+  transform: scale(1.01);
+}
+
+.fw-btn {
+  width: 200px;
+}
+
+.primary-filled {
+  background: #3030ab;
+  color: #73B5DE;
+  border-radius: 8px;
+}
+.primary-filled:hover {
+  background: #73B5DE;
+  color: #3030ab;
+}
+
+.secondary-filled {
+  background: #73B5DE;
+  color: #3030ab;
+  border-radius: 8px;
+}
+.secondary-filled:hover {
+  background: #3030ab;
+  color: #73B5DE;
+}
+
+.primary-outlined {
+  background: none;
+  color: #121253;
+  border: 1px solid #3030ab;
+  border-radius: 8px;
+}
+.primary-outlined:hover {
+  border: none;
+  border-radius: 8px;
+  background: #73B5DE;
+  color: #3030ab;
+}
+
+.secondary-outlined {
+  background: none;
+  color: #316791;
+  border: 1px solid #73B5DE;
+  border-radius: 8px;
+}
+.secondary-outlined:hover {
+  border: none;
+  border-radius: 8px;
+  background: #3030ab;
+  color: #73B5DE;
+}
+
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.7rem !important;
+}
+.icon-button.rounded {
+  border-radius: 100px !important;
+}
+.icon-button.primary-filled {
+  background: #3030ab;
+  color: #73B5DE;
+  border-radius: 8px;
+}
+.icon-button.primary-filled:hover {
+  background: #73B5DE;
+  color: #3030ab;
+}
+.icon-button.secondary-filled {
+  background: #73B5DE;
+  color: #3030ab;
+  border-radius: 8px;
+}
+.icon-button.secondary-filled:hover {
+  background: #3030ab;
+  color: #73B5DE;
+}
+.icon-button.white-filled {
+  background-color: #e5e1e1;
+}
+.icon-button.primary-outlined {
+  background: none;
+  color: #121253;
+  border: 1px solid #3030ab;
+  border-radius: 8px;
+}
+.icon-button.primary-outlined:hover {
+  border: none;
+  border-radius: 8px;
+  background: #73B5DE;
+  color: #3030ab;
+}
+.icon-button.secondary-outlined {
+  background: none;
+  color: #316791;
+  border: 1px solid #73B5DE;
+  border-radius: 8px;
+}
+.icon-button.secondary-outlined:hover {
+  border: none;
+  border-radius: 8px;
+  background: #3030ab;
+  color: #73B5DE;
+}
+
+a {
+  color: #3030ab;
+  transition: transform ease-in-out 0.15s !important;
+}
+a:hover {
+  transform: scale(1.03) !important;
+}
+
+.no-dec {
+  text-decoration: none;
+}
+
+.modal {
+  backdrop-filter: blur(50px);
+  background: linear-gradient(45deg, rgba(48, 48, 171, 0.2941176471) 0%, rgba(66, 61, 61, 0.2941176471) 100%);
+}
+.modal .modal-dialog #login-modal-image {
+  height: 500px !important;
+  object-fit: cover;
+}
+.modal .modal-dialog .modal-content {
+  border: none;
+  border-radius: 8px;
+}
+.modal .modal-dialog .modal-content .modal-header {
+  border: none;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  border: none;
+}
+
+#navbar .logo img {
+  width: 150px;
+}
+
+#site-menu li {
+  padding: 1rem;
+}
+
+#actions-menu {
+  display: flex;
+}
+#actions-menu button {
+  margin-left: 0.5rem;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,275 @@
+// FONT IMPORT
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+// VARIABLES IMPORT
+@import 'variables';
+
+// ========================================
+// RESET CSS
+// ========================================
+    *{
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        padding-inline-start: 0px;
+        padding-inline-end: 0px;
+        padding-block-start: 0px;
+        padding-block-end: 0px;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+    }
+
+// ========================================
+// STRUCTURE CSS
+// ========================================
+
+    body{
+        font-family: $font;
+        ul{list-style: none; margin-bottom: 0rem;}
+    }
+    // Page structure
+    .page-container{
+        .page-content{
+            width: 100vw;
+            position: relative;
+        }
+    }
+    // Section structure
+    .section{
+        &.fw{
+            width: 100%;
+        }
+        &.flex-row{
+            display: flex;
+            flex-direction: row;
+        }
+        &.flex-column{
+            display: flex;
+            flex-direction: column;
+        }
+        &.flex-center{
+            justify-content: center;
+            align-items: center;
+        }
+        &.flex-space-between{
+            justify-content: space-between;
+        }
+        &.margin{
+            margin: 3rem auto;
+        }
+        &.padding{
+            padding: 2rem;
+        }
+    }
+    // Component wrapper
+    .component-container{
+        &.fw{
+            width: 100%;
+        }
+    }
+    // Component content
+    .component-content{
+        display: flex;
+        &.flex-row{
+            flex-direction: row;
+            align-items: center;
+        }
+        &.flex-column{
+            flex-direction: column;
+        }
+        &.flex-center{
+            justify-content: center;
+        }
+        &.flex-space-between{
+            justify-content: space-between;
+        }
+        &.fw{
+            width: 100%;
+        }
+        &.padding{
+            padding: 2rem 1rem;
+        }
+    }
+// ========================================
+// DESIGN SYSTEM (Buttons, Links, Inputs, etc)
+// ========================================
+
+    // BUTTONS
+        // Generic
+        button{
+            border: none;
+            background: none;
+            padding: .5rem 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform ease-in-out 0.15s;
+            &:hover{
+                transform: scale(1.01);
+            }
+        }
+        // Sizes
+        .fw-btn{
+            width: 200px;
+        }
+        // Filled
+        .primary-filled{
+            background: $primary-color;
+            color: $secondary-color;
+            border-radius: $radius;
+            &:hover{
+                background: $secondary-color;
+                color: $primary-color;
+            }
+        }
+        .secondary-filled{
+            background: $secondary-color;
+            color: $primary-color;
+            border-radius: $radius;
+            &:hover{
+                background: $primary-color;
+                color: $secondary-color;
+            }
+        }
+        // Outlined
+        .primary-outlined{
+            background: none;
+            color: $darker-primary-color;
+            border: 1px solid $primary-color;
+            border-radius: $radius;
+            &:hover{
+                border: none;
+                border-radius: $radius;
+                background: $secondary-color;
+                color: $primary-color;
+            }
+        }
+        .secondary-outlined{
+            background: none;
+            color: $darker-secondary-color;
+            border: 1px solid $secondary-color;
+            border-radius: $radius;
+            &:hover{
+                border: none;
+                border-radius: $radius;
+                background: $primary-color;
+                color: $secondary-color;
+            }
+        }
+        // Icon Button
+        .icon-button{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .5rem .7rem !important;
+            // Rounded
+                &.rounded{
+                    border-radius: $round !important;
+                }
+            // Filled
+                &.primary-filled{
+                    background: $primary-color;
+                    color: $secondary-color;
+                    border-radius: $radius;
+                    &:hover{
+                        background: $secondary-color;
+                        color: $primary-color;
+                    }
+                }
+                &.secondary-filled{
+                    background: $secondary-color;
+                    color: $primary-color;
+                    border-radius: $radius;
+                    &:hover{
+                        background: $primary-color;
+                        color: $secondary-color;
+                    }
+                }
+                &.white-filled{
+                    background-color: $light-grey;
+                }
+            // Outlined
+                &.primary-outlined{
+                    background: none;
+                    color: $darker-primary-color;
+                    border: 1px solid $primary-color;
+                    border-radius: $radius;
+                    &:hover{
+                        border: none;
+                        border-radius: $radius;
+                        background: $secondary-color;
+                        color: $primary-color;
+                    }
+                }
+                &.secondary-outlined{
+                    background: none;
+                    color: $darker-secondary-color;
+                    border: 1px solid $secondary-color;
+                    border-radius: $radius;
+                    &:hover{
+                        border: none;
+                        border-radius: $radius;
+                        background: $primary-color;
+                        color: $secondary-color;
+                    }
+                }
+        }
+    // LINKS
+        a{  
+            color: $primary-color;
+            transition: transform ease-in-out 0.15s !important;
+            &:hover{
+                transform: scale(1.03) !important;
+            }
+        }
+        .no-dec{
+            text-decoration: none;
+        }
+// ========================================
+// UI COMPONENTS (Modal, Toast, etc.)
+// ========================================
+
+// Modal
+.modal{
+    backdrop-filter: $bigblur;
+    background: $primary-transparent-gradient;
+    .modal-dialog{
+        #login-modal-image{
+            height: 500px !important;
+            object-fit: cover;
+        }
+        .modal-content{
+            border: none;
+            border-radius: $radius;
+            .modal-header{
+                border: none;
+            }
+            .modal-footer{
+                border: none;
+            }
+        }
+    }
+}
+// Imagery sizing
+#navbar{
+    .logo{
+        img{
+            width: 150px;
+        }
+    }
+}
+// IDS Components
+#site-menu{
+    li{
+        padding: 1rem;
+    }
+}
+#actions-menu{
+    display: flex;
+    button{
+        margin-left: .5rem;
+    }
+}

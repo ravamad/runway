@@ -1,0 +1,173 @@
+{
+    "faqsData": [
+      {
+        "category": "Baggage",
+        "subCategories": [
+          {
+            "title": "Baggage calculator",
+            "faqs": [
+              {
+                "question": "What is the Baggage Calculator, and how does it help me?",
+                "answer": "The Baggage Calculator is an online tool that shows you your total baggage allowance based on your itinerary. It helps you plan for any extra fees by calculating free allowances and possible excess charges."
+              },
+              {
+                "question": "Do I have to pay to use the Baggage Calculator?",
+                "answer": "No, the tool is free to use on {{}}’ website. Simply enter your flight details to view your allowance."
+              },
+              {
+                "question": "Can I use the Baggage Calculator for codeshare flights?",
+                "answer": "Yes, though baggage rules may differ if another airline operates the flight. Always confirm directly with the operating carrier."
+              }
+            ]
+          },
+          {
+            "title": "Hand baggage",
+            "faqs": [
+              {
+                "question": "What is the hand baggage allowance on {{}}?",
+                "answer": "Economy Class typically allows one carry-on (up to 10 kg) plus a personal item. Exact allowances can vary by ticket type and route."
+              },
+              {
+                "question": "Are liquids allowed in my hand baggage?",
+                "answer": "Yes, but follow the 100 ml per container rule (in many international airports) and place them in a clear, resealable bag. Domestic flights in Japan may have slightly different rules."
+              },
+              {
+                "question": "Can I bring my laptop or camera in my hand baggage?",
+                "answer": "Yes, electronics like laptops or cameras are allowed as long as they fit within weight and size limits."
+              }
+            ]
+          },
+          {
+            "title": "Free checked baggage",
+            "faqs": [
+              {
+                "question": "How many pieces of checked baggage am I allowed for free?",
+                "answer": "It depends on class and route. Economy often allows at least one piece (23 kg), while Business Class can allow two (32 kg each). Always verify your ticket details."
+              },
+              {
+                "question": "Can I pool my free checked baggage allowance with a travel companion?",
+                "answer": "If you share the same booking, you may be able to combine allowances. Policies vary by fare rules, so confirm beforehand."
+              },
+              {
+                "question": "What happens if my bag exceeds the free weight allowance?",
+                "answer": "Excess baggage fees will apply. The cost depends on how much over the limit you are and your travel route."
+              }
+            ]
+          },
+          {
+            "title": "Excess baggage",
+            "faqs": [
+              {
+                "question": "How are excess baggage fees calculated?",
+                "answer": "They can be charged per extra kilogram or per piece, depending on the route. Check {{}}’ website or use their Baggage Calculator for specifics."
+              },
+              {
+                "question": "Can I purchase excess baggage online in advance?",
+                "answer": "Yes, and pre-purchasing online may be cheaper than paying at the airport. Check the airline’s website for details."
+              },
+              {
+                "question": "What if my baggage exceeds both size and weight limits?",
+                "answer": "You may face additional fees for oversized and overweight items. It’s best to arrange extra allowance beforehand."
+              }
+            ]
+          },
+          {
+            "title": "Special baggage",
+            "faqs": [
+              {
+                "question": "What is considered special baggage?",
+                "answer": "Items like sports equipment (skis, golf clubs), musical instruments, or wheelchairs. They require special handling and sometimes extra fees."
+              },
+              {
+                "question": "Do I need to inform {{}} in advance for special baggage?",
+                "answer": "Yes, notify them at least 24–48 hours before departure to ensure proper handling and space availability."
+              },
+              {
+                "question": "Are there any additional fees for musical instruments?",
+                "answer": "It depends on size and weight. Smaller instruments may fit within standard allowances, while larger ones might require extra fees or a separate seat."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Check-in",
+        "subCategories": [
+          {
+            "title": "Online check-in",
+            "faqs": [
+              {
+                "question": "When does online check-in open and close?",
+                "answer": "It typically opens 24 hours before departure and closes 1–2 hours prior, depending on your route. Check the airline’s site for specifics."
+              },
+              {
+                "question": "Is online check-in available for all flights?",
+                "answer": "Most domestic and international routes are eligible, but some special fare classes or routes may require airport check-in. Verify on the website."
+              },
+              {
+                "question": "Can I check in my bags online?",
+                "answer": "You can’t physically check bags online. Complete your seat assignment via online check-in, then drop off your luggage at the airport."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Airport information",
+        "subCategories": [
+          {
+            "title": "Business lounge",
+            "faqs": [
+              {
+                "question": "Who has access to the {{}} business lounge?",
+                "answer": "Business Class passengers, JAL Mileage Bank elite members, and certain frequent flyers typically have lounge access."
+              },
+              {
+                "question": "What facilities are available in the business lounge?",
+                "answer": "Expect comfortable seating, complimentary snacks and drinks, Wi-Fi, workstations, and sometimes shower facilities or rest areas."
+              },
+              {
+                "question": "Can I purchase lounge access if I’m not flying Business Class?",
+                "answer": "Some lounges allow walk-in or pre-booked access for a fee. Check the airline’s website or inquire at the lounge reception."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Travel guide",
+        "subCategories": [
+          {
+            "title": "For Japan domestic flights",
+            "faqs": [
+              {
+                "question": "Do I need a passport for domestic flights in Japan?",
+                "answer": "Japanese nationals can use a valid government-issued ID. Foreign nationals typically need a passport."
+              },
+              {
+                "question": "How early should I arrive at the airport for a domestic flight?",
+                "answer": "Usually 1–2 hours beforehand. Check {{}}’ recommendation and account for peak travel times."
+              },
+              {
+                "question": "Can I bring food on domestic flights?",
+                "answer": "Yes, sealed snacks or light meals are generally allowed. Check security rules for liquids or fresh food items."
+              }
+            ]
+          },
+          {
+            "title": "For flights to Japan",
+            "faqs": [
+              {
+                "question": "Do I need a visa to enter Japan?",
+                "answer": "It depends on your nationality. Some travelers have visa exemptions, while others need an e-visa or visa on arrival. Check official embassy guidelines."
+              },
+              {
+                "question": "How do I clear customs upon arrival in Japan?",
+                "answer": "First, go through immigration. Then claim your baggage and pass through customs. Declare any restricted or high-value items as required."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
