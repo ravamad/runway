@@ -18,72 +18,72 @@
             <!-- STANDALONE (Menu Floating, Login Modal, Search modal, Language modal, Calendar Modal, Feedback modal, AI modal) -->
             <!-- ======================================== -->
                 <!-- Login Modal -->
-                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="row g-0">
-                                <!-- Left Image -->
-                                <div class="col-md-5 d-none d-md-block">
-                                    <img id="login-modal-image" class="img-fluid rounded-start w-100 h-100" alt="Login Image">
-                                </div>
-                                <!-- Right Content -->
-                                <div class="col-md-7">
-                                    <div class="modal-header border-0">
-                                        <h5 class="modal-title" id="loginModalLabel">
-                                            <i class="fas fa-sign-in-alt"></i> Login to <span class="loyalty-id"></span>
-                                        </h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="row g-0">
+                                    <!-- Left Image -->
+                                    <div class="col-md-5 d-none d-md-block">
+                                        <img id="login-modal-image" class="img-fluid rounded-start w-100 h-100" alt="Login Image">
                                     </div>
-                
-                                    <div class="modal-body">
-                                        <form>
-                                            <!-- Email Field -->
-                                            <div class="mb-3">
-                                                <label for="loginEmail" class="form-label">
-                                                    <i class="fas fa-envelope"></i> Email address
-                                                </label>
-                                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
-                                            </div>
-                                            
-                                            <!-- Password Field -->
-                                            <div class="mb-3">
-                                                <label for="loginPassword" class="form-label">
-                                                    <i class="fas fa-lock"></i> Password
-                                                </label>
-                                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
-                                            </div>
-                                            
-                                            <!-- Remember Me -->
-                                            <div class="mb-3 form-check">
-                                                <input type="checkbox" class="form-check-input" id="rememberMe">
-                                                <label class="form-check-label" for="rememberMe">Remember Me</label>
-                                            </div>
-                
-                                            <!-- Forgot Password -->
-                                            <div class="mb-3 text-end">
-                                                <a href="#" class="text-decoration-none">Forgot password?</a>
-                                            </div>
-                
-                                            <!-- Submit Button -->
-                                            <div class="d-grid">
-                                                <button type="submit" class="primary-filled">Login</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                
-                                    <div class="modal-footer border-0">
-                                        <p class="m-0">
-                                            Don't have an account? <a href="#" class="text-primary text-decoration-none">Sign up</a>
-                                        </p>
+                                    <!-- Right Content -->
+                                    <div class="col-md-7">
+                                        <div class="modal-header border-0">
+                                            <h5 class="modal-title" id="loginModalLabel">
+                                                <i class="fas fa-sign-in-alt"></i> Login to <span class="loyalty-id"></span>
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                    
+                                        <div class="modal-body">
+                                            <form>
+                                                <!-- Email Field -->
+                                                <div class="mb-3">
+                                                    <label for="loginEmail" class="form-label">
+                                                        <i class="fas fa-envelope"></i> Email address
+                                                    </label>
+                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                                                </div>
+                                                
+                                                <!-- Password Field -->
+                                                <div class="mb-3">
+                                                    <label for="loginPassword" class="form-label">
+                                                        <i class="fas fa-lock"></i> Password
+                                                    </label>
+                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                                </div>
+                                                
+                                                <!-- Remember Me -->
+                                                <div class="mb-3 form-check">
+                                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                    <label class="form-check-label" for="rememberMe">Remember Me</label>
+                                                </div>
+                    
+                                                <!-- Forgot Password -->
+                                                <div class="mb-3 text-end">
+                                                    <a href="#" class="text-decoration-none">Forgot password?</a>
+                                                </div>
+                    
+                                                <!-- Submit Button -->
+                                                <div class="d-grid">
+                                                    <button type="submit" class="primary-filled">Login</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                    
+                                        <div class="modal-footer border-0">
+                                            <p class="m-0">
+                                                Don't have an account? <a href="#" class="text-primary text-decoration-none">Sign up</a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <!-- Search Modal -->
                     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
                             <div class="modal-content">
                                 <!-- Modal Header -->
                                 <div class="modal-header">
@@ -114,65 +114,64 @@
                         </div>
                     </div>
                 <!-- Language Modal -->
-                <!-- Language Selection Modal -->
-                <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="languageModalLabel">
-                                    Choose your language
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
+                    <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="languageModalLabel">
+                                        Choose your language
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
 
-                            <!-- Modal Body -->
-                            <div class="modal-body">
-                                <div class="accordion" id="languageAccordion">
-                                    <!-- Select Country -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingCountry">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseCountry" aria-expanded="true" aria-controls="collapseCountry">
-                                                🌍 Select Country
-                                            </button>
-                                        </h2>
-                                        <div id="collapseCountry" class="accordion-collapse collapse show" aria-labelledby="headingCountry"
-                                            data-bs-parent="#languageAccordion">
-                                            <div class="accordion-body">
-                                                <label for="countrySelect" class="form-label">Choose your country:</label>
-                                                <select id="countrySelect" class="form-select"></select>
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    <div class="accordion" id="languageAccordion">
+                                        <!-- Select Country -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingCountry">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseCountry" aria-expanded="true" aria-controls="collapseCountry">
+                                                    🌍 Select Country
+                                                </button>
+                                            </h2>
+                                            <div id="collapseCountry" class="accordion-collapse collapse show" aria-labelledby="headingCountry"
+                                                data-bs-parent="#languageAccordion">
+                                                <div class="accordion-body">
+                                                    <label for="countrySelect" class="form-label">Choose your country:</label>
+                                                    <select id="countrySelect" class="form-select"></select>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Select Language -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingLanguage">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
-                                                🏳️ Select Language
-                                            </button>
-                                        </h2>
-                                        <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage"
-                                            data-bs-parent="#languageAccordion">
-                                            <div class="accordion-body">
-                                                <label for="languageSelect" class="form-label">Choose your language:</label>
-                                                <select id="languageSelect" class="form-select" disabled></select>
+                                        <!-- Select Language -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingLanguage">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
+                                                    🏳️ Select Language
+                                                </button>
+                                            </h2>
+                                            <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage"
+                                                data-bs-parent="#languageAccordion">
+                                                <div class="accordion-body">
+                                                    <label for="languageSelect" class="form-label">Choose your language:</label>
+                                                    <select id="languageSelect" class="form-select" disabled></select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Modal Footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="secondary-outlined" data-bs-dismiss="modal">Cancel</button>
-                                <button type="button" class="primary-filled" id="saveLanguagePreference" data-bs-dismiss="modal">Save</button>
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="secondary-outlined" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="primary-filled" id="saveLanguagePreference" data-bs-dismiss="modal">Save</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <!-- Calendar Modal -->
                 <!-- Feedback Modal -->
 
