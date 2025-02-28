@@ -1,7 +1,7 @@
-async function fetchAirlineData() {
+async function fetchBusinessData() {
     try {
         // Fetch JSON from the correct file path
-        const response = await fetch("../airline-data/airline-config.json");
+        const response = await fetch("../business-data/business-config.json");
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -17,12 +17,16 @@ async function fetchAirlineData() {
             return;
         }
 
-        // Extract loyalty program name and login image
-        const airlineData = data[0];
-        const loyaltyProgramName = airlineData.loyalty_program || "Loyalty Program";
-        const loginImageUrl = airlineData["login-image"];
+        // Extract data
+        const businessData = data[0];
+        const businessLogoUrl = businessData.business_logo || "";
+        const loyaltyProgramName = businessData.loyalty_program || "Loyalty Program";
+        const loyaltyProgramLogoUrl = businessData.loyalty_program_logo || "";
+        const loginImageUrl = businessData["login-image"] || "";
 
+        console.log("Business Logo URL:", businessLogoUrl); // ✅ Verify logo URL
         console.log("Loyalty Program Name:", loyaltyProgramName); // ✅ Verify program name
+        console.log("Loyalty Program Logo URL:", loyaltyProgramLogoUrl); // ✅ Verify logo URL
         console.log("Login Image URL:", loginImageUrl); // ✅ Verify image URL
 
         // ✅ Update all elements with class 'loyalty-id'
@@ -30,22 +34,33 @@ async function fetchAirlineData() {
             element.textContent = loyaltyProgramName;
         });
 
+        // ✅ Update loyalty program logo
+        const loyaltyLogo = document.getElementById("loyalty-logo");
+        if (loyaltyLogo && loyaltyProgramLogoUrl) {
+            loyaltyLogo.src = loyaltyProgramLogoUrl;
+        }
+
         // ✅ Update loyalty link in the navigation menu
         const loyaltyMenuItem = document.querySelector("#site-menu .loyalty-id");
         if (loyaltyMenuItem) {
-            loyaltyMenuItem.innerHTML = `<a class="no-dec" href="#">${loyaltyProgramName}</a>`;
+            loyaltyMenuItem.innerHTML = `${loyaltyProgramName}`;
         }
 
         // ✅ Update the login modal image
         const loginImage = document.getElementById("login-modal-image");
-        if (loginImage) {
+        if (loginImage && loginImageUrl) {
             loginImage.src = loginImageUrl;
         }
 
+        // ✅ Update airline logo
+        const airlineLogo = document.getElementById("business-logo");
+        if (airlineLogo && businessLogoUrl) {
+            airlineLogo.src = businessLogoUrl;
+        }
+
     } catch (error) {
-        console.error("Error fetching airline data:", error);
+        console.error("Error fetching business data:", error);
     }
 }
-
 // Run the function after the DOM is loaded
-document.addEventListener("DOMContentLoaded", fetchAirlineData);
+document.addEventListener("DOMContentLoaded", fetchBusinessData);

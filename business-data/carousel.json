@@ -1,0 +1,16 @@
+[
+    {
+        "image": "https://images.unsplash.com/photo-1525874684015-58379d421a52?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "offer": "Inspire your next journey",
+        "title": "Discover Italy, the heart of Europe",
+        "description": "Book now, starting from 755$",
+        "link": "/book-now"
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "offer": "Japan uncovered",
+        "title": "Japan, the land of the rising sun",
+        "description": "Experience the best of Japan, starting from 899$",
+        "link": "/first-class"
+    }
+]

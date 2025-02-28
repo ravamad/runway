@@ -26,70 +26,72 @@
     body{
         font-family: $font;
         ul{list-style: none; margin-bottom: 0rem;}
+        background-color: $light-grey;
     }
     // Page structure
-    .page-container{
-        .page-content{
-            width: 100vw;
-            position: relative;
+        .page-container{
+            .page-content{
+                width: 100vw;
+                height: 100vh;
+                position: relative;
+            }
         }
-    }
     // Section structure
-    .section{
-        &.fw{
-            width: 100%;
+        .section{
+            &.fw{
+                width: 100%;
+            }
+            &.flex-row{
+                display: flex;
+                flex-direction: row;
+            }
+            &.flex-column{
+                display: flex;
+                flex-direction: column;
+            }
+            &.flex-center{
+                justify-content: center;
+                align-items: center;
+            }
+            &.flex-space-between{
+                justify-content: space-between;
+            }
+            &.margin{
+                margin: 3rem auto;
+            }
+            &.padding{
+                padding: 2rem;
+            }
         }
-        &.flex-row{
-            display: flex;
-            flex-direction: row;
-        }
-        &.flex-column{
-            display: flex;
-            flex-direction: column;
-        }
-        &.flex-center{
-            justify-content: center;
-            align-items: center;
-        }
-        &.flex-space-between{
-            justify-content: space-between;
-        }
-        &.margin{
-            margin: 3rem auto;
-        }
-        &.padding{
-            padding: 2rem;
-        }
-    }
     // Component wrapper
-    .component-container{
-        &.fw{
-            width: 100%;
+        .component-container{
+            &.fw{
+                width: 100%;
+            }
         }
-    }
     // Component content
-    .component-content{
-        display: flex;
-        &.flex-row{
-            flex-direction: row;
-            align-items: center;
+        .component-content{
+            display: flex;
+            &.flex-row{
+                flex-direction: row;
+                align-items: center;
+            }
+            &.flex-column{
+                flex-direction: column;
+            }
+            &.flex-center{
+                justify-content: center;
+            }
+            &.flex-space-between{
+                justify-content: space-between;
+            }
+            &.fw{
+                width: 100%;
+            }
+            &.padding{
+                padding: 2rem 1rem;
+            }
         }
-        &.flex-column{
-            flex-direction: column;
-        }
-        &.flex-center{
-            justify-content: center;
-        }
-        &.flex-space-between{
-            justify-content: space-between;
-        }
-        &.fw{
-            width: 100%;
-        }
-        &.padding{
-            padding: 2rem 1rem;
-        }
-    }
 // ========================================
 // DESIGN SYSTEM (Buttons, Links, Inputs, etc)
 // ========================================
@@ -189,7 +191,10 @@
                     }
                 }
                 &.white-filled{
-                    background-color: $light-grey;
+                    background-color: $white;
+                    i{
+                        color: $primary-color;
+                    }
                 }
             // Outlined
                 &.primary-outlined{
@@ -232,44 +237,142 @@
 // UI COMPONENTS (Modal, Toast, etc.)
 // ========================================
 
-// Modal
-.modal{
-    backdrop-filter: $bigblur;
-    background: $primary-transparent-gradient;
-    .modal-dialog{
-        #login-modal-image{
-            height: 500px !important;
-            object-fit: cover;
-        }
-        .modal-content{
-            border: none;
-            border-radius: $radius;
-            .modal-header{
-                border: none;
+    // Modal
+        .modal{
+            backdrop-filter: $bigblur;
+            background: $primary-transparent-gradient;
+            .modal-dialog{
+                #login-modal-image{
+                    height: 500px !important;
+                    object-fit: cover;
+                }
+                .modal-content{
+                    border: none;
+                    border-radius: $radius;
+                    .modal-header{
+                        border: none;
+                    }
+                    .modal-footer{
+                        border: none;
+                    }
+                }
             }
-            .modal-footer{
-                border: none;
+        }
+
+// ========================================
+// CUSTOM ID COMPONENTS
+// ========================================
+    // Hero-container
+        .hero-container{
+            position: relative;
+            width: 100vw;
+        }
+    // Navbar
+        #navbar{
+            position: absolute;
+            top: 0;
+            z-index: 1000;
+            padding: 0rem 4rem;
+            .logo{
+                img{
+                    width: 150px;
+                }
+            }
+            // Site-menu
+                #site-menu{
+                    li{
+                        a{
+                            padding: .5rem 1rem;
+                            &:hover{
+                                background: $secondary-color;
+                                color: $darker-primary-color;
+                                border-radius: $radius;
+                            }
+                        }
+                    }
+                }
+                // Action-menu
+                #actions-menu{
+                    display: flex;
+                    button{
+                        margin-left: .5rem;
+                    }
+                    #mobile-menu{
+                        display: none;
+                    }
+                }
+                @media screen and (max-width: 768px){
+                    padding: 0rem 2rem;
+                    .logo{
+                        img{
+                            width: 80px;
+                        }
+                    }
+                    #site-menu{
+                        display: none !important;
+                    }
+                    #actions-menu{
+                        #mobile-menu{
+                            display: flex;
+                        }
+                    }
+                }
+        }
+    // Mobile Menu Modal
+        #MobileMenuModal{
+            backdrop-filter: $bigblur;
+            background: $primary-transparent-gradient;
+            .modal-dialog{
+                .modal-content{
+                    border: none;
+                    border-radius: 0rem;
+                    .modal-header{
+                        border: none;
+                    }
+                    .modal-body{
+                        #site-menu-mobile{
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 1rem;
+                            li{
+                                margin: .2rem 0rem;
+                                a{
+                                    font-size: $xl;
+                                    font-weight: $bold;
+                                }
+                            }
+                        }
+                    }
+                    .modal-footer{
+                        border: none;
+                    }
+                }
             }
         }
-    }
-}
-// Imagery sizing
-#navbar{
-    .logo{
-        img{
-            width: 150px;
+    // AI assistant
+        #AI-assistant-container{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 1rem;
+            .AI-assistant-trigger-container{
+                .AI-assistant-trigger-content{
+                    display: flex;
+                    align-items: center;
+                    .AI-assistant-trigger-bubble{
+                        margin-right: .5rem;
+                        padding: .5rem 1rem;
+                        background: $white;
+                        box-shadow: $shadow;
+                        border-radius: $radius;
+                    }
+                    #AI-assistant-trigger-button{
+                        padding: 1rem !important;
+                        i{
+                            font-size: $xl !important;
+                            line-height: $xl !important;
+                        }
+                    }
+                }
+            }
         }
-    }
-}
-// IDS Components
-#site-menu{
-    li{
-        padding: 1rem;
-    }
-}
-#actions-menu{
-    display: flex;
-    button{
-        margin-left: .5rem;
-    }
-}

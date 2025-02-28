@@ -14,6 +14,7 @@
 
 body {
   font-family: "Hanken Grotesk", sans-serif;
+  background-color: #f1eeee;
 }
 body ul {
   list-style: none;
@@ -22,6 +23,7 @@ body ul {
 
 .page-container .page-content {
   width: 100vw;
+  height: 100vh;
   position: relative;
 }
 
@@ -171,7 +173,10 @@ button:hover {
   color: #73B5DE;
 }
 .icon-button.white-filled {
-  background-color: #e5e1e1;
+  background-color: #ffffff;
+}
+.icon-button.white-filled i {
+  color: #3030ab;
 }
 .icon-button.primary-outlined {
   background: none;
@@ -212,7 +217,7 @@ a:hover {
 
 .modal {
   backdrop-filter: blur(50px);
-  background: linear-gradient(45deg, rgba(48, 48, 171, 0.2941176471) 0%, rgba(66, 61, 61, 0.2941176471) 100%);
+  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
 }
 .modal .modal-dialog #login-modal-image {
   height: 500px !important;
@@ -229,19 +234,102 @@ a:hover {
   border: none;
 }
 
+.hero-container {
+  position: relative;
+  width: 100vw;
+}
+
+#navbar {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  padding: 0rem 4rem;
+}
 #navbar .logo img {
   width: 150px;
 }
-
-#site-menu li {
-  padding: 1rem;
+#navbar #site-menu li a {
+  padding: 0.5rem 1rem;
 }
-
-#actions-menu {
+#navbar #site-menu li a:hover {
+  background: #73B5DE;
+  color: #121253;
+  border-radius: 8px;
+}
+#navbar #actions-menu {
   display: flex;
 }
-#actions-menu button {
+#navbar #actions-menu button {
   margin-left: 0.5rem;
+}
+#navbar #actions-menu #mobile-menu {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #navbar {
+    padding: 0rem 2rem;
+  }
+  #navbar .logo img {
+    width: 80px;
+  }
+  #navbar #site-menu {
+    display: none !important;
+  }
+  #navbar #actions-menu #mobile-menu {
+    display: flex;
+  }
+}
+
+#MobileMenuModal {
+  backdrop-filter: blur(50px);
+  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
+}
+#MobileMenuModal .modal-dialog .modal-content {
+  border: none;
+  border-radius: 0rem;
+}
+#MobileMenuModal .modal-dialog .modal-content .modal-header {
+  border: none;
+}
+#MobileMenuModal .modal-dialog .modal-content .modal-body #site-menu-mobile {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+#MobileMenuModal .modal-dialog .modal-content .modal-body #site-menu-mobile li {
+  margin: 0.2rem 0rem;
+}
+#MobileMenuModal .modal-dialog .modal-content .modal-body #site-menu-mobile li a {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+#MobileMenuModal .modal-dialog .modal-content .modal-footer {
+  border: none;
+}
+
+#AI-assistant-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
+#AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content {
+  display: flex;
+  align-items: center;
+}
+#AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content .AI-assistant-trigger-bubble {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.621);
+  border-radius: 8px;
+}
+#AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content #AI-assistant-trigger-button {
+  padding: 1rem !important;
+}
+#AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content #AI-assistant-trigger-button i {
+  font-size: 1.6rem !important;
+  line-height: 1.6rem !important;
 }
 
 /*# sourceMappingURL=main.css.map */
