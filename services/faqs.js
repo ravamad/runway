@@ -2,8 +2,8 @@ async function fetchData() {
     try {
         // Fetch both airline data and FAQ data
         const [faqsResponse, airlineResponse] = await Promise.all([
-            fetch("../airline-data/faqs.json"),
-            fetch("../airline-data/airline-config.json")
+            fetch("../business-data/hotel-data/faqs.json"),
+            fetch("../business-data/business-config.json")
         ]);
 
         if (!faqsResponse.ok || !airlineResponse.ok) {

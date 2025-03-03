@@ -1,0 +1,199 @@
+{
+    "faqsData": [
+      {
+        "category": "Reservations",
+        "subCategories": [
+          {
+            "title": "Booking Process",
+            "faqs": [
+              {
+                "question": "How can I make a reservation?",
+                "answer": "You can book a room online through our website, via our mobile app, or by calling our reservations team."
+              },
+              {
+                "question": "Do I need a credit card to book a room?",
+                "answer": "Yes, a valid credit card is required to guarantee your booking. Some rates may allow alternative payment options."
+              },
+              {
+                "question": "Can I book a room without creating an account?",
+                "answer": "Yes, you can book as a guest, but having an account allows for faster checkouts and access to exclusive offers."
+              }
+            ]
+          },
+          {
+            "title": "Modifications & Cancellations",
+            "faqs": [
+              {
+                "question": "How do I modify my reservation?",
+                "answer": "Log in to your account or use the 'Manage Booking' section on our website. You can also contact customer service."
+              },
+              {
+                "question": "What is the cancellation policy?",
+                "answer": "Cancellation policies vary by rate type and room selection. Check your booking confirmation for specific details."
+              },
+              {
+                "question": "Can I get a refund if I cancel my booking?",
+                "answer": "Refund eligibility depends on your booking terms. Non-refundable bookings typically cannot be refunded."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Check-in & Check-out",
+        "subCategories": [
+          {
+            "title": "Check-in Process",
+            "faqs": [
+              {
+                "question": "What time is check-in?",
+                "answer": "Check-in is from 3:00 PM onwards. Early check-in is subject to availability and may incur an extra charge."
+              },
+              {
+                "question": "Do I need an ID to check in?",
+                "answer": "Yes, a government-issued ID or passport is required at check-in for security purposes."
+              },
+              {
+                "question": "Can someone else check in on my behalf?",
+                "answer": "Yes, but they must provide a copy of your ID and a signed authorization letter."
+              }
+            ]
+          },
+          {
+            "title": "Check-out Process",
+            "faqs": [
+              {
+                "question": "What time is check-out?",
+                "answer": "Check-out is by 12:00 PM. Late check-out may be available upon request for an additional fee."
+              },
+              {
+                "question": "Can I check out late?",
+                "answer": "Late check-out is subject to availability and may involve extra charges. Contact the front desk for details."
+              },
+              {
+                "question": "Is express check-out available?",
+                "answer": "Yes, express check-out is available for guests who wish to leave quickly. Simply drop off your key or use our mobile app."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Hotel Services & Amenities",
+        "subCategories": [
+          {
+            "title": "Dining Options",
+            "faqs": [
+              {
+                "question": "Does the hotel have a restaurant?",
+                "answer": "Yes, we have an on-site restaurant serving breakfast, lunch, and dinner."
+              },
+              {
+                "question": "Is room service available?",
+                "answer": "Yes, 24-hour room service is available with a menu featuring a variety of cuisines."
+              },
+              {
+                "question": "Do you offer vegetarian or special diet options?",
+                "answer": "Yes, we cater to vegetarian, vegan, and gluten-free diets. Please inform us in advance for specific requests."
+              }
+            ]
+          },
+          {
+            "title": "Wellness & Recreation",
+            "faqs": [
+              {
+                "question": "Does the hotel have a gym?",
+                "answer": "Yes, our fitness center is open 24/7 and includes modern workout equipment."
+              },
+              {
+                "question": "Is there a swimming pool?",
+                "answer": "Yes, we have an outdoor pool available for all guests from 7:00 AM to 10:00 PM."
+              },
+              {
+                "question": "Are spa services available?",
+                "answer": "Yes, we offer a range of spa treatments. Advance booking is recommended."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Payment & Policies",
+        "subCategories": [
+          {
+            "title": "Payment Options",
+            "faqs": [
+              {
+                "question": "What payment methods do you accept?",
+                "answer": "We accept major credit cards, debit cards, and cash. Some locations may also accept digital wallets."
+              },
+              {
+                "question": "Can I pay at the hotel instead of online?",
+                "answer": "Yes, select rates allow payment at check-in. A valid credit card is required for guarantee."
+              },
+              {
+                "question": "Do you offer corporate or group billing?",
+                "answer": "Yes, we provide direct billing for corporate clients and group reservations. Contact us for details."
+              }
+            ]
+          },
+          {
+            "title": "Deposit & Fees",
+            "faqs": [
+              {
+                "question": "Is a security deposit required?",
+                "answer": "A refundable security deposit may be required at check-in to cover incidental charges."
+              },
+              {
+                "question": "Are there any additional taxes or fees?",
+                "answer": "Yes, local taxes and service fees may apply. Check your booking confirmation for details."
+              },
+              {
+                "question": "Is there a fee for extra guests?",
+                "answer": "Yes, additional guests beyond room capacity may be subject to extra charges."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Travel Information",
+        "subCategories": [
+          {
+            "title": "Transportation",
+            "faqs": [
+              {
+                "question": "Does the hotel offer airport transfers?",
+                "answer": "Yes, we provide airport pick-up and drop-off services. Advance booking is required."
+              },
+              {
+                "question": "Is parking available?",
+                "answer": "Yes, we offer on-site parking. Charges may apply for valet parking."
+              },
+              {
+                "question": "Can I rent a car from the hotel?",
+                "answer": "Yes, car rental services are available through our concierge desk."
+              }
+            ]
+          },
+          {
+            "title": "Local Attractions",
+            "faqs": [
+              {
+                "question": "What are some nearby attractions?",
+                "answer": "Our hotel is close to popular landmarks, shopping districts, and cultural sites. Visit the concierge for recommendations."
+              },
+              {
+                "question": "Do you offer guided tours?",
+                "answer": "Yes, we can arrange guided city tours and excursions. Contact the front desk for options."
+              },
+              {
+                "question": "Is public transportation accessible from the hotel?",
+                "answer": "Yes, bus and metro stations are within walking distance for convenient city travel."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

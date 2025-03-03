@@ -1,6 +1,6 @@
 async function fetchLanguages() {
     try {
-        const response = await fetch("../airline-data/languages.json"); // Adjust path if necessary
+        const response = await fetch("../business-data/languages.json"); // Adjust path if necessary
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
