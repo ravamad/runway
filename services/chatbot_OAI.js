@@ -6,25 +6,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     const sendButton = document.getElementById("send-input");
     const chatMainContent = document.querySelector(".AI-assistant-chat-main-content");
 
+    const API_KEY = ""; // Replace with your actual OpenAI API key
+
     triggerButton?.addEventListener("click", () => chatContainer.style.display = "block");
     hideButton?.addEventListener("click", () => chatContainer.style.display = "none");
 
-    // ✅ Fetch Welcome Message from `chatbot.json`
-    async function fetchWelcomeMessage() {
-        try {
-            const response = await fetch("../business-data/chatbot.json");
-            if (!response.ok) throw new Error("Failed to fetch chatbot.json");
-
-            const data = await response.json();
-            console.log("Welcome message loaded:", data);
-            displayAIMessage(data.welcome_message); // ✅ Display it as the first AI message
-        } catch (error) {
-            console.error("Error fetching welcome message:", error);
-            displayAIMessage("Hello! How can I assist you today?"); // Fallback message
-        }
-    }
-
-    // ✅ Fetch FAQ JSON path from `business-config.json`
+    // ✅ FIX: Added `fetchBusinessConfig()` back
     async function fetchBusinessConfig() {
         try {
             const response = await fetch("../business-data/business-config.json");
@@ -49,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const loader = showLoadingAnimation();
 
         setTimeout(async () => {
-            const faqsUrl = await fetchBusinessConfig();
+            const faqsUrl = await fetchBusinessConfig(); // ✅ NOW IT EXISTS!
             if (!faqsUrl) {
                 removeLoadingAnimation(loader);
                 displayAIMessage("Sorry, I couldn't access FAQs at the moment.");
@@ -134,7 +121,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             console.log("Extracted FAQs:", allFAQs);
 
-            // ✅ Matching logic (Find the most relevant FAQ)
             const matchedFAQ = allFAQs.find(faq =>
                 userText.toLowerCase().includes(faq.question.toLowerCase()) ||
                 faq.question.toLowerCase().includes(userText.toLowerCase())
@@ -145,13 +131,58 @@ document.addEventListener("DOMContentLoaded", async function () {
                 console.log("FAQ match found:", matchedFAQ);
                 displayAIMessage(matchedFAQ.answer);
             } else {
+                console.log("No FAQ match, querying GPT-4o Mini...");
+                const gptResponse = await getAIResponse(userText, loader);
                 removeLoadingAnimation(loader);
-                displayAIMessage("Sorry, I couldn't find an answer to your question.");
+                displayAIMessage(gptResponse);
             }
         } catch (error) {
             console.error("Error processing user query:", error);
             removeLoadingAnimation(loader);
             displayAIMessage("Sorry, I couldn't retrieve the information. Please try again.");
+        }
+    }
+
+    async function getAIResponse(userText, loader, attempt = 1) {
+        if (attempt > 3) {
+            removeLoadingAnimation(loader);
+            return "I'm unable to fetch AI-generated responses at the moment.";
+        }
+
+        const url = "https://api.openai.com/v1/chat/completions";
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
+        };
+
+        const body = JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+                { role: "system", content: "You are a customer support assistant." },
+                { role: "user", content: userText }
+            ],
+            max_tokens: 150
+        });
+
+        try {
+            console.log(`Sending request to OpenAI API... Attempt ${attempt}`);
+            const response = await fetch(url, { method: "POST", headers, body });
+
+            if (response.status === 429) {
+                console.warn(`Rate limited! Retrying in ${attempt * 2} seconds...`);
+                await new Promise(resolve => setTimeout(resolve, attempt * 2000));
+                return await getAIResponse(userText, loader, attempt + 1);
+            }
+
+            if (!response.ok) throw new Error(`OpenAI API error: ${response.status}`);
+
+            const data = await response.json();
+            console.log("GPT-4o Mini Response:", data);
+
+            return data.choices[0]?.message?.content || "I'm not sure how to answer that.";
+        } catch (error) {
+            console.error("Error fetching AI response:", error);
+            return "I'm unable to fetch AI-generated responses at the moment.";
         }
     }
 
@@ -184,7 +215,4 @@ document.addEventListener("DOMContentLoaded", async function () {
         chatMainContent.appendChild(aiBubble);
         chatMainContent.scrollTop = chatMainContent.scrollHeight;
     }
-
-    // ✅ Fetch and show the welcome message when the page loads
-    fetchWelcomeMessage();
 });
