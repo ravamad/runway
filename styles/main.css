@@ -15,16 +15,21 @@
 body {
   font-family: "Hanken Grotesk", sans-serif;
   background-color: #f1eeee;
+  max-height: 100vh;
+  overflow-x: hidden;
 }
 body ul {
   list-style: none;
   margin-bottom: 0rem;
 }
 
-.page-container .page-content {
-  width: 100vw;
+.page-container {
   height: 100vh;
-  position: relative;
+  width: 100vw;
+}
+.page-container .page-content {
+  height: 100vh;
+  width: 100vw;
 }
 
 .section.fw {
@@ -308,10 +313,17 @@ a:hover {
 }
 
 #AI-assistant-container {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 #AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content {
   display: flex;
@@ -325,11 +337,183 @@ a:hover {
   border-radius: 8px;
 }
 #AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content #AI-assistant-trigger-button {
-  padding: 1rem !important;
+  padding: 0.8rem !important;
 }
 #AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content #AI-assistant-trigger-button i {
-  font-size: 1.6rem !important;
-  line-height: 1.6rem !important;
+  font-size: 1.2rem !important;
+  line-height: 1.2rem !important;
+}
+#AI-assistant-container .AI-assistant-chat-container {
+  display: none;
+  width: 350px;
+  height: 450px;
+  margin-top: 1rem;
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.621);
+  border-radius: 8px;
+}
+@media screen and (max-width: 375px) {
+  #AI-assistant-container .AI-assistant-chat-container {
+    width: 320px;
+  }
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content {
+  width: 100%;
+  height: 100%;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container {
+  border-bottom: 1px solid #f1eeee;
+  height: 70px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status {
+  display: flex;
+  align-items: center;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status .logo {
+  margin-right: 0.5rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status .logo #chat-favicon {
+  width: 32px;
+  height: 32px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status .chat-status {
+  line-height: 1.2rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status .chat-status #chat-business-name {
+  font-weight: 700;
+  color: #3030ab;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status .chat-status .status {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content .AI-assistant-logo-status .chat-status .status .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #2EBFA5;
+  display: flex;
+  border-radius: 100px;
+  margin-right: 0.3rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-header .AI-assistant-chat-header-container .AI-assistant-chat-header-content #hide-chat {
+  padding: 0.1rem 0.3rem !important;
+  background: #f1eeee;
+  border-radius: 100px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main {
+  overflow-y: scroll;
+  height: 320px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content ::-webkit-scrollbar {
+  width: 5px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content ::-webkit-scrollbar-track {
+  background: none;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content ::-webkit-scrollbar-thumb {
+  background: #3030ab;
+  border-radius: 100px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .user-input-container {
+  width: 100%;
+  display: flex;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .user-input-container .user-input-content {
+  margin: 1rem 0rem !important;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .user-input-container .user-input-content .timing {
+  font-size: 0.8rem;
+  color: #a19a9a;
+  margin-bottom: 0.3rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .user-input-container .user-input-content .user-input-bubble .user-input-text {
+  width: fit-content;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #e4f5ff;
+  color: #423d3d;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .AI-response-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .AI-response-container .AI-response-content .timing {
+  font-size: 0.8rem;
+  color: #a19a9a;
+  margin-bottom: 0.3rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-main .AI-assistant-chat-main-container .AI-assistant-chat-main-content .AI-response-container .AI-response-content .AI-response-bubble .AI-response-text {
+  width: fit-content;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #f1eeee;
+  color: #423d3d;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-footer {
+  width: 100%;
+  height: 60px;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-footer .AI-assistant-chat-footer-container {
+  border-top: 1px solid #f1eeee;
+  background: #ffffff;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-footer .AI-assistant-chat-footer-container .AI-assistant-chat-footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-footer .AI-assistant-chat-footer-container .AI-assistant-chat-footer-content .input input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-footer .AI-assistant-chat-footer-container .AI-assistant-chat-footer-content .actions {
+  display: flex;
+  align-items: center;
+}
+#AI-assistant-container .AI-assistant-chat-container .AI-assistant-chat-content .AI-assistant-chat-footer .AI-assistant-chat-footer-container .AI-assistant-chat-footer-content .actions button {
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+#AI-assistant-container .AI-assistant-chat-container .loader {
+  width: 28px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, #888 90%, transparent);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: 33.3333333333% 50%;
+  animation: typing-indicator 1s infinite linear;
+}
+@keyframes typing-indicator {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

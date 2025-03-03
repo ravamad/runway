@@ -202,7 +202,7 @@
                         <div class="AI-assistant-trigger-container">
                             <div class="AI-assistant-trigger-content">
                                 <div class="AI-assistant-trigger-bubble">
-                                    How can I help you?
+                                    I'm your AI assistant!
                                 </div>
                                 <button id="AI-assistant-trigger-button" class="icon-button rounded primary-filled">
                                     <i class="ri-bard-fill"></i>
@@ -210,11 +210,50 @@
                             </div>
                         </div>
                         <!-- Chat -->
-                        <div id="AI-chat-container">
-                            <div class="AI-chat-content">
-                                <div class="AI-chat-header"></div>
-                                <div class="AI-chat-main"></div>
-                                <div class="AI-chat-footer"></div>
+                        <div class="AI-assistant-chat-container">
+                            <div class="AI-assistant-chat-content">
+                                <div class="AI-assistant-chat-header">
+                                    <div class="AI-assistant-chat-header-container">
+                                        <div class="AI-assistant-chat-header-content">
+                                            <div class="AI-assistant-logo-status">
+                                                <div class="logo">
+                                                    <img src="" alt="" id="chat-favicon">
+                                                </div>
+                                                <div class="chat-status">
+                                                    <div id="chat-business-name" class="business-name"></div>
+                                                    <div class="status"><span class="dot"></span>Online</div>
+                                                </div>
+                                            </div>
+                                            <button class="icon-button" id="hide-chat"><i class="ri-arrow-down-s-line"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="AI-assistant-chat-main">
+                                    <div class="AI-assistant-chat-main-container">
+                                        <div class="AI-assistant-chat-main-content">
+                                            <div class="user-input-container">
+                                                <div class="user-input-content">
+                                                </div>
+                                            </div>
+                                            <div class="AI-response-container">
+                                                <div class="AI-response-content">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="AI-assistant-chat-footer">
+                                    <div class="AI-assistant-chat-footer-container">
+                                        <div class="AI-assistant-chat-footer-content">
+                                            <div class="input"><input type="text" id="user-input" placeholder="Ask anything"></div>
+                                            <div class="actions">
+                                                <button id="upload"><i class="ri-upload-2-line"></i></button>
+                                                <button id="voice"><i class="ri-mic-ai-fill"></i></button>
+                                                <button id="send-input"><i class="ri-send-plane-fill"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -278,7 +317,7 @@
     <script src="../services/business-config.js"></script>
     <script src="../services/languages.js"></script>
     <script src="../services/faqs.js"></script>
-    <script src="../services/favicon.js"></script>
+    <script src="../services/chatbot.js"></script>
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>

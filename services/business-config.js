@@ -19,12 +19,16 @@ async function fetchBusinessData() {
 
         // Extract data
         const businessData = data[0];
+        const businessName = businessData.business_name || "";
         const businessLogoUrl = businessData.business_logo || "";
+        const faviconLogoUrl = businessData.favicon_logo || "";
         const loyaltyProgramName = businessData.loyalty_program || "Loyalty Program";
         const loyaltyProgramLogoUrl = businessData.loyalty_program_logo || "";
         const loginImageUrl = businessData["login-image"] || "";
 
+        console.log("Business Name:", businessName); // ✅ Verify logo URL
         console.log("Business Logo URL:", businessLogoUrl); // ✅ Verify logo URL
+        console.log("Favicon Logo URL:", faviconLogoUrl); // ✅ Verify favicon URL
         console.log("Loyalty Program Name:", loyaltyProgramName); // ✅ Verify program name
         console.log("Loyalty Program Logo URL:", loyaltyProgramLogoUrl); // ✅ Verify logo URL
         console.log("Login Image URL:", loginImageUrl); // ✅ Verify image URL
@@ -33,6 +37,17 @@ async function fetchBusinessData() {
         document.querySelectorAll(".loyalty-id").forEach(element => {
             element.textContent = loyaltyProgramName;
         });
+
+        // ✅ Update all elements with class 'business-name'
+        document.querySelectorAll(".business-name").forEach(element => {
+            element.innerHTML = businessName;
+        });
+        
+        // ✅ Update loyalty program logo
+        const businessFavicon = document.getElementById("chat-favicon");
+        if (businessFavicon && faviconLogoUrl) {
+            businessFavicon.src = faviconLogoUrl;
+        }
 
         // ✅ Update loyalty program logo
         const loyaltyLogo = document.getElementById("loyalty-logo");

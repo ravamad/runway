@@ -1,26 +1,37 @@
 async function fetchData() {
     try {
-        // Fetch both airline data and FAQ data
-        const [faqsResponse, airlineResponse] = await Promise.all([
-            fetch("../business-data/hotel-data/faqs.json"),
-            fetch("../business-data/business-config.json")
-        ]);
-
-        if (!faqsResponse.ok || !airlineResponse.ok) {
-            throw new Error(`HTTP error! Status: ${faqsResponse.status} / ${airlineResponse.status}`);
+        // Fetch business config first to get the correct FAQs URL
+        const configResponse = await fetch("../business-data/business-config.json");
+        
+        if (!configResponse.ok) {
+            throw new Error(`HTTP error! Status: ${configResponse.status}`);
         }
 
-        // Parse responses
+        const configData = await configResponse.json();
+        
+        // Get the FAQs URL from the first business entry
+        const faqsUrl = configData.length > 0 ? configData[0].faqs : null;
+
+        if (!faqsUrl) {
+            throw new Error("FAQs URL not found in business-config.json");
+        }
+
+        // Fetch FAQs data using the retrieved URL
+        const faqsResponse = await fetch(faqsUrl);
+
+        if (!faqsResponse.ok) {
+            throw new Error(`HTTP error! Status: ${faqsResponse.status}`);
+        }
+
         const faqsData = await faqsResponse.json();
-        const airlineData = await airlineResponse.json();
         
         console.log("Fetched FAQs Data:", faqsData);
-        console.log("Fetched Airline Data:", airlineData);
+        console.log("Fetched Business Config:", configData);
 
-        // Get airline name (assuming first object in array)
-        const airlineName = airlineData.length > 0 ? airlineData[0].airline_name : "the airline";
+        // Get business name (assuming first object in array)
+        const businessName = configData.length > 0 ? configData[0].business_name : "the business";
 
-        console.log("Airline Name:", airlineName);
+        console.log("Business Name:", businessName);
 
         const searchInput = document.getElementById("searchInput");
         const searchResults = document.getElementById("searchResults");
@@ -31,7 +42,7 @@ async function fetchData() {
             return;
         }
 
-        // Flatten all FAQ questions into an array, replacing `{{}}` with airline name
+        // Flatten all FAQ questions into an array, replacing `{{}}` with business name
         let allFAQs = [];
         faqsData.faqsData.forEach(category => {
             category.subCategories.forEach(subCategory => {
@@ -40,13 +51,13 @@ async function fetchData() {
                         category: category.category,
                         subCategory: subCategory.title,
                         question: faq.question,
-                        answer: faq.answer.replace(/{{}}/g, airlineName) // Replace {{}} with airline name
+                        answer: faq.answer.replace(/{{}}/g, businessName) // Replace {{}} with business name
                     });
                 });
             });
         });
 
-        console.log("Processed FAQs with Airline Name:", allFAQs);
+        console.log("Processed FAQs with Business Name:", allFAQs);
 
         // Listen for input changes and filter results
         searchInput.addEventListener("input", function () {
