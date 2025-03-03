@@ -253,13 +253,70 @@ a:hover {
 #navbar .logo img {
   width: 150px;
 }
+#navbar #site-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+#navbar #site-menu li {
+  position: relative;
+}
 #navbar #site-menu li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #3030ab;
   padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
 #navbar #site-menu li a:hover {
   background: #73B5DE;
   color: #121253;
+}
+#navbar #site-menu li.has-submenu > a::after {
+  font-weight: 900;
+  margin-left: 8px;
+  font-size: 0.8rem;
+}
+#navbar #site-menu li.has-submenu .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  padding: 10px 0;
+  padding-top: 1rem;
+  min-width: 180px;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.621);
   border-radius: 8px;
+  list-style: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+#navbar #site-menu li.has-submenu .submenu li {
+  padding: 5px 15px;
+}
+#navbar #site-menu li.has-submenu .submenu li a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 8px 12px;
+  display: block;
+  color: #1e1c1c;
+}
+#navbar #site-menu li.has-submenu .submenu li a:hover {
+  background: linear-gradient(45deg, #3030ab 0%, #73B5DE 100%);
+  color: #ffffff;
+  border-radius: 8px;
+}
+#navbar #site-menu li.has-submenu:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 #navbar #actions-menu {
   display: flex;

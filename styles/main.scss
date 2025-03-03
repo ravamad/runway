@@ -282,14 +282,93 @@
                 }
             }
             // Site-menu
-                #site-menu{
-                    li{
-                        a{
+                // #site-menu{
+                //     li{
+                //         a{
+                //             padding: .5rem 1rem;
+                //             &:hover{
+                //                 background: $secondary-color;
+                //                 color: $darker-primary-color;
+                //                 border-radius: $radius;
+                //             }
+                //         }
+                //     }
+                // }
+                // Site Menu
+                #site-menu {
+                    list-style: none;
+                    display: flex;
+                    gap: 1rem;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        position: relative;
+
+                        a {
+                            text-decoration: none;
+                            font-size: $default;
+                            color: $primary-color;
                             padding: .5rem 1rem;
-                            &:hover{
+                            border-radius: $radius;
+                            transition: $transition;
+
+                            &:hover {
                                 background: $secondary-color;
                                 color: $darker-primary-color;
+                            }
+                        }
+
+                        // Dropdown
+                        &.has-submenu {
+                            > a::after {
+                                font-weight: 900;
+                                margin-left: 8px;
+                                font-size: $small;
+                            }
+
+                            .submenu {
+                                // margin-top: 1rem;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                background: $white;
+                                padding: 10px 0;
+                                padding-top: 1rem;
+                                min-width: 180px;
+                                box-shadow: $shadow;
                                 border-radius: $radius;
+                                list-style: none;
+                                display: none;
+                                opacity: 0;
+                                visibility: hidden;
+                                transform: translateY(-10px);
+                                transition: $transition;
+
+                                li {
+                                    padding: 5px 15px;
+
+                                    a {
+                                        font-size: $small;
+                                        font-weight: $regular;
+                                        padding: 8px 12px;
+                                        display: block;
+                                        color: $black;
+
+                                        &:hover {
+                                            background: $primary-gradient;
+                                            color: $white;
+                                            border-radius: $radius;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:hover .submenu {
+                                display: block;
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translateY(0);
                             }
                         }
                     }

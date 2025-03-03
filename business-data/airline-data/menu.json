@@ -1,0 +1,41 @@
+{
+    "menu": [
+      {
+        "title": "Book",
+        "link": "#",
+        "submenu": [
+          { "title": "Flights", "link": "/book/flights" },
+          { "title": "Hotels", "link": "/book/hotels" },
+          { "title": "Car Rentals", "link": "/book/cars" }
+        ]
+      },
+      {
+        "title": "Manage",
+        "link": "#",
+        "submenu": [
+          { "title": "My Booking", "link": "/manage/booking" },
+          { "title": "Check-in", "link": "/manage/checkin" },
+          { "title": "Extras", "link": "/manage/extras" }
+        ]
+      },
+      {
+        "title": "Explore",
+        "link": "#",
+        "submenu": [
+          { "title": "Destinations", "link": "/explore/destinations" },
+          { "title": "Travel Guides", "link": "/explore/guides" },
+          { "title": "Offers", "link": "/explore/offers" }
+        ]
+      },
+      {
+        "title": "Loyalty",
+        "link": "#",
+        "submenu": [
+          { "title": "Register", "link": "/loyalty/register" },
+          { "title": "Redeem Points", "link": "/loyalty/redeem" },
+          { "title": "Benefits", "link": "/loyalty/benefits" },
+          { "title": "Partners", "link": "/loyalty/partners" }
+        ]
+      }
+    ]
+  }

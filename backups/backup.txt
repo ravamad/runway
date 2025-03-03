@@ -258,3 +258,12 @@ document.addEventListener("DOMContentLoaded", fetchData);
             <div class="AI-response-text">
         </div>
     </div> -->
+
+
+
+<ul class="d-flex menu" id="site-menu">
+                                        <li><a class="no-dec" href="#">Book</a></li>
+                                        <li><a class="no-dec" href="#">Manage</a></li>
+                                        <li><a class="no-dec" href="#">Explore</a></li>
+                                        <li><a class="no-dec" href="#"><span class="loyalty-id"></span></a></li>
+                                    </ul>
