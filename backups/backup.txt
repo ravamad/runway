@@ -150,10 +150,6 @@ async function fetchCarouselData() {
 // Run function after DOM loads
 document.addEventListener("DOMContentLoaded", fetchCarouselData);
 
-API KEY
-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
-
-
 
 FAQ outlined
 async function fetchData() {
