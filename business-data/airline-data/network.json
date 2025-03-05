@@ -1,0 +1,342 @@
+{
+    "continents": 
+    {
+      "Europe": {
+        "United Kingdom": {
+          "London": {
+            "geolocation": { "latitude": 51.5074, "longitude": -0.1278 },
+            "airports": [
+              {
+                "name": "Heathrow Airport",
+                "iata_code": "LHR",
+                "icao_code": "EGLL",
+                "geolocation": { "latitude": 51.4700, "longitude": -0.4543 }
+              },
+              {
+                "name": "Gatwick Airport",
+                "iata_code": "LGW",
+                "icao_code": "EGKK",
+                "geolocation": { "latitude": 51.1537, "longitude": -0.1821 }
+              }
+            ]
+          }
+        },
+        "Germany": {
+          "Frankfurt": {
+            "geolocation": { "latitude": 50.1109, "longitude": 8.6821 },
+            "airports": [
+              {
+                "name": "Frankfurt Airport",
+                "iata_code": "FRA",
+                "icao_code": "EDDF",
+                "geolocation": { "latitude": 50.0379, "longitude": 8.5622 }
+              }
+            ]
+          }
+        },
+        "Spain": {
+          "Madrid": {
+            "geolocation": { "latitude": 40.4168, "longitude": -3.7038 },
+            "airports": [
+              {
+                "name": "Adolfo Suárez Madrid–Barajas Airport",
+                "iata_code": "MAD",
+                "icao_code": "LEMD",
+                "geolocation": { "latitude": 40.4719, "longitude": -3.5626 }
+              }
+            ]
+          }
+        },
+        "Italy": {
+            "Rome": {
+              "geolocation": { "latitude": 41.9028, "longitude": 12.4964 },
+              "airports": [
+                {
+                  "name": "Leonardo da Vinci–Fiumicino Airport",
+                  "iata_code": "FCO",
+                  "icao_code": "LIRF",
+                  "geolocation": { "latitude": 41.7999, "longitude": 12.2462 }
+                },
+                {
+                  "name": "Ciampino–G. B. Pastine International Airport",
+                  "iata_code": "CIA",
+                  "icao_code": "LIRA",
+                  "geolocation": { "latitude": 41.7994, "longitude": 12.5971 }
+                }
+              ]
+            },
+            "Milan": {
+              "geolocation": { "latitude": 45.4642, "longitude": 9.1900 },
+              "airports": [
+                {
+                  "name": "Milan Malpensa Airport",
+                  "iata_code": "MXP",
+                  "icao_code": "LIMC",
+                  "geolocation": { "latitude": 45.6301, "longitude": 8.7281 }
+                },
+                {
+                  "name": "Milan Linate Airport",
+                  "iata_code": "LIN",
+                  "icao_code": "LIML",
+                  "geolocation": { "latitude": 45.4451, "longitude": 9.2767 }
+                }
+              ]
+            }
+        },
+        "France": {
+        "Paris": {
+            "geolocation": { "latitude": 48.8566, "longitude": 2.3522 },
+            "airports": [
+            {
+                "name": "Charles de Gaulle Airport",
+                "iata_code": "CDG",
+                "icao_code": "LFPG",
+                "geolocation": { "latitude": 49.0097, "longitude": 2.5479 }
+            },
+            {
+                "name": "Orly Airport",
+                "iata_code": "ORY",
+                "icao_code": "LFPO",
+                "geolocation": { "latitude": 48.7233, "longitude": 2.3794 }
+            }
+            ]
+        },
+        "Nice": {
+            "geolocation": { "latitude": 43.7102, "longitude": 7.2620 },
+            "airports": [
+            {
+                "name": "Nice Côte d'Azur Airport",
+                "iata_code": "NCE",
+                "icao_code": "LFMN",
+                "geolocation": { "latitude": 43.6584, "longitude": 7.2159 }
+            }
+            ]
+        }
+        }
+      },
+      "Middle East": {
+        "United Arab Emirates": {
+          "Dubai": {
+            "geolocation": { "latitude": 25.2048, "longitude": 55.2708 },
+            "airports": [
+              {
+                "name": "Dubai International Airport",
+                "iata_code": "DXB",
+                "icao_code": "OMDB",
+                "geolocation": { "latitude": 25.2532, "longitude": 55.3657 }
+              },
+              {
+                "name": "Al Maktoum International Airport",
+                "iata_code": "DWC",
+                "icao_code": "OMDW",
+                "geolocation": { "latitude": 24.8964, "longitude": 55.1614 }
+              }
+            ]
+          }
+        },
+        "Qatar": {
+          "Doha": {
+            "geolocation": { "latitude": 25.276987, "longitude": 51.520008 },
+            "airports": [
+              {
+                "name": "Hamad International Airport",
+                "iata_code": "DOH",
+                "icao_code": "OTHH",
+                "geolocation": { "latitude": 25.2731, "longitude": 51.6089 }
+              }
+            ]
+          }
+        }
+      },
+      "Africa": {
+        "South Africa": {
+          "Johannesburg": {
+            "geolocation": { "latitude": -26.2041, "longitude": 28.0473 },
+            "airports": [
+              {
+                "name": "O. R. Tambo International Airport",
+                "iata_code": "JNB",
+                "icao_code": "FAOR",
+                "geolocation": { "latitude": -26.1337, "longitude": 28.2423 }
+              }
+            ]
+          }
+        },
+        "Kenya": {
+          "Nairobi": {
+            "geolocation": { "latitude": -1.286389, "longitude": 36.817223 },
+            "airports": [
+              {
+                "name": "Jomo Kenyatta International Airport",
+                "iata_code": "NBO",
+                "icao_code": "HKJK",
+                "geolocation": { "latitude": -1.319167, "longitude": 36.9275 }
+              }
+            ]
+          }
+        }
+      },
+      "APAC": {
+        "China": {
+          "Beijing": {
+            "geolocation": { "latitude": 39.9042, "longitude": 116.4074 },
+            "airports": [
+              {
+                "name": "Beijing Capital International Airport",
+                "iata_code": "PEK",
+                "icao_code": "ZBAA",
+                "geolocation": { "latitude": 40.0801, "longitude": 116.5846 }
+              },
+              {
+                "name": "Beijing Daxing International Airport",
+                "iata_code": "PKX",
+                "icao_code": "ZBAD",
+                "geolocation": { "latitude": 39.5098, "longitude": 116.4103 }
+              }
+            ]
+          }
+        },
+        "Australia": {
+          "Sydney": {
+            "geolocation": { "latitude": -33.8688, "longitude": 151.2093 },
+            "airports": [
+              {
+                "name": "Sydney Kingsford Smith Airport",
+                "iata_code": "SYD",
+                "icao_code": "YSSY",
+                "geolocation": { "latitude": -33.9399, "longitude": 151.1753 }
+              }
+            ]
+          }
+        }
+      },
+      "North America": {
+        "Canada": {
+          "Montreal": {
+            "geolocation": { "latitude": 45.5017, "longitude": -73.5673 },
+            "airports": [
+              {
+                "name": "Montréal–Pierre Elliott Trudeau International Airport",
+                "iata_code": "YUL",
+                "icao_code": "CYUL",
+                "geolocation": { "latitude": 45.4706, "longitude": -73.7408 }
+              },
+              {
+                "name": "Montréal Saint-Hubert Longueuil Airport",
+                "iata_code": "YHU",
+                "icao_code": "CYHU",
+                "geolocation": { "latitude": 45.5164, "longitude": -73.4169 }
+              }
+            ]
+          },
+          "Calgary": {
+            "geolocation": { "latitude": 51.0447, "longitude": -114.0719 },
+            "airports": [
+              {
+                "name": "Calgary International Airport",
+                "iata_code": "YYC",
+                "icao_code": "CYYC",
+                "geolocation": { "latitude": 51.1139, "longitude": -114.0203 }
+              }
+            ]
+          }
+        }
+      },
+      "South America": {
+        "Brazil": {
+          "São Paulo": {
+            "geolocation": { "latitude": -23.5505, "longitude": -46.6333 },
+            "airports": [
+              {
+                "name": "São Paulo–Guarulhos International Airport",
+                "iata_code": "GRU",
+                "icao_code": "SBGR",
+                "geolocation": { "latitude": -23.4356, "longitude": -46.4731 }
+              },
+              {
+                "name": "Congonhas-São Paulo Airport",
+                "iata_code": "CGH",
+                "icao_code": "SBSP",
+                "geolocation": { "latitude": -23.6261, "longitude": -46.6566 }
+              }
+            ]
+          },
+          "Rio de Janeiro": {
+            "geolocation": { "latitude": -22.9068, "longitude": -43.1729 },
+            "airports": [
+              {
+                "name": "Rio de Janeiro–Galeão International Airport",
+                "iata_code": "GIG",
+                "icao_code": "SBGL",
+                "geolocation": { "latitude": -22.8089, "longitude": -43.2436 }
+              },
+              {
+                "name": "Santos Dumont Airport",
+                "iata_code": "SDU",
+                "icao_code": "SBRJ",
+                "geolocation": { "latitude": -22.9104, "longitude": -43.1631 }
+              }
+            ]
+          }
+        },
+        "Argentina": {
+          "Buenos Aires": {
+            "geolocation": { "latitude": -34.6037, "longitude": -58.3816 },
+            "airports": [
+              {
+                "name": "Ministro Pistarini International Airport",
+                "iata_code": "EZE",
+                "icao_code": "SAEZ",
+                "geolocation": { "latitude": -34.8125, "longitude": -58.5392 }
+              },
+              {
+                "name": "Jorge Newbery Airfield",
+                "iata_code": "AEP",
+                "icao_code": "SABE",
+                "geolocation": { "latitude": -34.5592, "longitude": -58.4156 }
+              }
+            ]
+          }
+        },
+        "Chile": {
+          "Santiago": {
+            "geolocation": { "latitude": -33.4489, "longitude": -70.6693 },
+            "airports": [
+              {
+                "name": "Comodoro Arturo Merino Benítez International Airport",
+                "iata_code": "SCL",
+                "icao_code": "SCEL",
+                "geolocation": { "latitude": -33.3930, "longitude": -70.7858 }
+              }
+            ]
+          }
+        },
+        "Colombia": {
+          "Bogotá": {
+            "geolocation": { "latitude": 4.7110, "longitude": -74.0721 },
+            "airports": [
+              {
+                "name": "El Dorado International Airport",
+                "iata_code": "BOG",
+                "icao_code": "SKBO",
+                "geolocation": { "latitude": 4.7016, "longitude": -74.1469 }
+              }
+            ]
+          }
+        },
+        "Peru": {
+          "Lima": {
+            "geolocation": { "latitude": -12.0464, "longitude": -77.0428 },
+            "airports": [
+              {
+                "name": "Jorge Chávez International Airport",
+                "iata_code": "LIM",
+                "icao_code": "SPJC",
+                "geolocation": { "latitude": -12.0219, "longitude": -77.1143 }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }

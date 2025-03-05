@@ -1,73 +1,90 @@
 async function fetchBusinessData() {
     try {
-        // Fetch JSON from the correct file path
+        // Fetch business config JSON
         const response = await fetch("../business-data/business-config.json");
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        // ✅ Parse JSON response
         const data = await response.json();
-        console.log("Fetched Data:", data); // ✅ Debugging log
+        console.log("Fetched Business Data:", data);
 
-        // Ensure data is an array and contains at least one object
         if (!Array.isArray(data) || data.length === 0) {
-            console.error("JSON is empty or incorrectly formatted.");
+            console.error("Business JSON is empty or incorrectly formatted.");
             return;
         }
 
-        // Extract data
         const businessData = data[0];
         const businessName = businessData.business_name || "";
         const businessLogoUrl = businessData.business_logo || "";
         const faviconLogoUrl = businessData.favicon_logo || "";
         const loyaltyProgramName = businessData.loyalty_program || "Loyalty Program";
         const loyaltyProgramLogoUrl = businessData.loyalty_program_logo || "";
-        const loginImageUrl = businessData["login-image"] || "";
+        const imageryPath = businessData.imagery || ""; // Get the path to imagery.json
 
-        console.log("Business Name:", businessName); // ✅ Verify logo URL
-        console.log("Business Logo URL:", businessLogoUrl); // ✅ Verify logo URL
-        console.log("Favicon Logo URL:", faviconLogoUrl); // ✅ Verify favicon URL
-        console.log("Loyalty Program Name:", loyaltyProgramName); // ✅ Verify program name
-        console.log("Loyalty Program Logo URL:", loyaltyProgramLogoUrl); // ✅ Verify logo URL
-        console.log("Login Image URL:", loginImageUrl); // ✅ Verify image URL
+        console.log("Business Name:", businessName);
+        console.log("Business Logo URL:", businessLogoUrl);
+        console.log("Favicon Logo URL:", faviconLogoUrl);
+        console.log("Loyalty Program Name:", loyaltyProgramName);
+        console.log("Loyalty Program Logo URL:", loyaltyProgramLogoUrl);
+        console.log("Imagery Path:", imageryPath);
 
-        // ✅ Update all elements with class 'loyalty-id'
+        // Initialize loginImageUrl variable
+        let loginImageUrl = "";
+
+        // Fetch imagery.json if the path is available
+        if (imageryPath) {
+            try {
+                const imageryResponse = await fetch(imageryPath);
+
+                if (!imageryResponse.ok) {
+                    throw new Error(`Imagery fetch failed! Status: ${imageryResponse.status}`);
+                }
+
+                const imageryData = await imageryResponse.json();
+                console.log("Fetched Imagery Data:", imageryData);
+
+                if (Array.isArray(imageryData) && imageryData.length > 0) {
+                    loginImageUrl = imageryData[0]["login-image"] || "";
+                }
+            } catch (imageryError) {
+                console.error("Error fetching imagery data:", imageryError);
+            }
+        }
+
+        console.log("Login Image URL:", loginImageUrl);
+
+        // Update elements with fetched data
         document.querySelectorAll(".loyalty-id").forEach(element => {
             element.textContent = loyaltyProgramName;
         });
 
-        // ✅ Update all elements with class 'business-name'
         document.querySelectorAll(".business-name").forEach(element => {
             element.innerHTML = businessName;
         });
-        
-        // ✅ Update loyalty program logo
+
         const businessFavicon = document.getElementById("chat-favicon");
         if (businessFavicon && faviconLogoUrl) {
             businessFavicon.src = faviconLogoUrl;
         }
 
-        // ✅ Update loyalty program logo
         const loyaltyLogo = document.getElementById("loyalty-logo");
         if (loyaltyLogo && loyaltyProgramLogoUrl) {
             loyaltyLogo.src = loyaltyProgramLogoUrl;
         }
 
-        // ✅ Update loyalty link in the navigation menu
         const loyaltyMenuItem = document.querySelector("#site-menu .loyalty-id");
         if (loyaltyMenuItem) {
             loyaltyMenuItem.innerHTML = `${loyaltyProgramName}`;
         }
 
-        // ✅ Update the login modal image
+        // ✅ Update the login modal image from imagery.json
         const loginImage = document.getElementById("login-modal-image");
         if (loginImage && loginImageUrl) {
             loginImage.src = loginImageUrl;
         }
 
-        // ✅ Update airline logo
         const airlineLogo = document.getElementById("business-logo");
         if (airlineLogo && businessLogoUrl) {
             airlineLogo.src = businessLogoUrl;
@@ -77,5 +94,6 @@ async function fetchBusinessData() {
         console.error("Error fetching business data:", error);
     }
 }
+
 // Run the function after the DOM is loaded
 document.addEventListener("DOMContentLoaded", fetchBusinessData);

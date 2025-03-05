@@ -14,7 +14,7 @@
 
 body {
   font-family: "Hanken Grotesk", sans-serif;
-  background-color: #f1eeee;
+  background-color: #ffffff;
   max-height: 100vh;
   overflow-x: hidden;
 }
@@ -212,6 +212,60 @@ a {
   color: #3030ab;
   transition: transform ease-in-out 0.15s !important;
 }
+a.button {
+  border: none;
+  background: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  text-decoration: none;
+}
+a.primary-filled {
+  background: #3030ab;
+  color: #73B5DE;
+  border-radius: 8px;
+}
+a.primary-filled:hover {
+  background: #73B5DE;
+  color: #3030ab;
+}
+a.secondary-filled {
+  background: #73B5DE;
+  color: #3030ab;
+  border-radius: 8px;
+}
+a.secondary-filled:hover {
+  background: #3030ab;
+  color: #73B5DE;
+}
+a.primary-outlined {
+  background: none;
+  color: #121253;
+  border: 1px solid #3030ab;
+  border-radius: 8px;
+}
+a.primary-outlined:hover {
+  border: none;
+  border-radius: 8px;
+  background: #73B5DE;
+  color: #3030ab;
+}
+a.secondary-outlined {
+  background: none;
+  color: #316791;
+  border: 1px solid #73B5DE;
+  border-radius: 8px;
+}
+a.secondary-outlined:hover {
+  border: none;
+  border-radius: 8px;
+  background: #3030ab;
+  color: #73B5DE;
+}
 a:hover {
   transform: scale(1.03) !important;
 }
@@ -223,6 +277,7 @@ a:hover {
 .modal {
   backdrop-filter: blur(50px);
   background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
+  z-index: 100000 !important;
 }
 .modal .modal-dialog #login-modal-image {
   height: 500px !important;
@@ -247,11 +302,12 @@ a:hover {
 #navbar {
   position: absolute;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
   padding: 0rem 4rem;
 }
 #navbar .logo img {
   width: 150px;
+  filter: brightness(100);
 }
 #navbar #site-menu {
   list-style: none;
@@ -266,7 +322,7 @@ a:hover {
 #navbar #site-menu li a {
   text-decoration: none;
   font-size: 1rem;
-  color: #3030ab;
+  color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
@@ -288,7 +344,7 @@ a:hover {
   padding: 10px 0;
   padding-top: 1rem;
   min-width: 180px;
-  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.621);
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
   border-radius: 8px;
   list-style: none;
   display: none;
@@ -390,7 +446,7 @@ a:hover {
   margin-right: 0.5rem;
   padding: 0.5rem 1rem;
   background: #ffffff;
-  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.621);
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
   border-radius: 8px;
 }
 #AI-assistant-container .AI-assistant-trigger-container .AI-assistant-trigger-content #AI-assistant-trigger-button {
@@ -406,7 +462,7 @@ a:hover {
   height: 450px;
   margin-top: 1rem;
   background: #ffffff;
-  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.621);
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
   border-radius: 8px;
 }
 @media screen and (max-width: 375px) {
@@ -571,6 +627,133 @@ a:hover {
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }
+}
+
+.carousel-indicators {
+  margin-bottom: 6rem;
+}
+
+.carousel-item {
+  position: relative;
+}
+.carousel-item .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
+}
+.carousel-item img {
+  height: 480px;
+  object-fit: cover;
+}
+.carousel-item .carousel-caption {
+  margin-bottom: 7rem;
+}
+.carousel-item .carousel-caption h2 {
+  font-weight: 700;
+  font-size: 2.6rem;
+}
+
+.deals-section {
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  margin-top: 5rem;
+}
+.deals-section h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #423d3d;
+}
+.deals-section h2 .highlight {
+  color: #73B5DE;
+}
+.deals-section p {
+  font-size: 16px;
+  color: #3030ab;
+}
+.deals-section .swiper-container {
+  width: 100%;
+  margin: auto;
+  padding: 1rem 0rem;
+}
+.deals-section .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+.deals-section .swiper-slide:hover {
+  transform: scale(1.05);
+}
+.deals-section .deal-card {
+  width: 50rem;
+  height: fit-content;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  position: relative;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.deals-section .deal-card img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.deals-section .deal-card .deal-content {
+  padding: 1rem;
+}
+.deals-section .deal-card .deal-content .trip-type {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  background: #f1eeee;
+  color: #121253;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+.deals-section .deal-card .deal-content h3 {
+  margin: 10px 0;
+  font-size: 1.6rem;
+  color: #3030ab;
+}
+.deals-section .deal-card .deal-content p {
+  font-size: 14px;
+  color: #a19a9a;
+}
+.deals-section .deal-card .deal-content p strong {
+  color: #73B5DE;
+}
+.deals-section .swiper-pagination {
+  position: relative;
+  margin-top: 15px;
+}
+.deals-section .swiper-pagination .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #3030ab;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.deals-section .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #3030ab;
+  opacity: 1;
+}
+.deals-section .swiper-button-prev,
+.deals-section .swiper-button-next {
+  display: none;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+.deals-section .swiper-button-prev:hover,
+.deals-section .swiper-button-next:hover {
+  color: #e4f5ff;
 }
 
 /*# sourceMappingURL=main.css.map */

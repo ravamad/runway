@@ -1,0 +1,41 @@
+{
+    "menu": [
+        {
+            "title": "Book",
+            "link": "#",
+            "submenu": [
+                { "title": "Hotels", "link": "/book/hotels" },
+                { "title": "Vacation Packages", "link": "/book/packages" },
+                { "title": "Special Deals", "link": "/book/deals" }
+            ]
+        },
+        {
+            "title": "Manage",
+            "link": "#",
+            "submenu": [
+                { "title": "My Reservations", "link": "/manage/reservations" },
+                { "title": "Modify Booking", "link": "/manage/modify" },
+                { "title": "Cancellation", "link": "/manage/cancel" }
+            ]
+        },
+        {
+            "title": "Explore",
+            "link": "#",
+            "submenu": [
+                { "title": "Hotel Locations", "link": "/explore/locations" },
+                { "title": "Room Types", "link": "/explore/rooms" },
+                { "title": "Guest Reviews", "link": "/explore/reviews" }
+            ]
+        },
+        {
+            "title": "Loyalty",
+            "link": "#",
+            "submenu": [
+                { "title": "Join Loyalty Program", "link": "/loyalty/register" },
+                { "title": "Redeem Rewards", "link": "/loyalty/redeem" },
+                { "title": "Loyalty Benefits", "link": "/loyalty/benefits" },
+                { "title": "Exclusive Member Offers", "link": "/loyalty/offers" }
+            ]
+        }
+    ]
+}

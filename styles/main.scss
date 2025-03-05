@@ -26,7 +26,7 @@
     body{
         font-family: $font;
         ul{list-style: none; margin-bottom: 0rem;}
-        background-color: $light-grey;
+        background-color: $white;
         max-height: 100vh;
         overflow-x: hidden;
     }
@@ -229,6 +229,61 @@
         a{  
             color: $primary-color;
             transition: transform ease-in-out 0.15s !important;
+            &.button{
+                border: none;
+                background: none;
+                padding: .5rem 1rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                margin: auto;
+                text-decoration: none;
+            }
+            &.primary-filled{
+                background: $primary-color;
+                color: $secondary-color;
+                border-radius: $radius;
+                &:hover{
+                    background: $secondary-color;
+                    color: $primary-color;
+                }
+            }
+            &.secondary-filled{
+                background: $secondary-color;
+                color: $primary-color;
+                border-radius: $radius;
+                &:hover{
+                    background: $primary-color;
+                    color: $secondary-color;
+                }
+            }
+            // Outlined
+            &.primary-outlined{
+                background: none;
+                color: $darker-primary-color;
+                border: 1px solid $primary-color;
+                border-radius: $radius;
+                &:hover{
+                    border: none;
+                    border-radius: $radius;
+                    background: $secondary-color;
+                    color: $primary-color;
+                }
+            }
+            &.secondary-outlined{
+                background: none;
+                color: $darker-secondary-color;
+                border: 1px solid $secondary-color;
+                border-radius: $radius;
+                &:hover{
+                    border: none;
+                    border-radius: $radius;
+                    background: $primary-color;
+                    color: $secondary-color;
+                }
+            }
             &:hover{
                 transform: scale(1.03) !important;
             }
@@ -244,6 +299,7 @@
         .modal{
             backdrop-filter: $bigblur;
             background: $primary-transparent-gradient;
+            z-index: 100000 !important;
             .modal-dialog{
                 #login-modal-image{
                     height: 500px !important;
@@ -274,26 +330,14 @@
         #navbar{
             position: absolute;
             top: 0;
-            z-index: 1000;
+            z-index: 10000;
             padding: 0rem 4rem;
             .logo{
                 img{
                     width: 150px;
+                    filter: brightness(100);
+                    }
                 }
-            }
-            // Site-menu
-                // #site-menu{
-                //     li{
-                //         a{
-                //             padding: .5rem 1rem;
-                //             &:hover{
-                //                 background: $secondary-color;
-                //                 color: $darker-primary-color;
-                //                 border-radius: $radius;
-                //             }
-                //         }
-                //     }
-                // }
                 // Site Menu
                 #site-menu {
                     list-style: none;
@@ -301,14 +345,13 @@
                     gap: 1rem;
                     padding: 0;
                     margin: 0;
-
                     li {
                         position: relative;
 
                         a {
                             text-decoration: none;
                             font-size: $default;
-                            color: $primary-color;
+                            color: $white;
                             padding: .5rem 1rem;
                             border-radius: $radius;
                             transition: $transition;
@@ -634,4 +677,131 @@
                     80%{background-position:0%  50%, 50%  50%,100% 100%}
                 }
             }
+        }
+    // Header Carousel
+        .carousel-indicators{
+            margin-bottom: 6rem;
+        } 
+        .carousel-item{
+            position: relative;
+            .overlay{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: $clear-transparent-gradient;
+            }
+            img{
+                height: 480px;
+                object-fit: cover;
+            }
+            .carousel-caption{
+                margin-bottom: 7rem;
+                h2{
+                    font-weight: $bold;
+                    font-size: $xxl;
+                }
+            }
+        }
+    // Deals Carousel
+        .deals-section {
+            width: 90%;
+            margin: auto;
+            padding: 2rem;
+            margin-top: 5rem;
+            h2 {
+                font-size: $xl;
+                font-weight: bold;
+                color: $dark-grey;
+                .highlight {
+                    color: $secondary-color;
+                }
+            }
+            p {
+                font-size: 16px;
+                color: $primary-color;
+            }
+            .swiper-container {
+                width: 100%;
+                margin: auto;
+                padding: 1rem 0rem;
+            }
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2rem;
+                transition: transform 0.3s ease-in-out;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            .deal-card {
+                width: 50rem;
+                height: fit-content;
+                background: $white;
+                border-radius: $radius;
+                overflow: hidden;
+                text-align: left;
+                position: relative;
+                box-shadow: $shadow;
+                transition: box-shadow 0.3s ease-in-out;
+                img {
+                    width: 100%;
+                    height: 10rem;
+                    object-fit: cover;
+                    border-top-left-radius: $radius;
+                    border-top-right-radius: $radius;
+                }
+                .deal-content {
+                    padding: 1rem;
+                    .trip-type {
+                        padding: .2rem .5rem;
+                        font-size: $small;
+                        background: $light-grey;
+                        color: $darker-primary-color;
+                        border-radius: $radius;
+                        display: inline-block;
+                        margin-top: 1rem;
+                    }
+                    h3 {
+                        margin: 10px 0;
+                        font-size: $xl;
+                        color: $primary-color;
+                    }
+                    p {
+                        font-size: 14px;
+                        color: $grey;
+                        strong {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+            }
+            .swiper-pagination {
+                position: relative;
+                margin-top: 15px;
+                .swiper-pagination-bullet {
+                    width: .5rem;
+                    height: .5rem;
+                    background: $primary-color;
+                    opacity: 0.6;
+                    transition: opacity 0.3s;
+            
+                    &.swiper-pagination-bullet-active {
+                        background: $primary-color;
+                        opacity: 1;
+                    }
+                }
+            }
+            .swiper-button-prev, 
+            .swiper-button-next {
+                display: none;
+                color: $white;
+                transition: color 0.3s ease-in-out;
+            
+                &:hover {
+                    color: $lighter-secondary-color;
+                }
+            } 
         }

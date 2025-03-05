@@ -18,7 +18,7 @@
         <!-- PAGE CONTENT -->
         <div class="page-content">
             <!-- ======================================== -->
-            <!-- STANDALONE (Menu Floating, Login Modal, Search modal, Language modal, Calendar Modal, Feeback modal, Cookie consent, AI modal) -->
+            <!-- STANDALONE (Mobile Menu, Login Modal, Search modal, Language modal, Calendar Modal, Feeback modal, Cookie consent, AI modal) -->
             <!-- ======================================== -->
                 <!-- Login Modal -->
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -262,13 +262,11 @@
             <!-- ======================================== -->
                 <!-- Header -->
                     <div class="section fw flex-row" id="header">
+                        <!-- Hero -->
                         <div class="hero-container">
+                            <!-- Hero Carousel -->
                             <div class="component-container" id="hero">
-                                    <div class="swiper-container hero-swiper">
-                                        <div class="swiper-wrapper">
-                                        </div>
-                                        <div class="swiper-pagination"></div>
-                                    </div>
+                                <div id="carousel-container"></div>
                             </div>
                             <!-- Navbar -->
                             <div class="component-container fw" id="navbar">
@@ -294,6 +292,7 @@
                         <!-- Booking Magnet -->
                         <div class="booking-magnet-container">
                             <div class="component-container" id="BookingMagnet">
+                                <div class="booking-magnet-container"></div>
                             </div>
                             <div class="component-container" id="RecentSearches">
                             </div>
@@ -302,7 +301,19 @@
             <!-- ======================================== -->
             <!-- MAIN (Best Deals, Stopover, Ancillary Services Carousel, Experience Carousel, Loyalty Banner) -->
             <!-- ======================================== -->
-
+                    <div class="section fw flex-column" id="main">
+                        <!-- Deals -->
+                        <section class="deals-section" id="deals">
+                            <h2>Enjoy our deals from <span class="highlight" id="closest-location"></span><i class="ri-map-pin-line"></i></h2>
+                            <p>Let us inspire your next trip</p>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper"></div>
+                                <div class="swiper-pagination"></div>
+                                <!-- <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div> -->
+                            </div>
+                        </section>
+                    </div>
             <!-- ======================================== -->
             <!-- FOOTER (Newsletter, Apps download, T&C, Badges) -->
             <!-- ======================================== -->
@@ -316,6 +327,9 @@
     <script src="../services/faqs.js"></script>
     <script src="../services/chatbot.js"></script>
     <script src="../services/menu.js"></script>
+    <script src="../services/carousel.js"></script>
+    <script src="../services/geolocalization.js"></script>
+    <script src="../services/deals.js"></script>
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
