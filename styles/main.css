@@ -891,4 +891,83 @@ a:hover {
   color: #e4f5ff;
 }
 
+.banner {
+  width: 70%;
+  height: 280px;
+  margin: 2rem auto;
+}
+.banner .banner-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+}
+.banner .banner-container .banner-content {
+  padding: 5rem;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .banner .banner-container .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .banner .banner-container .banner-content .banner-message {
+    margin-bottom: 1rem;
+  }
+}
+.banner .banner-container .banner-content .banner-text {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.banner .banner-container .banner-content .banner-text .banner-message {
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+.banner .banner-container .banner-content .banner-text .banner-subtitle {
+  color: white;
+}
+.banner .banner-container .banner-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.banner .banner-container .banner-media .banner-media-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.banner .banner-container .banner-media .banner-media-content .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.7568627451) 100%);
+  border-radius: 16px;
+}
+.banner .banner-container .banner-media .banner-media-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

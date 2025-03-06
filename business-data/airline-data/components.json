@@ -24,5 +24,37 @@
         }
       ]
     }
+  ],
+  "banners": [
+    {
+      "id": "loyalty-banner",
+      "imagery_key": "loyalty",
+      "message": "Join our loyalty program and earn rewards!",
+      "subtitle": "Get the best out of this program!",
+      "cta": {
+        "text": "Sign Up Now",
+        "url": "https://www.example.com/loyalty"
+      }
+    },
+    {
+      "id": "holidays-banner",
+      "imagery_key": "holidays",
+      "message": "Exclusive holiday deals just for you!",
+      "subtitle": "Get the best out of this program!",
+      "cta": {
+        "text": "Explore Now",
+        "url": "https://www.example.com/holidays"
+      }
+    },
+    {
+      "id": "stopover-banner",
+      "imagery_key": "stopover",
+      "message": "Enjoy a free stopover in amazing cities!",
+      "subtitle": "Get the best out of this program!",
+      "cta": {
+        "text": "Learn More",
+        "url": "https://www.example.com/stopover"
+      }
+    }
   ]
 }
