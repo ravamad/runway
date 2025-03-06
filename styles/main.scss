@@ -960,7 +960,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                border-radius: $bigradius;
+                border-radius: $radius;
                 .banner-content{
                     padding: 5rem;
                     width: 100%;
@@ -974,7 +974,6 @@
                         flex-direction: column;
                         justify-content: flex-start;
                         align-items: flex-start;
-                        .banner-message{margin-bottom: 1rem;}
                     }
                     .banner-text{
                         display: flex;
@@ -987,6 +986,7 @@
                         }
                         .banner-subtitle{
                             color: white;
+                            margin-bottom: 1rem;
                         }
                     }
                 }
@@ -1006,18 +1006,27 @@
                             width: 100%;
                             height: 100%;
                             background: $clear-transparent-gradient;
-                            border-radius: $bigradius;
+                            border-radius: $radius;
                         }
                         img{
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
-                            border-radius: $bigradius;
+                            border-radius: $radius;
                         }
                     }
                 }
             }
             @media screen and (max-width:768px) {
-                width: 100%;
+                width:90%;
+                margin: .5rem auto;
+                .banner-container{
+                    .banner-content{
+                        padding: 3rem;
+                        .banner-text{
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
