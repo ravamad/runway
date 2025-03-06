@@ -202,7 +202,7 @@
                         <div class="AI-assistant-trigger-container">
                             <div class="AI-assistant-trigger-content">
                                 <div class="AI-assistant-trigger-bubble">
-                                    I'm your AI assistant!
+                                    Need help?
                                 </div>
                                 <button id="AI-assistant-trigger-button" class="icon-button rounded primary-filled">
                                     <i class="ri-bard-fill"></i>
@@ -258,10 +258,26 @@
                         </div>
                     </div>
             <!-- ======================================== -->
-            <!-- HEADER (Navbar, Hero carousel, Booking Magnet, Recent Searches) -->
+            <!-- HEADER (Rolling News, Navbar, Hero carousel, Booking Magnet, Recent Searches) -->
             <!-- ======================================== -->
+                <!-- Rolling news banner -->
+                    <div class="section fw" id="rolling-info">
+                        <div class="rolling-info-container">
+                            <div class="rolling-info-content">
+                                <div class="rolling-info-text">
+                                    <div class="icon"><i class="ri-information-2-fill"></i></div>
+                                    <div class="info-text">
+                                        <a href="" id="info"></a>
+                                    </div>
+                                </div>
+                                <button class="icon-button small">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 <!-- Header -->
-                    <div class="section fw flex-row" id="header">
+                    <div class="section fw flex-column" id="header">
                         <!-- Hero -->
                         <div class="hero-container">
                             <!-- Hero Carousel -->
@@ -290,9 +306,55 @@
                             </div>
                         </div>
                         <!-- Booking Magnet -->
-                        <div class="booking-magnet-container">
-                            <div class="component-container" id="BookingMagnet">
-                                <div class="booking-magnet-container"></div>
+                        <div class="section flex-row" id="bookingMagnet">
+                            <div class="component-container" id="BookingMagnetContainer">
+                                <div class="booking-magnet-content">
+                                    <ul class="nav nav-pills mb-3" id="BM-tabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link active" id="book-tab" data-bs-toggle="pill" data-bs-target="#book" type="button" role="tab" aria-controls="book" aria-selected="true">Book</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link" id="manage-tab" data-bs-toggle="pill" data-bs-target="#manage" type="button" role="tab" aria-controls="manage" aria-selected="false">Manage</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link" id="inspire-tab" data-bs-toggle="pill" data-bs-target="#inspire-ai" type="button" role="tab" aria-controls="inspire" aria-selected="false">Ask AI <i class="ri-bard-fill"></i></button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="BM-content">
+                                        <div class="tab-pane fade show active" id="book" role="tabpanel" aria-labelledby="book-tab" tabindex="0">
+                                            <div class="form-container">
+                                                <form action="">
+                                                    <div class="field" id="from">
+                                                        <label for="">Departure</label>
+                                                        <input id="origin" type="text" placeholder="From">
+                                                    </div>
+                                                    <div class="field" id="to">
+                                                        <label for="">Destination</label>
+                                                        <input id="destination" type="text" placeholder="To">
+                                                    </div>
+                                                    <button class="primary-filled">Search</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab" tabindex="0">
+                                            <div class="form-container">
+                                                <form action="" id="manage-form">
+                                                    <input type="text" placeholder="Reservation number">
+                                                    <input type="text" placeholder="Family name">
+                                                    <button class="primary-filled">Search</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="inspire-ai" role="tabpanel" aria-labelledby="inspire-tab" tabindex="0">
+                                            <div class="form-container">
+                                                <form action="" id="inspire-form">
+                                                    <input type="text" placeholder="Ask me anything!">
+                                                    <button class="primary-filled">Let's go <i class="ri-bard-fill"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="component-container" id="RecentSearches">
                             </div>
@@ -304,7 +366,7 @@
                     <div class="section fw flex-column" id="main">
                         <!-- Deals -->
                         <section class="deals-section" id="deals">
-                            <h2>Enjoy our deals from <span class="highlight" id="closest-location"></span><i class="ri-map-pin-line"></i></h2>
+                            <h2>Enjoy our packages near/from <span class="highlight" id="closest-location"></span><i class="ri-map-pin-line"></i></h2>
                             <p>Let us inspire your next trip</p>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper"></div>
@@ -313,6 +375,20 @@
                                 <div class="swiper-button-next"></div> -->
                             </div>
                         </section>
+                        <!-- Stopover banner -->
+                        <div class="banner" id="stopover">
+                            <div class="banner-container">
+                                <div class="banner-content"></div>
+                            </div>
+                        </div>
+                        <!-- Ancillary services carousel -->
+                        <!-- Experience carousel -->
+                        <!-- Loyalty banner -->
+                        <div class="banner" id="loyalty">
+                            <div class="banner-container">
+                                <div class="banner-content"></div>
+                            </div>
+                        </div>
                     </div>
             <!-- ======================================== -->
             <!-- FOOTER (Newsletter, Apps download, T&C, Badges) -->
@@ -330,6 +406,7 @@
     <script src="../services/carousel.js"></script>
     <script src="../services/geolocalization.js"></script>
     <script src="../services/deals.js"></script>
+    <script src="../services/rolling-info.js"></script>
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>

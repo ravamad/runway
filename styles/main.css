@@ -159,6 +159,9 @@ button:hover {
 .icon-button.rounded {
   border-radius: 100px !important;
 }
+.icon-button.small {
+  padding: 0.1rem 0.3rem !important;
+}
 .icon-button.primary-filled {
   background: #3030ab;
   color: #73B5DE;
@@ -276,7 +279,7 @@ a:hover {
 
 .modal {
   backdrop-filter: blur(50px);
-  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
+  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.7568627451) 100%);
   z-index: 100000 !important;
 }
 .modal .modal-dialog #login-modal-image {
@@ -292,6 +295,37 @@ a:hover {
 }
 .modal .modal-dialog .modal-content .modal-footer {
   border: none;
+}
+
+#rolling-info {
+  background: #f1eeee;
+  padding: 0.5rem 3rem;
+}
+#rolling-info .rolling-info-container .rolling-info-content {
+  display: flex;
+  justify-content: space-between;
+}
+#rolling-info .rolling-info-container .rolling-info-content .rolling-info-text {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+#rolling-info .rolling-info-container .rolling-info-content .rolling-info-text .info-text {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+#rolling-info .rolling-info-container .rolling-info-content .rolling-info-text .info-text a {
+  color: #423d3d;
+  text-decoration: none;
+}
+#rolling-info .rolling-info-container .rolling-info-content .rolling-info-text .info-text a:hover {
+  color: #316791;
+  cursor: pointer;
+}
+#rolling-info .rolling-info-container .rolling-info-content .rolling-info-right {
+  display: flex;
+  align-items: center;
 }
 
 .hero-container {
@@ -398,9 +432,100 @@ a:hover {
   }
 }
 
+#bookingMagnet #BookingMagnetContainer {
+  margin-top: -6.5rem;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-tabs {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-tabs .nav-item .nav-link {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-tabs .nav-item .nav-link.active {
+  background: #ffffff;
+  color: #3030ab;
+  font-weight: 700;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 100px;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 768px) {
+  #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content {
+    font-size: 1rem;
+  }
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content #inspire-ai .form-container {
+  width: 700px !important;
+}
+@media screen and (max-width: 465px) {
+  #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content #inspire-ai .form-container {
+    width: 100% !important;
+  }
+  #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content #inspire-ai .form-container form input {
+    width: 60%;
+  }
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form input {
+  border: none;
+  outline: none;
+  padding-left: 1rem;
+  width: 70%;
+  border-left: 1px solid #f1eeee;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form input:first-child {
+  border-left: none;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form button {
+  border-radius: 100px;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form .field {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  border-left: 1px solid #f1eeee;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form .field:first-child {
+  border-left: none;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form .field label {
+  font-size: 0.8rem;
+  color: #3030ab;
+}
+#bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form .field input {
+  padding-left: 0rem;
+  border-left: none;
+  font-size: 1.2rem;
+}
+
 #MobileMenuModal {
   backdrop-filter: blur(50px);
-  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
+  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.7568627451) 100%);
 }
 #MobileMenuModal .modal-dialog .modal-content {
   border: none;
@@ -630,7 +755,7 @@ a:hover {
 }
 
 .carousel-indicators {
-  margin-bottom: 6rem;
+  padding-bottom: 10rem;
 }
 
 .carousel-item {
@@ -640,15 +765,24 @@ a:hover {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.5921568627) 100%);
+  height: 550px;
+  background: linear-gradient(180deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.7568627451) 100%);
 }
 .carousel-item img {
-  height: 480px;
+  height: 550px;
   object-fit: cover;
 }
 .carousel-item .carousel-caption {
-  margin-bottom: 7rem;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 11rem !important;
+}
+@media screen and (max-width: 768px) {
+  .carousel-item .carousel-caption {
+    flex-direction: column;
+  }
 }
 .carousel-item .carousel-caption h2 {
   font-weight: 700;
@@ -687,6 +821,7 @@ a:hover {
 }
 .deals-section .swiper-slide:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 .deals-section .deal-card {
   width: 50rem;

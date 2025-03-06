@@ -1,22 +1,28 @@
 {
-    "carousels": [
-      {
-        "id": "carouselExampleCaptions",
-        "imagery_key": "carouselExampleCaptions",
-        "slides": [
-          {
-            "title": "Rome, the city of magic",
-            "description": "Some representative placeholder content for the first slide."
-          },
-          {
-            "title": "Dubai",
-            "description": "Some representative placeholder content for the second slide."
-          },
-          {
-            "title": "Student offer",
-            "description": "Some representative placeholder content for the third slide."
-          }
-        ]
-      }
-    ]
-  }
+  "carousels": [
+    {
+      "id": "carouselExampleCaptions",
+      "imagery_key": "carouselExampleCaptions",
+      "slides": [
+        {
+          "title": "Rome, the city of love",
+          "description": "Some representative placeholder content for the first slide.",
+          "cta": "Book now",
+          "url": "https://www.google.com"
+        },
+        {
+          "title": "Dubai",
+          "description": "Some representative placeholder content for the second slide.",
+          "cta": "Book now",
+          "url": "https://www.google.com"
+        },
+        {
+          "title": "Student offer",
+          "description": "Some representative placeholder content for the third slide.",
+          "cta": "Book now",
+          "url": "https://www.google.com"
+        }
+      ]
+    }
+  ]
+}

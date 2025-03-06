@@ -79,9 +79,11 @@ async function loadCarousel(componentsPath, imageryPath) {
                 <div class="carousel-item ${index === 0 ? "active" : ""}">
                     <div class="overlay"></div>
                     <img src="${imageUrl}" class="d-block w-100" alt="${slide.title}">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2>${slide.title}</h2>
-                        <p>${slide.description}</p>
+                    <div class="carousel-caption d-none d-md-flex justify-content-center">
+                        <div class="carousel-caption-content text-start">
+                            <h2 class="text-start">${slide.title}</h2>
+                            <p>${slide.description}</p>
+                        </div>
                         ${slide.cta && slide.url ? `<a href="${slide.url}" class="button primary-filled">${slide.cta}</a>` : ""}
                     </div>
                 </div>`;

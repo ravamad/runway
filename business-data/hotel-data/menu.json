@@ -22,6 +22,7 @@
             "title": "Explore",
             "link": "#",
             "submenu": [
+                { "title": "Destinations", "link": "/explore/locations" },
                 { "title": "Hotel Locations", "link": "/explore/locations" },
                 { "title": "Room Types", "link": "/explore/rooms" },
                 { "title": "Guest Reviews", "link": "/explore/reviews" }

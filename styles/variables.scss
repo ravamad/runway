@@ -34,14 +34,14 @@
     $dark-grey: #423d3d;
     $light-grey: #f1eeee;
 // transparent
-    $transparent-black: #423d3d97;
+    $transparent-black: #423d3dc1;
     $transparent-primary-color: #3030ab77;
     $transparent-white: #ffffff68;
 // gradients
     $primary-gradient: linear-gradient(45deg, $primary-color 0%, $secondary-color 100%);
     $primary-transparent-gradient: linear-gradient(45deg, $transparent-primary-color 0%, $transparent-black 100%);
     $dark-transparent-gradient: linear-gradient(45deg, $black 0%, $transparent-black 100%);
-    $clear-transparent-gradient: linear-gradient(45deg, $transparent-primary-color 0%, $transparent-black 100%);
+    $clear-transparent-gradient: linear-gradient(180deg, $transparent-primary-color 0%, $transparent-black 100%);
 // RADIUSES
     $radius: 8px;
     $bigradius: 16px;

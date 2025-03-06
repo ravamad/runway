@@ -1,0 +1,18 @@
+{
+    "news": [
+      {
+        "infoText": "Important travel advisory: Check entry requirements before departure.",
+        "infoLink": "https://example.com/travel-advisory"
+      },
+      {
+        "infoText": "New baggage policy update: Carry-on rules have changed.",
+        "infoLink": "https://example.com/baggage-policy"
+      },
+      {
+        "infoText": "Exclusive deals: Save up to 30% on your next flight!",
+        "infoLink": "https://example.com/flight-deals"
+      }
+    ],
+    "dismissible": true,
+    "rotationInterval": 5000
+  }
