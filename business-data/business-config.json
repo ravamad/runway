@@ -12,6 +12,6 @@
       "BM": "../business-data/airline-data/BM.json",
       "network":"../business-data/airline-data/network.json",
       "deals":"../business-data/airline-data/deals.json",
-      "banners":"../business-data/airline-data/banners.json",
+      "banners":"../business-data/airline-data/banners.json"
     }
 ]
