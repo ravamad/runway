@@ -892,9 +892,10 @@ a:hover {
 }
 
 .banner {
-  width: 70%;
-  height: 250px;
+  width: 90%;
+  height: 300px;
   margin: 2rem auto;
+  overflow: hidden;
 }
 .banner .banner-container {
   width: 100%;
@@ -948,6 +949,7 @@ a:hover {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .banner .banner-container .banner-media .banner-media-content .overlay {
   position: absolute;
@@ -961,6 +963,7 @@ a:hover {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .banner {
@@ -973,6 +976,9 @@ a:hover {
   .banner .banner-container .banner-content .banner-text {
     width: 100%;
   }
+}
+.banner:hover .banner-media img {
+  transform: scale(1.01);
 }
 
 /*# sourceMappingURL=main.css.map */
