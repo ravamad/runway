@@ -503,6 +503,7 @@ a:hover {
 }
 #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form button {
   border-radius: 100px;
+  font-size: 1rem;
 }
 #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content .form-container form .field {
   display: flex;
@@ -786,7 +787,7 @@ a:hover {
 }
 .carousel-item .carousel-caption h2 {
   font-weight: 700;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
 }
 
 .deals-section {
@@ -892,10 +893,11 @@ a:hover {
 }
 
 .banner {
-  width: 90%;
+  width: 85%;
   height: 300px;
   margin: 2rem auto;
   overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 .banner .banner-container {
   width: 100%;
@@ -929,9 +931,14 @@ a:hover {
   width: 80%;
 }
 .banner .banner-container .banner-content .banner-text .banner-message {
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   color: #ffffff;
   font-weight: 700;
+}
+@media screen and (max-width: 1024px) {
+  .banner .banner-container .banner-content .banner-text .banner-message {
+    font-size: 1.6rem;
+  }
 }
 .banner .banner-container .banner-content .banner-text .banner-subtitle {
   color: white;
@@ -963,7 +970,6 @@ a:hover {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.5s ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .banner {
@@ -977,8 +983,77 @@ a:hover {
     width: 100%;
   }
 }
-.banner:hover .banner-media img {
+.banner:hover {
   transform: scale(1.01);
+}
+
+footer {
+  width: 100%;
+  margin-top: 5rem;
+}
+footer .footer-container {
+  width: 100%;
+}
+footer .footer-container .footer-content {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  footer .footer-container .footer-content {
+    width: 90%;
+  }
+}
+footer .footer-container .footer-content .newsletter {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container {
+  width: 100%;
+  background: #121253;
+  border-radius: 8px;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff {
+  width: 65%;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff h3 {
+  font-size: 1.6rem;
+  color: #73B5DE;
+  font-weight: 700;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
+  width: 35%;
+  background: #3030ab;
+  padding: 1rem;
+  border-radius: 8px;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form {
+  display: flex;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 
 /*# sourceMappingURL=main.css.map */

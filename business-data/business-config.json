@@ -1,16 +1,16 @@
 [
     {
-      "business_name": "Airline Portal",
-      "business_logo": "../assets/img/logo.png",
-      "favicon_logo": "../assets/img/favicon.png",
-      "loyalty_program": "Airline loyalty",
+      "business_name": "Hotel Portal",
+      "business_logo": "../assets/img/logo-h.png",
+      "favicon_logo": "../assets/img/favicon-h.png",
+      "loyalty_program": "Hotel loyalty",
       "loyalty_program_logo": "https://www.singaporeair.com/etc/designs/singaporeair/clientlibs/images/logo-krisflyer.png",
-      "faqs": "../business-data/airline-data/faqs.json",
-      "menu": "../business-data/airline-data/menu.json",
-      "imagery": "../business-data/airline-data/imagery.json",
-      "components": "../business-data/airline-data/components.json",
-      "BM": "../business-data/airline-data/BM.json",
-      "network":"../business-data/airline-data/network.json",
-      "deals":"../business-data/airline-data/deals.json"
+      "faqs": "../business-data/hotel-data/faqs.json",
+      "menu": "../business-data/hotel-data/menu.json",
+      "imagery": "../business-data/hotel-data/imagery.json",
+      "components": "../business-data/hotel-data/components.json",
+      "BM": "../business-data/hotel-data/BM.json",
+      "network":"../business-data/hotel-data/network.json",
+      "deals":"../business-data/hotel-data/deals.json"
     }
 ]
