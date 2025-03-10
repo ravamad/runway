@@ -1010,59 +1010,59 @@ footer {
   width: 100%;
   margin-top: 5rem;
 }
-footer .footer-container {
+footer .footer-wrapper {
   width: 100%;
 }
-footer .footer-container .footer-content {
-  width: 85%;
+footer .footer-wrapper .footer-content {
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+footer .footer-wrapper .footer-content .newsletter {
+  width: 85%;
+  margin-bottom: 3rem;
+}
 @media screen and (max-width: 768px) {
-  footer .footer-container .footer-content {
+  footer .footer-wrapper .footer-content .newsletter {
     width: 90%;
   }
 }
-footer .footer-container .footer-content .newsletter {
-  width: 100%;
-  margin-bottom: 3rem;
-}
-footer .footer-container .footer-content .newsletter .newsletter-container {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container {
   width: 100%;
   background: #121253;
   border-radius: 8px;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3rem;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff {
   width: 65%;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff h3 {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff h3 {
   font-size: 1.6rem;
   color: #73B5DE;
   font-weight: 700;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff p {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff p {
   font-size: 1rem;
   color: #ffffff;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
   width: 35%;
   background: #73B5DE;
   padding: 1rem;
   border-radius: 8px;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form {
   display: flex;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form input {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form input {
   width: 100%;
   padding: 0.5rem;
   margin-right: 1rem;
@@ -1070,22 +1070,30 @@ footer .footer-container .footer-content .newsletter .newsletter-container .news
   outline: none;
   border-radius: 8px;
 }
-footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form button {
+footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form button {
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
 @media screen and (max-width: 1024px) {
-  footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content {
+  footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content {
     flex-direction: column;
     padding: 2rem;
   }
-  footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff {
+  footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff {
     width: 100%;
     margin-bottom: 1rem;
   }
-  footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
+  footer .footer-wrapper .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
     width: 100%;
   }
+}
+
+#footer-container {
+  width: 100%;
+  margin: auto;
+  margin-top: 2rem;
+  background: #f1eeee;
+  padding: 5rem 3rem !important;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,50 @@
+{
+    "Our Network": [
+        "Middle East",
+        "Asia",
+        "Africa",
+        "Europe",
+        "North America"
+    ],
+    "Plan your trip": [
+        "Travel updates",
+        "Travel requirements",
+        "Branded fares",
+        "Visa & permits",
+        "Baggage",
+        "Special assistance"
+    ],
+    "Book": [
+        { "title": "Flights", "url": "#" },
+        { "title": "Hotels", "url": "#", "external": true },
+        { "title": "Cars", "url": "#", "external": true }
+    ],
+    "Manage": [
+        "Change flights",
+        "Change or Cancel Flights",
+        "Upgrade flights",
+        "Refunds",
+        "Check-in",
+        "Extra baggage",
+        "Seats reservation",
+        "Meal selection"
+    ],
+    "Loyalty": [
+        "Join Loyalty Program",
+        "About Our Program",
+        "Tiers & benefits",
+        "Family program",
+        "Commercial partners"
+    ],
+    "About Us": [
+        "Our Story",
+        "Careers",
+        "Sustainability",
+        "Media center"
+    ],
+    "Help": [
+        "FAQs",
+        "Contact us",
+        "Our Offices"
+    ]
+}

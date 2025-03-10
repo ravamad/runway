@@ -1066,21 +1066,20 @@
         footer{
             width: 100%;
             margin-top: 5rem;
-            .footer-container{
+            .footer-wrapper{
                 width: 100%;
                 .footer-content{
-                    width: 85%;
+                    width: 100%;
                     margin: auto;
-                    @media  screen and (max-width: 768px){
-                        width: 90%;
-                        
-                    }
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     .newsletter{
-                        width: 100%;
+                        width: 85%;
                         margin-bottom: 3rem;
+                        @media  screen and (max-width: 768px){
+                            width: 90%;   
+                        }
                         .newsletter-container{
                             width: 100%;
                             background: $darker-primary-color;
@@ -1140,4 +1139,12 @@
                     }
                 }
             }
+        }
+    // Footer
+        #footer-container{
+            width: 100%;
+            margin: auto;
+            margin-top: 2rem;
+            background: $light-grey;
+            padding: 5rem 3rem !important;
         }

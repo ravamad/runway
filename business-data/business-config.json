@@ -11,6 +11,7 @@
       "components": "../business-data/airline-data/components.json",
       "BM": "../business-data/airline-data/BM.json",
       "network":"../business-data/airline-data/network.json",
-      "deals":"../business-data/airline-data/deals.json"
+      "deals":"../business-data/airline-data/deals.json",
+      "footer":"../business-data/airline-data/footer.json"
     }
 ]
