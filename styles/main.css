@@ -297,6 +297,21 @@ a:hover {
   border: none;
 }
 
+#askAiModal {
+  backdrop-filter: blur(50px);
+  background: transparent !important;
+}
+#askAiModal .modal-dialog .modal-content {
+  border: none;
+  border-radius: 8px;
+}
+#askAiModal .modal-dialog .modal-content .modal-header {
+  border: none;
+}
+#askAiModal .modal-dialog .modal-content .modal-footer {
+  border: none;
+}
+
 #rolling-info {
   background: #f1eeee;
   padding: 0.5rem 3rem;
@@ -757,6 +772,10 @@ a:hover {
 
 .carousel-indicators {
   padding-bottom: 10rem;
+  justify-content: flex-start;
+}
+.carousel-indicators button {
+  width: 1rem !important;
 }
 
 .carousel-item {
@@ -787,7 +806,7 @@ a:hover {
 }
 .carousel-item .carousel-caption h2 {
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 3rem;
 }
 
 .deals-section {

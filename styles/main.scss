@@ -320,6 +320,23 @@
                 }
             }
         }
+    // Ask AI modal
+        #askAiModal{
+            backdrop-filter: $bigblur;
+            background: transparent !important;
+            .modal-dialog{
+                .modal-content{
+                    border: none;
+                    border-radius: $radius;
+                    .modal-header{
+                        border: none;
+                    }
+                    .modal-footer{
+                        border: none;
+                    }
+                }
+            }
+        }
 
 // ========================================
 // CUSTOM ID COMPONENTS
@@ -817,6 +834,10 @@
     // Header Carousel
         .carousel-indicators{
             padding-bottom: 10rem;
+            justify-content: flex-start;
+            button{
+                width: 1rem !important;
+            }
         } 
         .carousel-item{
             position: relative;
@@ -842,7 +863,7 @@
                 margin-bottom: 11rem !important;
                 h2{
                     font-weight: $bold;
-                    font-size: $xxl;
+                    font-size: $xxxl;
                 }
             }
         }

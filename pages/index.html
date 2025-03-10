@@ -18,7 +18,7 @@
         <!-- PAGE CONTENT -->
         <div class="page-content">
             <!-- ======================================== -->
-            <!-- STANDALONE (Mobile Menu, Login Modal, Search modal, Language modal, Calendar Modal, Feeback modal, Cookie consent, AI modal) -->
+            <!-- STANDALONE (Mobile Menu, Login Modal, Search modal, Language modal, Ask AI modal, Feeback modal, Cookie consent, AI modal) -->
             <!-- ======================================== -->
                 <!-- Login Modal -->
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -194,9 +194,22 @@
                         </div>
                         </div>
                     </div>
-                <!-- Calendar Modal -->
+                <!-- Ask Ai Modal -->
+                    <div class="modal fade" id="askAiModal" tabindex="-1" aria-labelledby="askAiModal" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id=""></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body d-flex flex-column">
+                                
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 <!-- Feedback Modal -->
-                <!-- AI assistant -->
+                <!-- Chatbot assistant -->
                     <div id="AI-assistant-container">
                         <!-- Trigger -->
                         <div class="AI-assistant-trigger-container">
@@ -349,7 +362,7 @@
                                             <div class="form-container">
                                                 <form action="" id="inspire-form">
                                                     <input type="text" placeholder="Ask me anything!">
-                                                    <button class="primary-filled">Let's go <i class="ri-bard-fill"></i></button>
+                                                    <button type="button" class="primary-filled" data-bs-target="#askAiModal" data-bs-toggle="modal" >Let's go <i class="ri-bard-fill"></i></button>
                                                 </form>
                                             </div>
                                         </div>
@@ -398,7 +411,6 @@
                         <!-- Ancillary services carousel -->
                         <!-- Experience carousel -->
                         <div class="section fw" id="experiences">
-
                         </div>
                         <!-- Stopover banner -->
                         <div class="banner" id="stopover-banner">
@@ -447,6 +459,7 @@
             <footer>
                 <div class="footer-container">
                     <div class="footer-content">
+                        <!-- Newletter -->
                         <div class="newsletter" id="newsletter">
                             <div class="newsletter-container">
                                 <div class="newsletter-content">
@@ -463,7 +476,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="app-mop-badges" id="app-mop-badges"></div>
+                        <div class="app-mop-badges" id="app-mop-badges">
+                            <div class="app-mop-badges-container">
+                                <div class="app-mop-badges-content">
+
+                                </div>
+                            </div>
+                        </div>
                         <div class="legal" id="legal"></div>
                         <div class="footer-menu-container">
                             <div class="footer-menu-content"></div>
