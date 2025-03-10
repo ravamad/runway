@@ -518,7 +518,7 @@
                         }
                         #inspire-ai{
                             .form-container{
-                                width: 700px !important;
+                                width: 700px;
                                 @media screen and (max-width: 465px){
                                     width: 100% !important;
                                     form{
@@ -1041,7 +1041,7 @@
                 transform: scale(1.01);
             }
         }
-    // Footer
+    // Newsletter
         footer{
             width: 100%;
             margin-top: 5rem;
@@ -1084,7 +1084,7 @@
                                 }
                                 .newsletter-form{
                                     width: 35%;
-                                    background: $primary-color;
+                                    background: $secondary-color;
                                     padding: 1rem;
                                     border-radius: $radius;
                                     form{
@@ -1101,6 +1101,17 @@
                                             padding: .5rem 1rem;
                                             border-radius: $radius;
                                         }
+                                    }
+                                }
+                                @media screen and (max-width: 1024px){
+                                    flex-direction: column;
+                                    padding: 2rem;
+                                    .newsletter-payoff{
+                                        width: 100%;
+                                        margin-bottom: 1rem;
+                                    }
+                                    .newsletter-form{
+                                        width: 100%;
                                     }
                                 }
                             }

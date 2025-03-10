@@ -468,7 +468,7 @@ a:hover {
   }
 }
 #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content #inspire-ai .form-container {
-  width: 700px !important;
+  width: 700px;
 }
 @media screen and (max-width: 465px) {
   #bookingMagnet #BookingMagnetContainer .booking-magnet-content #BM-content #inspire-ai .form-container {
@@ -1036,7 +1036,7 @@ footer .footer-container .footer-content .newsletter .newsletter-container .news
 }
 footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
   width: 35%;
-  background: #3030ab;
+  background: #73B5DE;
   padding: 1rem;
   border-radius: 8px;
 }
@@ -1054,6 +1054,19 @@ footer .footer-container .footer-content .newsletter .newsletter-container .news
 footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form form button {
   padding: 0.5rem 1rem;
   border-radius: 8px;
+}
+@media screen and (max-width: 1024px) {
+  footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-payoff {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  footer .footer-container .footer-content .newsletter .newsletter-container .newsletter-content .newsletter-form {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
