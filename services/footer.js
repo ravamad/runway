@@ -13,7 +13,7 @@ async function loadFooter() {
 
         Object.entries(footerData).forEach(([sectionTitle, links]) => {
             const sectionDiv = document.createElement('div');
-            sectionDiv.className = 'col-12 col-md-3 mb-4 footer-menu-content';
+            sectionDiv.className = 'col-12 col-md-2 mb-4 footer-menu-content';
 
             const heading = document.createElement('h5');
             heading.textContent = sectionTitle;

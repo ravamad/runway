@@ -1063,88 +1063,169 @@
             }
         }
     // Newsletter
-        footer{
+        .newsletter{
             width: 100%;
-            margin-top: 5rem;
-            .footer-wrapper{
+            margin: auto;
+            margin-bottom: 3rem;
+            .newsletter-container{
                 width: 100%;
-                .footer-content{
+                border-radius: $radius;
+                background: $light-grey;
+                .newsletter-content{
                     width: 100%;
-                    margin: auto;
                     display: flex;
-                    flex-direction: column;
+                    justify-content: space-between;
                     align-items: center;
-                    .newsletter{
-                        width: 85%;
-                        margin-bottom: 3rem;
-                        @media  screen and (max-width: 768px){
-                            width: 90%;   
+                    padding: 3rem;
+                    .newsletter-payoff{
+                        width: 60%;
+                        h3{
+                            font-size: $xl;
+                            color: $darker-primary-color;
+                            font-weight: $bold;
                         }
-                        .newsletter-container{
-                            width: 100%;
-                            background: $darker-primary-color;
-                            border-radius: $radius;
-                            .newsletter-content{
+                        p{
+                            font-size: $default;
+                            color: $dark-grey;
+                            width: 80%;
+                        }
+                    }
+                    .newsletter-form{
+                        width: 40%;
+                        padding: 1rem;
+                        border-radius: $radius;
+                        background: $white;
+                        form{
+                            display: flex;
+                            input{
                                 width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                padding: 3rem;
-                                .newsletter-payoff{
-                                    width: 65%;
-                                    h3{
-                                        font-size: $xl;
-                                        color: $secondary-color;
-                                        font-weight: $bold;
-                                    }
-                                    p{
-                                        font-size: $default;
-                                        color: $white;
-                                    }
-                                }
-                                .newsletter-form{
-                                    width: 35%;
-                                    background: $secondary-color;
-                                    padding: 1rem;
-                                    border-radius: $radius;
-                                    form{
-                                        display: flex;
-                                        input{
-                                            width: 100%;
-                                            padding: .5rem;
-                                            margin-right: 1rem;
-                                            border: none;
-                                            outline: none;
-                                            border-radius: $radius;
-                                        }
-                                        button{
-                                            padding: .5rem 1rem;
-                                            border-radius: $radius;
-                                        }
-                                    }
-                                }
-                                @media screen and (max-width: 1024px){
-                                    flex-direction: column;
-                                    padding: 2rem;
-                                    .newsletter-payoff{
-                                        width: 100%;
-                                        margin-bottom: 1rem;
-                                    }
-                                    .newsletter-form{
-                                        width: 100%;
-                                    }
-                                }
+                                padding: .5rem;
+                                margin-right: 1rem;
+                                border: none;
+                                outline: none;
+                                border-radius: $radius;
                             }
+                            button{
+                                padding: .5rem 1rem;
+                                border-radius: $radius;
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 1024px){
+                        flex-direction: column;
+                        padding: 2rem;
+                        .newsletter-payoff{
+                            width: 100%;
+                            margin-bottom: 1rem;
+                        }
+                        .newsletter-form{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    // Apps and Social Network
+        #apps-sn{
+            width: 100%;
+            margin: 2rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .apps{
+                .label{
+                    color: $dark-grey;
+                    margin-bottom: .3rem;
+                }
+                .apps{
+                    display: flex;
+                    align-items: center;
+                    a{
+                        text-decoration: none;
+                        padding: .5rem 1rem;
+                        border-radius: $radius;
+                        display: flex;
+                        background: $black;
+                        border: 1px solid $light-grey;
+                        color: $white;
+                        font-size: $large;
+                        i{
+                            margin: 0rem .5rem;
+                        }
+                    }
+                }
+            }
+            .sn{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .label{
+                    color: $dark-grey;
+                    margin-bottom: .3rem;
+                }
+                .icons{
+                    a{
+                        text-decoration: none;
+                        color: $dark-grey;
+                        margin-right: 1rem;
+                        i{
+                            font-size: $xl;
                         }
                     }
                 }
             }
         }
     // Footer
+        footer{
+            width: 100%;
+            margin-top: 5rem;
+            .footer-wrapper{
+                width: 100%;
+                background: $white;
+                padding: 5rem 3rem !important;
+                box-shadow: $shadow;
+                .footer-content{
+                    width: 100%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+        #terms-and-conditions{
+            width: 100%;
+            padding-top: 2rem;
+            border-top: 1px solid $light-grey;
+            ul{
+                width: 100%;
+                justify-content: space-evenly;
+                li{
+                    a{
+                        text-decoration: none;
+                        font-size: $small;
+                        color: $grey;
+                    }
+                }
+            }
+        }
+        // Footer menu
         #footer-container{
             width: 100%;
             margin: auto;
             margin-top: 2rem;
-            background: $light-grey;
-            padding: 5rem 3rem !important;
+            margin-bottom: 2rem;
+            padding-top: 2rem;
+            // border-top: 1px solid $light-grey;
+            .footer-menu-content{
+                ul{
+                    li{
+                        color: $grey;
+                        a{
+                            color: $secondary-color;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
         }
