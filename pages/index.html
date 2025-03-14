@@ -15,275 +15,275 @@
 <body>
     <!-- PAGE CONTAINER -->
     <div class="page-container">
+        <!-- ======================================== -->
+        <!-- STANDALONE (Mobile Menu, Login Modal, Search modal, Language modal, Ask AI modal, Feeback modal, Cookie consent, AI modal) -->
+        <!-- ======================================== -->
+            <!-- Login Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="row g-0">
+                                <!-- Left Image -->
+                                <div class="col-md-5 d-none d-md-block">
+                                    <img id="login-modal-image" class="img-fluid rounded-start w-100 h-100" alt="Login Image">
+                                </div>
+                                <!-- Right Content -->
+                                <div class="col-md-7">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title" id="loginModalLabel">
+                                            <i class="fas fa-sign-in-alt"></i> Login to <span class="loyalty-id"></span>
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                
+                                    <div class="modal-body">
+                                        <form>
+                                            <!-- Email Field -->
+                                            <div class="mb-3">
+                                                <label for="loginEmail" class="form-label">
+                                                    <i class="fas fa-envelope"></i> Email address
+                                                </label>
+                                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                                            </div>
+                                            
+                                            <!-- Password Field -->
+                                            <div class="mb-3">
+                                                <label for="loginPassword" class="form-label">
+                                                    <i class="fas fa-lock"></i> Password
+                                                </label>
+                                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                            </div>
+                                            
+                                            <!-- Remember Me -->
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                <label class="form-check-label" for="rememberMe">Remember Me</label>
+                                            </div>
+                
+                                            <!-- Forgot Password -->
+                                            <div class="mb-3 text-end">
+                                                <a href="#" class="text-decoration-none">Forgot password?</a>
+                                            </div>
+                
+                                            <!-- Submit Button -->
+                                            <div class="d-grid">
+                                                <button type="submit" class="primary-filled">Login</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                
+                                    <div class="modal-footer border-0">
+                                        <p class="m-0">
+                                            Don't have an account? <a href="#" class="text-primary text-decoration-none">Sign up</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Search Modal -->
+                <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="searchModalLabel">
+                                    <i class="ri-search-line"></i> Search the site
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                                <!-- Search Input -->
+                                <div class="input-group mb-3">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Search anything in the website" aria-label="Search">
+                                    <button class="primary-filled" id="searchButton">
+                                        <i class="ri-search-line"></i>
+                                    </button>
+                                </div>
+                                <!-- Search Results Container -->
+                                <ul id="searchResults" class="list-group list-group-flush"></ul>
+                            </div>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="secondary-outlined" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Language Modal -->
+                <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="languageModalLabel">
+                                    Choose your language
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                                <div class="accordion" id="languageAccordion">
+                                    <!-- Select Country -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingCountry">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseCountry" aria-expanded="true" aria-controls="collapseCountry">
+                                                🌍 Select Country
+                                            </button>
+                                        </h2>
+                                        <div id="collapseCountry" class="accordion-collapse collapse show" aria-labelledby="headingCountry"
+                                            data-bs-parent="#languageAccordion">
+                                            <div class="accordion-body">
+                                                <label for="countrySelect" class="form-label">Choose your country:</label>
+                                                <select id="countrySelect" class="form-select"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Select Language -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingLanguage">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
+                                                🏳️ Select Language
+                                            </button>
+                                        </h2>
+                                        <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage"
+                                            data-bs-parent="#languageAccordion">
+                                            <div class="accordion-body">
+                                                <label for="languageSelect" class="form-label">Choose your language:</label>
+                                                <select id="languageSelect" class="form-select" disabled></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="secondary-outlined" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="primary-filled" id="saveLanguagePreference" data-bs-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Mobile Menu Modal -->
+                <div class="modal fade" id="mobileMenuModal" tabindex="-1" aria-labelledby="mobileMenuModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="mobileMenuModalLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column">
+                            <ul class="d-flex flex-column" id="site-menu-mobile">
+                                <li><a class="no-dec" href="#">Book</a></li>
+                                <li><a class="no-dec" href="#">Manage</a></li>
+                                <li><a class="no-dec" href="#">Explore</a></li>
+                                <li><a class="no-dec" href="#"><span class="loyalty-id"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <!-- Ask Ai Modal -->
+                <div class="modal fade" id="askAiModal" tabindex="-1" aria-labelledby="askAiModal" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id=""></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column flex-space-between">
+                            <div id="AI-modal-chat-container" class="chat-container"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <div id="AI-modal-chat-input-field">
+                                <div class="container">
+                                    <div class="content">
+                                        <div class="input"><input type="text" id="inspiration-user-input" placeholder="Chat with Portal AI"></div>
+                                        <div class="actions">
+                                            <!-- <button id="upload"><i class="ri-upload-2-line"></i></button> -->
+                                            <!-- <button id="voice"><i class="ri-mic-ai-fill"></i></button> -->
+                                            <button id="send-inspiration-input"><i class="ri-send-plane-fill"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <!-- Feedback Modal -->
+            <!-- Chatbot assistant -->
+                <div id="AI-assistant-container">
+                    <!-- Trigger -->
+                    <div class="AI-assistant-trigger-container">
+                        <div class="AI-assistant-trigger-content">
+                            <div class="AI-assistant-trigger-bubble">
+                                Need help?
+                            </div>
+                            <button id="AI-assistant-trigger-button" class="icon-button rounded primary-filled">
+                                <i class="ri-chat-ai-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Chat -->
+                    <div class="AI-assistant-chat-container">
+                        <div class="AI-assistant-chat-content">
+                            <div class="AI-assistant-chat-header">
+                                <div class="AI-assistant-chat-header-container">
+                                    <div class="AI-assistant-chat-header-content">
+                                        <div class="AI-assistant-logo-status">
+                                            <div class="logo">
+                                                <img src="" alt="" id="chat-favicon">
+                                            </div>
+                                            <div class="chat-status">
+                                                <div id="chat-business-name" class="business-name"></div>
+                                                <div class="status"><span class="dot"></span>Online</div>
+                                            </div>
+                                        </div>
+                                        <button class="icon-button" id="hide-chat"><i class="ri-arrow-down-s-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="AI-assistant-chat-main">
+                                <div class="AI-assistant-chat-main-container">
+                                    <div class="AI-assistant-chat-main-content">
+                                        <div class="user-input-container">
+                                            <div class="user-input-content">
+                                            </div>
+                                        </div>
+                                        <div class="AI-response-container">
+                                            <div class="AI-response-content">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="AI-assistant-chat-footer">
+                                <div class="AI-assistant-chat-footer-container">
+                                    <div class="AI-assistant-chat-footer-content">
+                                        <div class="input"><input type="text" id="user-input" placeholder="Ask anything"></div>
+                                        <div class="actions">
+                                            <button id="upload"><i class="ri-upload-2-line"></i></button>
+                                            <button id="voice"><i class="ri-mic-ai-fill"></i></button>
+                                            <button id="send-input"><i class="ri-send-plane-fill"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <!-- PAGE CONTENT -->
         <div class="page-content">
-            <!-- ======================================== -->
-            <!-- STANDALONE (Mobile Menu, Login Modal, Search modal, Language modal, Ask AI modal, Feeback modal, Cookie consent, AI modal) -->
-            <!-- ======================================== -->
-                <!-- Login Modal -->
-                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="row g-0">
-                                    <!-- Left Image -->
-                                    <div class="col-md-5 d-none d-md-block">
-                                        <img id="login-modal-image" class="img-fluid rounded-start w-100 h-100" alt="Login Image">
-                                    </div>
-                                    <!-- Right Content -->
-                                    <div class="col-md-7">
-                                        <div class="modal-header border-0">
-                                            <h5 class="modal-title" id="loginModalLabel">
-                                                <i class="fas fa-sign-in-alt"></i> Login to <span class="loyalty-id"></span>
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                    
-                                        <div class="modal-body">
-                                            <form>
-                                                <!-- Email Field -->
-                                                <div class="mb-3">
-                                                    <label for="loginEmail" class="form-label">
-                                                        <i class="fas fa-envelope"></i> Email address
-                                                    </label>
-                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
-                                                </div>
-                                                
-                                                <!-- Password Field -->
-                                                <div class="mb-3">
-                                                    <label for="loginPassword" class="form-label">
-                                                        <i class="fas fa-lock"></i> Password
-                                                    </label>
-                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
-                                                </div>
-                                                
-                                                <!-- Remember Me -->
-                                                <div class="mb-3 form-check">
-                                                    <input type="checkbox" class="form-check-input" id="rememberMe">
-                                                    <label class="form-check-label" for="rememberMe">Remember Me</label>
-                                                </div>
-                    
-                                                <!-- Forgot Password -->
-                                                <div class="mb-3 text-end">
-                                                    <a href="#" class="text-decoration-none">Forgot password?</a>
-                                                </div>
-                    
-                                                <!-- Submit Button -->
-                                                <div class="d-grid">
-                                                    <button type="submit" class="primary-filled">Login</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                    
-                                        <div class="modal-footer border-0">
-                                            <p class="m-0">
-                                                Don't have an account? <a href="#" class="text-primary text-decoration-none">Sign up</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Search Modal -->
-                    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="searchModalLabel">
-                                        <i class="ri-search-line"></i> Search the site
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <!-- Modal Body -->
-                                <div class="modal-body">
-                                    <!-- Search Input -->
-                                    <div class="input-group mb-3">
-                                        <input type="text" id="searchInput" class="form-control" placeholder="Search anything in the website" aria-label="Search">
-                                        <button class="primary-filled" id="searchButton">
-                                            <i class="ri-search-line"></i>
-                                        </button>
-                                    </div>
-                                    <!-- Search Results Container -->
-                                    <ul id="searchResults" class="list-group list-group-flush"></ul>
-                                </div>
-
-                                <!-- Modal Footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="secondary-outlined" data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Language Modal -->
-                    <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="languageModalLabel">
-                                        Choose your language
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <!-- Modal Body -->
-                                <div class="modal-body">
-                                    <div class="accordion" id="languageAccordion">
-                                        <!-- Select Country -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingCountry">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseCountry" aria-expanded="true" aria-controls="collapseCountry">
-                                                    🌍 Select Country
-                                                </button>
-                                            </h2>
-                                            <div id="collapseCountry" class="accordion-collapse collapse show" aria-labelledby="headingCountry"
-                                                data-bs-parent="#languageAccordion">
-                                                <div class="accordion-body">
-                                                    <label for="countrySelect" class="form-label">Choose your country:</label>
-                                                    <select id="countrySelect" class="form-select"></select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Select Language -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingLanguage">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
-                                                    🏳️ Select Language
-                                                </button>
-                                            </h2>
-                                            <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage"
-                                                data-bs-parent="#languageAccordion">
-                                                <div class="accordion-body">
-                                                    <label for="languageSelect" class="form-label">Choose your language:</label>
-                                                    <select id="languageSelect" class="form-select" disabled></select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Modal Footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="secondary-outlined" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="button" class="primary-filled" id="saveLanguagePreference" data-bs-dismiss="modal">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Mobile Menu Modal -->
-                    <div class="modal fade" id="mobileMenuModal" tabindex="-1" aria-labelledby="mobileMenuModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="mobileMenuModalLabel">Menu</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body d-flex flex-column">
-                                <ul class="d-flex flex-column" id="site-menu-mobile">
-                                    <li><a class="no-dec" href="#">Book</a></li>
-                                    <li><a class="no-dec" href="#">Manage</a></li>
-                                    <li><a class="no-dec" href="#">Explore</a></li>
-                                    <li><a class="no-dec" href="#"><span class="loyalty-id"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                <!-- Ask Ai Modal -->
-                    <div class="modal fade" id="askAiModal" tabindex="-1" aria-labelledby="askAiModal" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id=""></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body d-flex flex-column flex-space-between">
-                                <div id="AI-modal-chat-container"></div>
-                            </div>
-                            <div class="modal-footer">
-                                <div id="AI-modal-chat-input-field">
-                                    <div class="container">
-                                        <div class="content">
-                                            <div class="input"><input type="text" id="inspiration-user-input" placeholder="Chat with Portal AI"></div>
-                                            <div class="actions">
-                                                <!-- <button id="upload"><i class="ri-upload-2-line"></i></button> -->
-                                                <!-- <button id="voice"><i class="ri-mic-ai-fill"></i></button> -->
-                                                <button id="send-inspiration-input"><i class="ri-send-plane-fill"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                <!-- Feedback Modal -->
-                <!-- Chatbot assistant -->
-                    <div id="AI-assistant-container">
-                        <!-- Trigger -->
-                        <div class="AI-assistant-trigger-container">
-                            <div class="AI-assistant-trigger-content">
-                                <div class="AI-assistant-trigger-bubble">
-                                    Need help?
-                                </div>
-                                <button id="AI-assistant-trigger-button" class="icon-button rounded primary-filled">
-                                    <i class="ri-chat-ai-fill"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Chat -->
-                        <div class="AI-assistant-chat-container">
-                            <div class="AI-assistant-chat-content">
-                                <div class="AI-assistant-chat-header">
-                                    <div class="AI-assistant-chat-header-container">
-                                        <div class="AI-assistant-chat-header-content">
-                                            <div class="AI-assistant-logo-status">
-                                                <div class="logo">
-                                                    <img src="" alt="" id="chat-favicon">
-                                                </div>
-                                                <div class="chat-status">
-                                                    <div id="chat-business-name" class="business-name"></div>
-                                                    <div class="status"><span class="dot"></span>Online</div>
-                                                </div>
-                                            </div>
-                                            <button class="icon-button" id="hide-chat"><i class="ri-arrow-down-s-line"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="AI-assistant-chat-main">
-                                    <div class="AI-assistant-chat-main-container">
-                                        <div class="AI-assistant-chat-main-content">
-                                            <div class="user-input-container">
-                                                <div class="user-input-content">
-                                                </div>
-                                            </div>
-                                            <div class="AI-response-container">
-                                                <div class="AI-response-content">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="AI-assistant-chat-footer">
-                                    <div class="AI-assistant-chat-footer-container">
-                                        <div class="AI-assistant-chat-footer-content">
-                                            <div class="input"><input type="text" id="user-input" placeholder="Ask anything"></div>
-                                            <div class="actions">
-                                                <button id="upload"><i class="ri-upload-2-line"></i></button>
-                                                <button id="voice"><i class="ri-mic-ai-fill"></i></button>
-                                                <button id="send-input"><i class="ri-send-plane-fill"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
             <!-- ======================================== -->
             <!-- HEADER (Rolling News, Navbar, Hero carousel, Booking Magnet, Recent Searches) -->
             <!-- ======================================== -->
@@ -375,7 +375,7 @@
                                         <div class="tab-pane fade" id="inspire-ai" role="tabpanel" aria-labelledby="inspire-tab" tabindex="0">
                                             <div class="form-container">
                                                 <form action="" id="inspire-form">
-                                                    <input type="text" placeholder="Ask me anything!">
+                                                    <input type="text" placeholder="Ask me anything!" id="inspire-ai-first-input">
                                                     <button type="button" class="primary-filled" data-bs-target="#askAiModal" data-bs-toggle="modal" >Let's go <i class="ri-bard-fill"></i></button>
                                                 </form>
                                             </div>
@@ -583,10 +583,6 @@
     <script src="../services/faqs.js"></script>
     <script src="../services/chatbot.js"></script>
 
-    <!-- Personalization services -->
-    <script src="../services/login.js"></script>
-    <script src="../services/offers.js"></script>
-
     <!-- Component services -->
     <script src="../services/menu.js"></script>
     <script src="../services/carousel.js"></script>
@@ -595,6 +591,11 @@
     <script src="../services/rolling-info.js"></script>
     <script src="../services/banners.js"></script>
     <script src="../services/footer.js"></script>
+
+    <!-- Personalization services -->
+    <script src="../services/login.js"></script>
+    <script src="../services/offers.js"></script>
+    <script src="../services/inspiration-bot.js"></script>
 
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

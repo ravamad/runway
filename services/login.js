@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM fully loaded and parsed');
 
     const loginModal = document.getElementById('loginModal');
@@ -6,10 +6,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.querySelector('#login');
     const actionsMenu = document.querySelector('#actions-menu');
 
+    // Add an alert container for error messages
+    const alertContainer = document.createElement('div');
+    alertContainer.id = 'login-alert-container';
+    alertContainer.className = 'alert-container mt-3';
+    loginModal.querySelector('.modal-body').appendChild(alertContainer);
+
+    // Create Toast Container (Top-Right)
+    const toastContainer = document.createElement('div');
+    toastContainer.id = 'toast-container';
+    toastContainer.className = 'toast-container position-fixed top-0 end-0 p-3';
+    document.body.appendChild(toastContainer);
+
+    // Toast Function
+    function showToast(message) {
+        const toastElement = document.createElement('div');
+        toastElement.className = 'toast align-items-center text-white bg-success border-0';
+        toastElement.setAttribute('role', 'alert');
+        toastElement.setAttribute('aria-live', 'assertive');
+        toastElement.setAttribute('aria-atomic', 'true');
+
+        toastElement.innerHTML = `
+            <div class="d-flex">
+                <div class="toast-body">${message}</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        `;
+
+        toastContainer.appendChild(toastElement);
+
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+
+        // Auto-remove the toast after fade-out
+        toastElement.addEventListener('hidden.bs.toast', () => toastElement.remove());
+    }
+
     // Create avatar dropdown
     const avatarContainer = document.createElement('div');
     avatarContainer.className = 'avatar-container';
-    avatarContainer.style.display = 'none'; // Hidden by default
+    avatarContainer.style.display = 'none';
 
     avatarContainer.innerHTML = `
         <div class="avatar-dropdown">
@@ -25,68 +61,96 @@ document.addEventListener('DOMContentLoaded', function() {
     actionsMenu.appendChild(avatarContainer);
 
     let profiles = [];
+    let segments = {};
 
-    // Fetch profiles path from business-config.json
+    // Fetch profiles and segments path from business-config.json
     fetch('../business-data/business-config.json')
         .then(response => response.json())
         .then(configData => {
             const profilesPath = configData[0].profiles;
-            return fetch(profilesPath);
-        })
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            profiles = data.customer_profiles;
-            console.log('Loaded profiles:', profiles);
+            const segmentsPath = configData[0].segments;
 
-            // Auto-login if "Remember Me" was checked
+            return Promise.all([
+                fetch(profilesPath).then(res => res.json()),
+                fetch(segmentsPath).then(res => res.json())
+            ]);
+        })
+        .then(([profilesData, segmentsData]) => {
+            profiles = profilesData.customer_profiles;
+            segments = segmentsData.customer_segments; // Correctly access the nested structure
+            console.log('✅ Loaded profiles:', profiles);
+            console.log('✅ Loaded segments:', segments);
+
+            // Auto-login if "Remember Me" or Persistent Login
             const savedUser = JSON.parse(localStorage.getItem('loggedInUser'));
             if (savedUser) {
                 displayUserUI(savedUser);
             }
         })
         .catch(error => {
-            console.error('Error fetching profiles:', error);
+            console.error('Error fetching data:', error);
             alert('Error loading profile data. Please try again later.');
         });
 
     // Login functionality
-    loginForm.addEventListener('submit', function(event) {
+    loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
-
+    
         const email = document.querySelector('#loginEmail').value.trim();
         const password = document.querySelector('#loginPassword').value.trim();
         const rememberMe = document.querySelector('#rememberMe').checked;
-
+    
         console.log(`Login attempt with email: ${email}`);
-
+    
         const user = profiles.find(profile =>
             profile.user.email === email && profile.user.password === password
         );
-
+    
         if (user) {
             console.log('Login successful:', user);
-            alert(`Welcome back, ${user.user.name || 'Guest'}!`);
-
-            // Remember Me functionality
-            if (rememberMe) {
-                localStorage.setItem('loggedInUser', JSON.stringify(user));
+    
+            // Clean localStorage before saving
+            localStorage.clear();
+    
+            // Correctly retrieve `customer_segments` value from nested structure
+            const userSegmentKey = user.user.customer_segments 
+                ? user.user.customer_segments.trim() 
+                : null;
+    
+            if (!userSegmentKey) {
+                console.warn('⚠️ No customer_segments found for this user.');
             }
-
-            displayUserUI(user);
-
+    
+            console.log('✅ Segment keys:', Object.keys(segments));
+    
+            // Correctly access segment data within `segments.customer_segments`
+            const userSegment = segments[userSegmentKey] || { profile: 'Unknown Segment', key_attributes: {} };
+    
+            console.log('✅ Found segment:', userSegment);
+    
+            // Store full profile and segment data in localStorage
+            const userData = {
+                ...user.user, // Spread full user data
+                segmentData: userSegment
+            };
+    
+            localStorage.setItem('loggedInUser', JSON.stringify(userData));
+    
+            displayUserUI(userData);
+    
+            // Show success toast
+            showToast('Logged in successfully');
+    
             // Close modal
             document.querySelector('#loginModal .btn-close').click();
         } else {
             console.log('Invalid email or password');
-            alert('Invalid email or password. Please try again.');
+            showLoginError('Invalid email or password. Please try again.');
         }
     });
 
     // Display avatar and logout UI
-    function displayUserUI({ user }) {
+    function displayUserUI(user) {
         console.log('🔎 User object in displayUserUI:', user);
     
         const avatarImage = document.getElementById('avatar-image');
@@ -100,10 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
         console.log('✅ Avatar image element found.');
     
-        // Confirm the profileImage URL
-        console.log(`🔎 Profile Image URL: ${user.profileImage}`);
-    
-        // Correctly assign the profile image
         const profileImageUrl = user.profileImage || '../assets/default-avatar.png';
         avatarImage.src = profileImageUrl;
     
@@ -112,24 +172,34 @@ document.addEventListener('DOMContentLoaded', function() {
             avatarImage.src = '../assets/img/default-avatar.png';
         };
     
-        // Display the user's name
         avatarName.textContent = user.name || 'User';
         profilePage.href = `../profile.html?user=${encodeURIComponent(user.email)}`;
     
-        // Show/hide UI elements
         loginButton.style.display = 'none';
         avatarContainer.style.display = 'block';
     }
 
     // Logout functionality
-    document.getElementById('logout').addEventListener('click', function() {
+    document.getElementById('logout').addEventListener('click', function () {
         console.log('User logged out');
-        alert('You have been logged out.');
 
-        localStorage.removeItem('loggedInUser');
+        // Clean localStorage before logout
+        localStorage.clear();
 
-        // Show/hide UI elements
+        // Show logout toast
+        showToast('Logged out');
+
         loginButton.style.display = 'block';
         avatarContainer.style.display = 'none';
     });
+
+    // Show contextual Bootstrap alert for login errors
+    function showLoginError(message) {
+        alertContainer.innerHTML = `
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="ri-error-warning-line"></i> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        `;
+    }
 });

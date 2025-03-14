@@ -332,6 +332,49 @@
                     .modal-header{
                         border: none;
                     }
+                    .modal-body{
+                        .chat-message {
+                            display: flex;
+                            margin-bottom: 10px;
+
+                            &.user {
+                                justify-content: flex-end;
+                                text-align: right;
+
+                                .message-content {
+                                    background-color: $primary-color;
+                                    color: $white;
+                                }
+                            }
+
+                            &.assistant {
+                                justify-content: flex-start;
+                                text-align: left;
+
+                                .message-content {
+                                    background-color: $light-grey;
+                                    color: $dark-grey;
+                                }
+                            }
+                        }
+                        // Message Content Styles
+                        .message-content {
+                            background-color: $lighter-secondary-color;
+                            border-radius: 12px;
+                            padding: 10px 15px;
+                            max-width: 70%;
+                        }
+
+                        // Toast Messages for Success/Error
+                        .toast-message {
+                            background-color: $success;
+                            color: $white;
+
+                            &.error {
+                                background-color: $error;
+                            }
+                        }
+                    }
                     .modal-footer{
                         border: none;
                     }
@@ -514,6 +557,7 @@
                 .avatar-image {
                     width: 40px;
                     height: 40px;
+                    object-fit: cover;
                     border-radius: 50%;
                     box-shadow: $shadow;
                 }
@@ -540,18 +584,20 @@
                         border-radius: $radius;
                         transition: background-color 0.3s ease;
                         font-size: $small !important;
-                        margin-left: 0rem !important;
-                        padding: .5rem 1rem !important;
                         &:hover {
-                            background-color: $primary-color;
-                            color: $white;
+                            background-color: none;
+                            color: $darker-primary-color;
+                            font-weight: $bold;
+                            transform: scale(1) !important;
                         }
-                        button{
-                            width: 100%;
-                            margin-left: 0rem !important;
-                            display: flex;
-                            justify-content: flex-start;
-                            text-align: left !important;
+                    }
+                    button{
+                        margin-left: 0rem !important;
+                        display: flex;
+                        justify-content: flex-start;
+                        text-align: left !important;
+                        &:hover{
+                            transform: scale(1);
                         }
                     }
                 }

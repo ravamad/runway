@@ -309,6 +309,39 @@ a:hover {
 #askAiModal .modal-dialog .modal-content .modal-header {
   border: none;
 }
+#askAiModal .modal-dialog .modal-content .modal-body .chat-message {
+  display: flex;
+  margin-bottom: 10px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .chat-message.user {
+  justify-content: flex-end;
+  text-align: right;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .chat-message.user .message-content {
+  background-color: #3030ab;
+  color: #ffffff;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .chat-message.assistant {
+  justify-content: flex-start;
+  text-align: left;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .chat-message.assistant .message-content {
+  background-color: #f1eeee;
+  color: #423d3d;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .message-content {
+  background-color: #e4f5ff;
+  border-radius: 12px;
+  padding: 10px 15px;
+  max-width: 70%;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .toast-message {
+  background-color: #2EBFA5;
+  color: #ffffff;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .toast-message.error {
+  background-color: #ED254E;
+}
 #askAiModal .modal-dialog .modal-content .modal-footer {
   border: none;
 }
@@ -466,6 +499,7 @@ a:hover {
 .avatar-container .avatar-dropdown .avatar-image {
   width: 40px;
   height: 40px;
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
 }
@@ -493,19 +527,21 @@ a:hover {
   border-radius: 8px;
   transition: background-color 0.3s ease;
   font-size: 0.8rem !important;
-  margin-left: 0rem !important;
-  padding: 0.5rem 1rem !important;
 }
 .avatar-container .avatar-dropdown .dropdown-menu .dropdown-item:hover {
-  background-color: #3030ab;
-  color: #ffffff;
+  background-color: none;
+  color: #121253;
+  font-weight: 700;
+  transform: scale(1) !important;
 }
-.avatar-container .avatar-dropdown .dropdown-menu .dropdown-item button {
-  width: 100%;
+.avatar-container .avatar-dropdown .dropdown-menu button {
   margin-left: 0rem !important;
   display: flex;
   justify-content: flex-start;
   text-align: left !important;
+}
+.avatar-container .avatar-dropdown .dropdown-menu button:hover {
+  transform: scale(1);
 }
 .avatar-container .avatar-dropdown:hover .dropdown-menu {
   display: block;
