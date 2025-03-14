@@ -5,28 +5,69 @@ document.addEventListener('DOMContentLoaded', function () {
     const sendButton = document.getElementById('send-inspiration-input');
     const userInputField = document.getElementById('inspiration-user-input');
 
-    // OpenAI API Configuration
-    const OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY';  // Replace with your actual key
-    const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+    const letsGoButton = document.querySelector('#inspire-form button');
+    const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal')); // Bootstrap modal instance
 
-    // Conversation context storage
+    // OpenAI API Configuration
+    const OPENAI_API_KEY = '';
+    const OPENAI_API_URL = 'https://altitude.openai.azure.com/';
+
     let conversationHistory = [
-        { role: 'system', content: "You are a helpful travel AI assistant that inspires users with creative travel ideas." }
+        { 
+            role: 'system', 
+            content: `
+You are a conversational travel expert designed to inspire users with personalized travel suggestions. 
+Ask thoughtful questions to refine their preferences (budget, travel dates, interests) and generate 3 tailored offers:
+
+1️⃣ **Creative Adventure**: A unique destination or experience.
+2️⃣ **Perfect Match**: A well-balanced option based on their details.
+3️⃣ **Luxury Choice**: An upscale, high-end experience.
+
+For each:
+- Destination
+- Image URL
+- Flight details & price
+- Hotel details & price
+- Extra service tailored to their travel profile.
+
+Be friendly, concise, and positive! 😊
+`
+        }
     ];
 
     // Event Listeners
     inspireForm.addEventListener('submit', startConversation);
+    letsGoButton.addEventListener('click', startConversation); // Handles "Let's Go"
     sendButton.addEventListener('click', handleUserMessage);
+
+    // Open modal and add initial message when "Enter" is pressed
+    inspireInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const userInput = inspireInput.value.trim();
+            if (userInput) {
+                conversationHistory.push({ role: 'user', content: userInput });
+                displayMessage('user', userInput);  
+                askAiModal.show();  // Open the modal
+                getAIResponse(userInput); // Continue the conversation
+            }
+        }
+    });
+
     userInputField.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') handleUserMessage();
+        if (e.key === 'Enter') {
+            handleUserMessage();
+        }
     });
 
     function startConversation(event) {
         event.preventDefault();
+
         const userInput = inspireInput.value.trim();
         if (userInput) {
             conversationHistory.push({ role: 'user', content: userInput });
-            displayMessage('user', userInput);
+            displayMessage('user', userInput);  // Display user's initial input
+            askAiModal.show(); // Open the modal
             getAIResponse(userInput);
         }
     }
@@ -42,7 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
         getAIResponse(userInput);
     }
 
-    async function getAIResponse(message) {
+    async function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function getAIResponse(message, retries = 3, delayTime = 2000) {
         const profileData = JSON.parse(localStorage.getItem('loggedInUser'));
         const userSegment = profileData?.segmentData || {};
 
@@ -55,49 +100,58 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(() => []);
 
         const fullPrompt = `
-            User Info: ${JSON.stringify(profileData)}
-            Segment Info: ${JSON.stringify(userSegment)}
-            Available Destinations: ${JSON.stringify(destinationData)}
-            Available Offers: ${JSON.stringify(offerData)}
+User Info:
+- Name: ${profileData?.user?.name || 'Guest'}
+- Segment: ${profileData?.segmentData?.profile || 'Unknown'}
+- Budget: ${profileData?.user?.averagePNRValue || 'Not Specified'}
+- Preferred Device: ${profileData?.user?.preferredDevice || 'Any'}
 
-            Question: ${message}
+Travel Preferences:
+- Popular Destinations: Paris, Tokyo, New York, Rome
+- Offer types: Unusual, Balanced, Premium
 
-            Please suggest 3 travel offers:
-            - One unusual destination
-            - One balanced/matching option
-            - One premium/luxurious option
-
-            Each should include:
-            - Destination name
-            - Destination image URL
-            - Flight details with price
-            - Hotel details with price
-            - One additional service tailored to the user's profile.
+Question: ${message}
         `;
 
-        try {
-            const response = await fetch(OPENAI_API_URL, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${OPENAI_API_KEY}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    model: 'gpt-4',
-                    messages: conversationHistory.concat({ role: 'user', content: fullPrompt }),
-                    max_tokens: 500
-                })
-            });
+        for (let i = 0; i < retries; i++) {
+            try {
+                await delay(delayTime);  // Delay to prevent rate limits
 
-            const data = await response.json();
-            const aiResponse = data.choices[0].message.content;
+                const response = await fetch(OPENAI_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-4-turbo',
+                        messages: conversationHistory.concat({ role: 'user', content: fullPrompt }),
+                        max_tokens: 300  // Reduced for efficiency
+                    })
+                });
 
-            conversationHistory.push({ role: 'assistant', content: aiResponse });
-            displayMessage('assistant', aiResponse);
+                const data = await response.json();
+                const aiResponse = data.choices && data.choices[0]?.message?.content;
 
-        } catch (error) {
-            console.error('Error fetching AI response:', error);
-            displayMessage('assistant', "Oops! Something went wrong. Please try again.");
+                if (!aiResponse) {
+                    displayMessage('assistant', "I'm still thinking... please try again in a moment.");
+                    return;
+                }
+
+                conversationHistory.push({ role: 'assistant', content: aiResponse });
+                displayMessage('assistant', aiResponse);
+
+                break;
+
+            } catch (error) {
+                if (error.response?.status === 429 && i < retries - 1) {
+                    console.warn(`Rate limit hit. Retrying in ${delayTime / 1000} seconds...`);
+                } else {
+                    console.error('Error fetching AI response:', error);
+                    displayMessage('assistant', "Oops! Something went wrong. Please try again.");
+                    break;
+                }
+            }
         }
     }
 

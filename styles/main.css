@@ -305,6 +305,7 @@ a:hover {
 #askAiModal .modal-dialog .modal-content {
   border: none;
   border-radius: 8px;
+  background: none;
 }
 #askAiModal .modal-dialog .modal-content .modal-header {
   border: none;
