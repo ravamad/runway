@@ -1,0 +1,180 @@
+{
+    "customer_profiles": [
+      {
+        "user": {
+          "name": "Jane",
+          "surname": "Doe",
+          "email": "jane.doe@gmail.com",
+          "password": "janedoe123",
+          "telephoneNumber": "+8568542541232",
+          "customer_segments": "family",
+          "averagePNRValue": 1500,
+          "totalPastBookings": 20,
+          "yearlyPastBookings": 5,
+          "country": "Vietnam",
+          "preferredDevice": "desktop",
+          "preferredAAAS": "Baby Stroller",
+          "profileImage": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1361&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "15245625",
+          "milesAccrual": 283990,
+          "toNextTier": 18000,
+          "loyaltyTier": "Platinum",
+          "expiryDate": "2025/06/30"
+        }
+      },
+      {
+        "user": {
+          "name": "John",
+          "surname": "Smith",
+          "email": "john.smith@gmail.com",
+          "password": "789qwe123rty",
+          "telephoneNumber": "+1234567890",
+          "customer_segments": "business",
+          "averagePNRValue": 3000,
+          "totalPastBookings": 50,
+          "yearlyPastBookings": 15,
+          "country": "United Kingdom",
+          "preferredDevice": "desktop",
+          "preferredAAAS": "Priority Boarding",
+          "profileImage": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "88774541",
+          "milesAccrual": 560000,
+          "toNextTier": 40000,
+          "loyaltyTier": "Gold",
+          "expiryDate": "2025/12/31"
+        }
+      },
+      {
+        "user": {
+          "name": "Alice",
+          "surname": "Johnson",
+          "email": "alice.j@gmail.com",
+          "password": "alice@password",
+          "telephoneNumber": "+147258369",
+          "customer_segments": "leisure",
+          "averagePNRValue": 1000,
+          "totalPastBookings": 12,
+          "yearlyPastBookings": 4,
+          "country": "Spain",
+          "preferredDevice": "mobile",
+          "preferredAAAS": "Extra Legroom",
+          "profileImage": "https://images.unsplash.com/photo-1530785602389-07594beb8b73?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "98765432",
+          "milesAccrual": 85000,
+          "toNextTier": 5000,
+          "loyaltyTier": "Silver",
+          "expiryDate": "2026/03/15"
+        }
+      },
+      {
+        "user": {
+          "name": "Mike",
+          "surname": "Davis",
+          "email": "mike.davis@gmail.com",
+          "password": "mike@secure",
+          "telephoneNumber": "+155589744",
+          "customer_segments": "budget",
+          "averagePNRValue": 400,
+          "totalPastBookings": 8,
+          "yearlyPastBookings": 2,
+          "country": "Poland",
+          "preferredDevice": "mobile",
+          "preferredAAAS": "No Additional Service",
+          "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "45678912",
+          "milesAccrual": 10000,
+          "toNextTier": 2000,
+          "loyaltyTier": "None",
+          "expiryDate": "2026/12/01"
+        }
+      },
+      {
+        "user": {
+          "name": "Sara",
+          "surname": "Wilson",
+          "email": "sara.wilson@gmail.com",
+          "password": "sara@safe",
+          "telephoneNumber": "+1415145145",
+          "customer_segments": "adventure",
+          "averagePNRValue": 700,
+          "totalPastBookings": 15,
+          "yearlyPastBookings": 4,
+          "country": "Australia",
+          "preferredDevice": "mobile",
+          "preferredAAAS": "Outdoor Gear Check-in",
+          "profileImage": "https://images.unsplash.com/photo-1581403341630-a6e0b9d2d257?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "1000112233",
+          "milesAccrual": 12000,
+          "toNextTier": 3000,
+          "loyaltyTier": "Bronze",
+          "expiryDate": "2026/11/15"
+        }
+      },
+      {
+        "user": {
+          "name": "Lucas",
+          "surname": "Anderson",
+          "email": "lucas.anderson@gmail.com",
+          "password": "lucas@nomad",
+          "telephoneNumber": "+123789654",
+          "customer_segments": "digital_nomad",
+          "averagePNRValue": 2000,
+          "totalPastBookings": 30,
+          "yearlyPastBookings": 8,
+          "country": "Thailand",
+          "preferredDevice": "laptop",
+          "preferredAAAS": "Wi-Fi Access",
+          "profileImage": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "88887777",
+          "milesAccrual": 145000,
+          "toNextTier": 10000,
+          "loyaltyTier": "Gold",
+          "expiryDate": "2025/07/01"
+        }
+      },
+      {
+        "user": {
+          "name": "George",
+          "surname": "Harris",
+          "email": "george.harris@gmail.com",
+          "password": "george@fly",
+          "telephoneNumber": "+111222333",
+          "customer_segments": "last_minute",
+          "averagePNRValue": 600,
+          "totalPastBookings": 25,
+          "yearlyPastBookings": 10,
+          "country": "United States",
+          "preferredDevice": "mobile",
+          "preferredAAAS": "Flexible Fare",
+          "profileImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "7654321",
+          "milesAccrual": 45000,
+          "toNextTier": 7000,
+          "loyaltyTier": "Bronze",
+          "expiryDate": "2026/04/20"
+        }
+      },
+      {
+        "user": {
+          "name": "Anna",
+          "surname": "Morris",
+          "email": "anna.morris@gmail.com",
+          "password": "anna@secure",
+          "telephoneNumber": "+989898989",
+          "customer_segments": "senior",
+          "averagePNRValue": 1000,
+          "totalPastBookings": 10,
+          "yearlyPastBookings": 2,
+          "country": "Portugal",
+          "preferredDevice": "tablet",
+          "preferredAAAS": "Wheelchair Assistance",
+          "profileImage": "https://plus.unsplash.com/premium_photo-1679439492707-a648d40d8a09?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "FFnumber": "23456789",
+          "milesAccrual": 30000,
+          "toNextTier": 5000,
+          "loyaltyTier": "Silver",
+          "expiryDate": "2026/09/10"
+        }
+      }
+    ]
+  }

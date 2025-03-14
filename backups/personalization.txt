@@ -1,0 +1,18 @@
+AI inspiration process
+
+- Login with credentials
+- Logged in info in localstorage
+
+LOGIN JS -> fetch profile + segment information -> localstorage
+
+- Interact with form (get inspired tab)
+- User input in Local Storage (?)
+- Print user input in the conversation
+- Call to openAI to reply to the request
+- Display the response, triggering an inspiration
+- Prompt user with inspiration parameters
+- Store parameters options (giotto.io similar)
+- Map the parameters, map the segment.json, use the offer.json template and populate with hotel, car, transfer, flight.
+- Produce three offers
+- Display the offers in the dedicated components
+- Propose share, save for later, purchase (10% discount)

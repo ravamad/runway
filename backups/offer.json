@@ -1,0 +1,158 @@
+[
+    {
+        "id": "ID-TO-BE-REPLACED-BY-OMS",
+        "offerSetRefId": "{{offerset_id_package}}",
+        "offerSetId": "{{offer_id_101}}",
+        "offerItems": [
+            {
+                "id": "1",
+                "type": "HOTEL",
+                "hotelInformation": {
+                    "hotelName": "Grand Ocean Resort",
+                    "location": {
+                        "city": "Lisbon",
+                        "country": "Portugal",
+                        "address": "123 Ocean View Avenue, Lisbon, Portugal"
+                    },
+                    "checkInDate": "2025-06-15",
+                    "checkOutDate": "2025-06-20",
+                    "roomDetails": [
+                        {
+                            "roomType": "Deluxe Suite",
+                            "bedType": "King",
+                            "guestCapacity": 2,
+                            "amenities": [
+                                "Free Wi-Fi",
+                                "Breakfast Included",
+                                "Sea View",
+                                "Air Conditioning"
+                            ]
+                        }
+                    ]
+                },
+                "priceInformation": {
+                    "totalAmount": {
+                        "value": 120000,
+                        "decimalPlaces": 2,
+                        "currency": "EUR"
+                    }
+                }
+            },
+            {
+                "id": "2",
+                "type": "FLIGHT",
+                "flightInformation": {
+                    "flightNumber": "TP1234",
+                    "departure": {
+                        "airport": "Lisbon Airport (LIS)",
+                        "dateTime": "2025-06-15T10:00:00"
+                    },
+                    "arrival": {
+                        "airport": "Paris Charles de Gaulle (CDG)",
+                        "dateTime": "2025-06-15T13:00:00"
+                    },
+                    "airline": "TAP Air Portugal",
+                    "class": "Economy",
+                    "seatNumber": "22A",
+                    "baggageAllowance": "1 x 23kg checked bag"
+                },
+                "priceInformation": {
+                    "totalAmount": {
+                        "value": 25000,
+                        "decimalPlaces": 2,
+                        "currency": "EUR"
+                    }
+                }
+            },
+            {
+                "id": "3",
+                "type": "CAR_RENTAL",
+                "carRentalInformation": {
+                    "rentalCompany": "Avis",
+                    "carType": "Compact",
+                    "model": "Toyota Corolla",
+                    "pickupLocation": "Lisbon Airport (LIS)",
+                    "pickupDateTime": "2025-06-15T15:00:00",
+                    "dropoffLocation": "Lisbon Airport (LIS)",
+                    "dropoffDateTime": "2025-06-20T10:00:00",
+                    "fuelPolicy": "Full to Full",
+                    "insuranceIncluded": true
+                },
+                "priceInformation": {
+                    "totalAmount": {
+                        "value": 18000,
+                        "decimalPlaces": 2,
+                        "currency": "EUR"
+                    }
+                }
+            },
+            {
+                "id": "4",
+                "type": "TAXI_TRANSFER",
+                "taxiTransferInformation": {
+                    "provider": "CityCab",
+                    "pickupLocation": "Grand Ocean Resort",
+                    "dropoffLocation": "Lisbon Airport (LIS)",
+                    "pickupDateTime": "2025-06-20T07:30:00",
+                    "carType": "Sedan",
+                    "passengerCapacity": 3,
+                    "luggageCapacity": 2
+                },
+                "priceInformation": {
+                    "totalAmount": {
+                        "value": 4000,
+                        "decimalPlaces": 2,
+                        "currency": "EUR"
+                    }
+                }
+            }
+        ],
+        "priceBreakdown": {
+            "totalPackagePrice": {
+                "value": 167000,
+                "decimalPlaces": 2,
+                "currency": "EUR",
+                "composition": [
+                    {
+                        "type": "HOTEL",
+                        "value": 120000
+                    },
+                    {
+                        "type": "FLIGHT",
+                        "value": 25000
+                    },
+                    {
+                        "type": "CAR_RENTAL",
+                        "value": 18000
+                    },
+                    {
+                        "type": "TAXI_TRANSFER",
+                        "value": 4000
+                    }
+                ]
+            }
+        },
+        "contractRules": [
+            {
+                "cancellationPolicy": {
+                    "freeCancellationBefore": "2025-06-10",
+                    "cancellationFeeAfter": {
+                        "value": 5000,
+                        "currency": "EUR"
+                    }
+                },
+                "modificationPolicy": {
+                    "modificationDeadline": "2025-06-12",
+                    "modificationFee": {
+                        "value": 2000,
+                        "currency": "EUR"
+                    }
+                }
+            }
+        ],
+        "lifecycle": {
+            "version": 1,
+            "status": "SELECTED"
+        }
+    }
+]

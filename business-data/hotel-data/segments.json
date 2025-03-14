@@ -1,0 +1,154 @@
+{
+    "customer_segments": {
+      "business_travelers": {
+        "profile": "Frequently stay in city hotels for work, prioritize comfort, convenience, and workspace facilities.",
+        "key_attributes": {
+          "booking_window": "0-3 days",
+          "preferred_room_type": ["Deluxe Room", "Business Suite"],
+          "frequent_destinations": ["business hubs", "conference centers"],
+          "preferred_services": ["high-speed Wi-Fi", "workspace facilities", "express check-in"],
+          "preferred_payment": ["corporate credit cards"],
+          "possible_offer_ids": ["offer_id_1101", "offer_id_1102"],
+          "propensity_to_buy": 85,
+          "age_range": "30-55",
+          "preferred_device": "Desktop",
+          "traffic_source": ["direct", "organic"]
+        }
+      },
+      "leisure_travelers": {
+        "profile": "Stay in resorts or city hotels for holidays and vacations.",
+        "key_attributes": {
+          "booking_window": "30-90 days",
+          "preferred_room_type": ["Standard Room", "Family Suite"],
+          "frequent_destinations": ["beach resorts", "popular tourist cities"],
+          "preferred_services": ["pool access", "spa services", "restaurant discounts"],
+          "preferred_payment": ["credit cards", "PayPal"],
+          "possible_offer_ids": ["offer_id_1201", "offer_id_1202"],
+          "propensity_to_buy": 70,
+          "age_range": "25-45",
+          "preferred_device": "Mobile",
+          "traffic_source": ["metasearch", "paid"]
+        }
+      },
+      "frequent_guests": {
+        "profile": "Loyal guests who frequently book the same hotel chains or locations.",
+        "key_attributes": {
+          "booking_window": "varied",
+          "preferred_room_type": ["Suite", "Executive Room"],
+          "frequent_destinations": ["business hubs", "city centers"],
+          "preferred_services": ["room upgrades", "priority check-in", "loyalty discounts"],
+          "preferred_payment": ["loyalty points", "credit cards"],
+          "possible_offer_ids": ["offer_id_1301", "offer_id_1302"],
+          "propensity_to_buy": 90,
+          "age_range": "35-60",
+          "preferred_device": "Desktop",
+          "traffic_source": ["direct", "organic"]
+        }
+      },
+      "budget_travelers": {
+        "profile": "Cost-conscious travelers who prioritize affordability over amenities.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_room_type": ["Budget Room", "Standard Room"],
+          "frequent_destinations": ["budget-friendly destinations", "hostel-style accommodations"],
+          "preferred_services": ["shared kitchen access", "self-check-in"],
+          "preferred_payment": ["credit cards", "debit cards"],
+          "possible_offer_ids": ["offer_id_1401", "offer_id_1402"],
+          "propensity_to_buy": 65,
+          "age_range": "20-40",
+          "preferred_device": "Mobile",
+          "traffic_source": ["organic", "paid"]
+        }
+      },
+      "family_travelers": {
+        "profile": "Book spacious rooms for family vacations, prioritize comfort and child-friendly amenities.",
+        "key_attributes": {
+          "booking_window": "30-120 days",
+          "preferred_room_type": ["Family Suite", "Interconnected Rooms"],
+          "frequent_destinations": ["family resorts", "theme parks"],
+          "preferred_services": ["kids clubs", "baby cots", "meal options for children"],
+          "preferred_payment": ["credit cards", "travel vouchers"],
+          "possible_offer_ids": ["offer_id_1501", "offer_id_1502"],
+          "propensity_to_buy": 75,
+          "age_range": "30-50",
+          "preferred_device": "Tablet",
+          "traffic_source": ["organic", "direct"]
+        }
+      },
+      "luxury_travelers": {
+        "profile": "Seek premium accommodations with top-notch services and experiences.",
+        "key_attributes": {
+          "booking_window": "varied",
+          "preferred_room_type": ["Luxury Suite", "Penthouse"],
+          "frequent_destinations": ["5-star resorts", "boutique hotels"],
+          "preferred_services": ["private concierge", "spa services", "gourmet dining"],
+          "preferred_payment": ["credit cards", "luxury travel agencies"],
+          "possible_offer_ids": ["offer_id_1601", "offer_id_1602"],
+          "propensity_to_buy": 95,
+          "age_range": "40-65",
+          "preferred_device": "Desktop",
+          "traffic_source": ["organic", "direct"]
+        }
+      },
+      "backpackers": {
+        "profile": "Young travelers seeking affordable hostels and shared accommodations.",
+        "key_attributes": {
+          "booking_window": "last-minute",
+          "preferred_room_type": ["Dormitory", "Shared Room"],
+          "frequent_destinations": ["youth hostels", "budget hotels"],
+          "preferred_services": ["shared kitchens", "lockers", "city maps"],
+          "preferred_payment": ["cash", "PayPal"],
+          "possible_offer_ids": ["offer_id_1701", "offer_id_1702"],
+          "propensity_to_buy": 50,
+          "age_range": "18-30",
+          "preferred_device": "Mobile",
+          "traffic_source": ["organic", "social media"]
+        }
+      },
+      "digital_nomads": {
+        "profile": "Remote workers seeking accommodations with strong connectivity and workspace options.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_room_type": ["Studio Apartment", "Co-living Space"],
+          "frequent_destinations": ["digital nomad hubs", "coastal cities"],
+          "preferred_services": ["Wi-Fi packages", "workspace access", "quiet zones"],
+          "preferred_payment": ["credit cards", "PayPal"],
+          "possible_offer_ids": ["offer_id_1801", "offer_id_1802"],
+          "propensity_to_buy": 60,
+          "age_range": "25-40",
+          "preferred_device": "Laptop",
+          "traffic_source": ["organic", "direct"]
+        }
+      },
+      "seniors": {
+        "profile": "Older travelers who prioritize comfort, accessibility, and quiet accommodations.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_room_type": ["Ground Floor Room", "Accessible Room"],
+          "frequent_destinations": ["cruise ports", "wellness resorts"],
+          "preferred_services": ["assistance services", "calm environments", "wellness amenities"],
+          "preferred_payment": ["credit cards", "cash"],
+          "possible_offer_ids": ["offer_id_1901", "offer_id_1902"],
+          "propensity_to_buy": 50,
+          "age_range": "55+",
+          "preferred_device": "Tablet",
+          "traffic_source": ["organic", "direct"]
+        }
+      },
+      "long_stay_travelers": {
+        "profile": "Guests booking extended stays for work, study, or lifestyle changes.",
+        "key_attributes": {
+          "booking_window": "60+ days",
+          "preferred_room_type": ["Serviced Apartment", "Extended Stay Suite"],
+          "frequent_destinations": ["urban centers", "university cities"],
+          "preferred_services": ["kitchenette", "laundry services", "long-stay discounts"],
+          "preferred_payment": ["credit cards", "direct bank transfer"],
+          "possible_offer_ids": ["offer_id_2001", "offer_id_2002"],
+          "propensity_to_buy": 70,
+          "age_range": "30-60",
+          "preferred_device": "Desktop",
+          "traffic_source": ["organic", "paid"]
+        }
+      }
+    }
+  }

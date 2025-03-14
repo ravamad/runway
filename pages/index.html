@@ -202,8 +202,22 @@
                             <h5 class="modal-title" id=""></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body d-flex flex-column">
-                                
+                            <div class="modal-body d-flex flex-column flex-space-between">
+                                <div id="AI-modal-chat-container"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <div id="AI-modal-chat-input-field">
+                                    <div class="container">
+                                        <div class="content">
+                                            <div class="input"><input type="text" id="inspiration-user-input" placeholder="Chat with Portal AI"></div>
+                                            <div class="actions">
+                                                <!-- <button id="upload"><i class="ri-upload-2-line"></i></button> -->
+                                                <!-- <button id="voice"><i class="ri-mic-ai-fill"></i></button> -->
+                                                <button id="send-inspiration-input"><i class="ri-send-plane-fill"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         </div>
@@ -330,7 +344,7 @@
                                           <button class="nav-link" id="manage-tab" data-bs-toggle="pill" data-bs-target="#manage" type="button" role="tab" aria-controls="manage" aria-selected="false">Manage</button>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                          <button class="nav-link" id="inspire-tab" data-bs-toggle="pill" data-bs-target="#inspire-ai" type="button" role="tab" aria-controls="inspire" aria-selected="false">Ask AI <i class="ri-bard-fill"></i></button>
+                                          <button class="nav-link" id="inspire-tab" data-bs-toggle="pill" data-bs-target="#inspire-ai" type="button" role="tab" aria-controls="inspire" aria-selected="false">Get inspired <i class="ri-bard-fill"></i></button>
                                         </li>
                                     </ul>
                                     <div class="tab-content" id="BM-content">
@@ -562,10 +576,18 @@
     <!-- ======================= -->
     <!-- Services -->
     <!-- ======================= -->
+
+    <!-- Global services -->
     <script src="../services/business-config.js"></script>
     <script src="../services/languages.js"></script>
     <script src="../services/faqs.js"></script>
     <script src="../services/chatbot.js"></script>
+
+    <!-- Personalization services -->
+    <script src="../services/login.js"></script>
+    <script src="../services/offers.js"></script>
+
+    <!-- Component services -->
     <script src="../services/menu.js"></script>
     <script src="../services/carousel.js"></script>
     <script src="../services/geolocalization.js"></script>
@@ -573,6 +595,7 @@
     <script src="../services/rolling-info.js"></script>
     <script src="../services/banners.js"></script>
     <script src="../services/footer.js"></script>
+
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>

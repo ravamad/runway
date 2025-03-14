@@ -1,0 +1,43 @@
+{
+    "Our Locations": [
+        "Middle East",
+        "Asia",
+        "Africa",
+        "Europe",
+        "North America"
+    ],
+    "Plan your stay": [
+        "Room types & amenities",
+        "Dining options",
+        "Spa & wellness",
+        "Events & conferences",
+        "Special offers",
+        "Local attractions"
+    ],
+    "Manage Booking": [
+        "Modify reservation",
+        "Cancel reservation",
+        "Upgrade room",
+        "Add breakfast",
+        "Request early check-in",
+        "Request late check-out"
+    ],
+    "Loyalty": [
+        "Join Rewards Program",
+        "About Our Program",
+        "Tiers & benefits",
+        "Earn & redeem points",
+        "Partner discounts"
+    ],
+    "About Us": [
+        "Our Story",
+        "Sustainability",
+        "Careers",
+        "Press & media"
+    ],
+    "Help": [
+        "FAQs",
+        "Contact us",
+        "Our Locations"
+    ]
+}

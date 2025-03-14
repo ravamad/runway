@@ -5,6 +5,7 @@
       "favicon_logo": "../assets/img/favicon.png",
       "loyalty_program": "Airline loyalty",
       "loyalty_program_logo": "https://www.singaporeair.com/etc/designs/singaporeair/clientlibs/images/logo-krisflyer.png",
+      
       "faqs": "../business-data/airline-data/faqs.json",
       "menu": "../business-data/airline-data/menu.json",
       "imagery": "../business-data/airline-data/imagery.json",
@@ -12,6 +13,10 @@
       "BM": "../business-data/airline-data/BM.json",
       "network":"../business-data/airline-data/network.json",
       "deals":"../business-data/airline-data/deals.json",
-      "footer":"../business-data/airline-data/footer.json"
+      "footer":"../business-data/airline-data/footer.json",
+
+      "segments":"../business-data/airline-data/segments.json",
+      "offers":"../business-data/airline-data/offers.json",
+      "profiles":"../business-data/airline-data/profiles.json"
     }
 ]

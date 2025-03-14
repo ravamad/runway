@@ -1,0 +1,164 @@
+{
+    "customer_segments": {
+      "business_travelers": {
+        "profile": "Frequent flyers, often booking last-minute flights, prioritize comfort and productivity.",
+        "key_attributes": {
+          "booking_window": "0-3 days",
+          "preferred_seating": ["aisle", "business_class", "premium_economy"],
+          "frequent_destinations": ["major business hubs", "conference cities"],
+          "loyalty_status": ["gold", "platinum"],
+          "preferred_services": ["fast-track security", "lounge access", "priority boarding"],
+          "preferred_payment": ["corporate credit cards"],
+          "possible_offer_ids": ["offer_id_101", "offer_id_102"],
+          "propensity_to_buy": 85,
+          "age_range": "30-55",
+          "preferred_device": "Desktop",
+          "traffic_source": ["direct", "organic"]
+        }
+      },
+      "leisure_travelers": {
+        "profile": "Travel occasionally for vacations or holidays, prioritize affordability.",
+        "key_attributes": {
+          "booking_window": "30-90 days",
+          "preferred_seating": ["window", "economy"],
+          "frequent_destinations": ["beach resorts", "popular tourist cities"],
+          "loyalty_status": ["none", "basic"],
+          "preferred_services": ["family meal deals", "checked baggage offers"],
+          "preferred_payment": ["credit cards", "PayPal"],
+          "possible_offer_ids": ["offer_id_201", "offer_id_202"],
+          "propensity_to_buy": 70,
+          "age_range": "25-45",
+          "preferred_device": "Mobile",
+          "traffic_source": ["metasearch", "paid"]
+        }
+      },
+      "frequent_flyers": {
+        "profile": "Engaged with loyalty programs, value points and exclusive benefits.",
+        "key_attributes": {
+          "booking_window": "varied",
+          "preferred_seating": ["business_class", "first_class"],
+          "frequent_destinations": ["varied"],
+          "loyalty_status": ["gold", "platinum"],
+          "preferred_services": ["priority boarding", "exclusive discounts"],
+          "preferred_payment": ["loyalty points", "credit cards"],
+          "possible_offer_ids": ["offer_id_301", "offer_id_302"],
+          "propensity_to_buy": 90,
+          "age_range": "35-60",
+          "preferred_device": "Desktop",
+          "traffic_source": ["direct", "organic"]
+        }
+      },
+      "budget_travelers": {
+        "profile": "Highly price-sensitive, prioritize deals and discounts.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_seating": ["economy", "low-cost options"],
+          "frequent_destinations": ["budget-friendly cities", "alternative airports"],
+          "loyalty_status": ["none", "basic"],
+          "preferred_services": ["low-cost baggage", "budget meal options"],
+          "preferred_payment": ["credit cards", "debit cards"],
+          "possible_offer_ids": ["offer_id_401", "offer_id_402"],
+          "propensity_to_buy": 65,
+          "age_range": "20-40",
+          "preferred_device": "Mobile",
+          "traffic_source": ["organic", "paid"]
+        }
+      },
+      "family_travelers": {
+        "profile": "Book for multiple passengers, prioritize comfort and convenience.",
+        "key_attributes": {
+          "booking_window": "30-120 days",
+          "preferred_seating": ["economy", "extra legroom"],
+          "frequent_destinations": ["family resorts", "theme parks"],
+          "loyalty_status": ["basic", "silver"],
+          "preferred_services": ["kids meals", "bulkhead seating"],
+          "preferred_payment": ["credit cards", "travel vouchers"],
+          "possible_offer_ids": ["offer_id_501", "offer_id_502"],
+          "propensity_to_buy": 75,
+          "age_range": "30-50",
+          "preferred_device": "Tablet",
+          "traffic_source": ["organic", "direct"]
+        }
+      },
+      "adventure_seekers": {
+        "profile": "Travel for unique experiences, often flexible with dates and destinations.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_seating": ["window", "budget airlines"],
+          "frequent_destinations": ["outdoor adventure spots", "remote locations"],
+          "loyalty_status": ["none", "basic"],
+          "preferred_services": ["equipment check-in", "sports gear allowances"],
+          "preferred_payment": ["credit cards", "PayPal"],
+          "possible_offer_ids": ["offer_id_601", "offer_id_602"],
+          "propensity_to_buy": 55,
+          "age_range": "25-45",
+          "preferred_device": "Mobile",
+          "traffic_source": ["organic", "paid"]
+        }
+      },
+      "solo_travelers": {
+        "profile": "Often seek flexibility, spontaneity, and safety.",
+        "key_attributes": {
+          "booking_window": "0-14 days",
+          "preferred_seating": ["window", "extra legroom"],
+          "frequent_destinations": ["city breaks", "cultural hubs"],
+          "loyalty_status": ["none", "basic"],
+          "preferred_services": ["secure payment", "safe transport options"],
+          "preferred_payment": ["credit cards", "digital wallets"],
+          "possible_offer_ids": ["offer_id_701", "offer_id_702"],
+          "propensity_to_buy": 60,
+          "age_range": "20-35",
+          "preferred_device": "Mobile",
+          "traffic_source": ["metasearch", "paid"]
+        }
+      },
+      "last_minute_travelers": {
+        "profile": "Book close to departure, prioritize availability and convenience.",
+        "key_attributes": {
+          "booking_window": "0-3 days",
+          "preferred_seating": ["any available"],
+          "frequent_destinations": ["varied"],
+          "loyalty_status": ["none", "basic"],
+          "preferred_services": ["express check-in", "flexible fares"],
+          "preferred_payment": ["credit cards", "contactless payment"],
+          "possible_offer_ids": ["offer_id_801", "offer_id_802"],
+          "propensity_to_buy": 50,
+          "age_range": "20-50",
+          "preferred_device": "Mobile",
+          "traffic_source": ["organic", "paid"]
+        }
+      },
+      "digital_nomads": {
+        "profile": "Value flexibility, connectivity, and workspace-friendly environments.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_seating": ["extra legroom", "premium economy"],
+          "frequent_destinations": ["coastal cities", "digital nomad hubs"],
+          "loyalty_status": ["basic", "silver"],
+          "preferred_services": ["Wi-Fi packages", "workspace-friendly accommodations"],
+          "preferred_payment": ["credit cards", "PayPal"],
+          "possible_offer_ids": ["offer_id_901", "offer_id_902"],
+          "propensity_to_buy": 60,
+          "age_range": "25-40",
+          "preferred_device": "Laptop",
+          "traffic_source": ["organic", "direct"]
+        }
+      },
+      "seniors": {
+        "profile": "Often travel off-peak, prefer comfort and assistance services.",
+        "key_attributes": {
+          "booking_window": "flexible",
+          "preferred_seating": ["extra legroom", "aisle seats"],
+          "frequent_destinations": ["cruise ports", "historical cities"],
+          "loyalty_status": ["none", "basic"],
+          "preferred_services": ["assistance services", "wellness offers"],
+          "preferred_payment": ["credit cards", "cash"],
+          "possible_offer_ids": ["offer_id_1001", "offer_id_1002"],
+          "propensity_to_buy": 50,
+          "age_range": "55+",
+          "preferred_device": "Tablet",
+          "traffic_source": ["organic", "direct"]
+        }
+      }
+    }
+  }

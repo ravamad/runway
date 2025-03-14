@@ -303,6 +303,7 @@
             backdrop-filter: $bigblur;
             background: $primary-transparent-gradient;
             z-index: 100000 !important;
+            height: 100vh;
             .modal-dialog{
                 #login-modal-image{
                     height: 500px !important;
@@ -472,8 +473,10 @@
                 // Action-menu
                 #actions-menu{
                     display: flex;
+                    height: fit-content;
                     button{
                         margin-left: .5rem;
+                        height: fit-content;
                     }
                     #mobile-menu{
                         display: none;
@@ -495,6 +498,67 @@
                         }
                     }
                 }
+        }
+    // Avatar-login-logout
+        .avatar-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-left: .5rem;
+            cursor: pointer;
+            .avatar-dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                .avatar-image {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    box-shadow: $shadow;
+                }
+                .avatar-name {
+                    display: block;
+                    font-size: 14px;
+                    color: $darker-primary-color;
+                    margin-top: 5px;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: calc(40px + 10px); // Positioned below avatar
+                    right: 0;
+                    background-color: $white;
+                    border-radius: $radius;
+                    box-shadow: $shadow;
+                    z-index: 999;
+                    .dropdown-item {
+                        display: flex;
+                        text-align: left;
+                        text-decoration: none;
+                        color: $primary-color;
+                        border-radius: $radius;
+                        transition: background-color 0.3s ease;
+                        font-size: $small !important;
+                        margin-left: 0rem !important;
+                        padding: .5rem 1rem !important;
+                        &:hover {
+                            background-color: $primary-color;
+                            color: $white;
+                        }
+                        button{
+                            width: 100%;
+                            margin-left: 0rem !important;
+                            display: flex;
+                            justify-content: flex-start;
+                            text-align: left !important;
+                        }
+                    }
+                }
+                &:hover .dropdown-menu {
+                    display: block;
+                }
+            }
         }
     // Booking Magnet
         #bookingMagnet{
@@ -828,6 +892,50 @@
                     40%{background-position:0% 100%, 50%   0%,100%  50%}
                     60%{background-position:0%  50%, 50% 100%,100%   0%}
                     80%{background-position:0%  50%, 50%  50%,100% 100%}
+                }
+            }
+        }
+    // AI Inspirer
+        #askAiModal{
+            max-height: 100vh;
+            .modal-content{
+                .modal-footer{
+                    #AI-modal-chat-input-field{
+                        width: 60%;
+                        margin: auto;
+                        margin-bottom: 1rem;
+                        @media screen and (max-width:768px) {
+                            width: 100%;
+                        }
+                        .container{
+                            width: 100%;
+                            background: $white;
+                            box-shadow: $shadow;
+                            border-radius: $round;
+                            .content{
+                                padding: 1rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .input{
+                                    input{
+                                        border: none;
+                                        outline: none;
+                                    }
+                                }
+                                .actions{
+                                    display: flex;
+                                    button{
+                                        padding: 0rem .3rem;
+                                    }
+                                    i{
+                                        color: $dark-grey;
+                                        font-size: $large;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1174,6 +1282,14 @@
                     }
                 }
             }
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                justify-content: center;
+                .sn{
+                    width: 100%;
+                    margin-top: 1rem;
+                }
+            }
         }
     // Footer
         footer{
@@ -1209,7 +1325,7 @@
                 }
             }
         }
-        // Footer menu
+    // Footer menu
         #footer-container{
             width: 100%;
             margin: auto;
@@ -1229,3 +1345,4 @@
                 }
             }
         }
+

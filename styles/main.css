@@ -281,6 +281,7 @@ a:hover {
   backdrop-filter: blur(50px);
   background: linear-gradient(45deg, rgba(48, 48, 171, 0.4666666667) 0%, rgba(66, 61, 61, 0.7568627451) 100%);
   z-index: 100000 !important;
+  height: 100vh;
 }
 .modal .modal-dialog #login-modal-image {
   height: 500px !important;
@@ -425,9 +426,11 @@ a:hover {
 }
 #navbar #actions-menu {
   display: flex;
+  height: fit-content;
 }
 #navbar #actions-menu button {
   margin-left: 0.5rem;
+  height: fit-content;
 }
 #navbar #actions-menu #mobile-menu {
   display: none;
@@ -445,6 +448,67 @@ a:hover {
   #navbar #actions-menu #mobile-menu {
     display: flex;
   }
+}
+
+.avatar-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.avatar-container .avatar-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.avatar-container .avatar-dropdown .avatar-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+}
+.avatar-container .avatar-dropdown .avatar-name {
+  display: block;
+  font-size: 14px;
+  color: #121253;
+  margin-top: 5px;
+}
+.avatar-container .avatar-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+  z-index: 999;
+}
+.avatar-container .avatar-dropdown .dropdown-menu .dropdown-item {
+  display: flex;
+  text-align: left;
+  text-decoration: none;
+  color: #3030ab;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-size: 0.8rem !important;
+  margin-left: 0rem !important;
+  padding: 0.5rem 1rem !important;
+}
+.avatar-container .avatar-dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #3030ab;
+  color: #ffffff;
+}
+.avatar-container .avatar-dropdown .dropdown-menu .dropdown-item button {
+  width: 100%;
+  margin-left: 0rem !important;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left !important;
+}
+.avatar-container .avatar-dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 #bookingMagnet #BookingMagnetContainer {
@@ -768,6 +832,46 @@ a:hover {
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }
+}
+
+#askAiModal {
+  max-height: 100vh;
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  #askAiModal .modal-content .modal-footer #AI-modal-chat-input-field {
+    width: 100%;
+  }
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field .container {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+  border-radius: 100px;
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field .container .content {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field .container .content .input input {
+  border: none;
+  outline: none;
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field .container .content .actions {
+  display: flex;
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field .container .content .actions button {
+  padding: 0rem 0.3rem;
+}
+#askAiModal .modal-content .modal-footer #AI-modal-chat-input-field .container .content .actions i {
+  color: #423d3d;
+  font-size: 1.2rem;
 }
 
 .carousel-indicators {
@@ -1115,6 +1219,16 @@ a:hover {
 }
 #apps-sn .sn .icons a i {
   font-size: 1.6rem;
+}
+@media screen and (max-width: 768px) {
+  #apps-sn {
+    flex-direction: column;
+    justify-content: center;
+  }
+  #apps-sn .sn {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 
 footer {
