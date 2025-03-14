@@ -378,6 +378,18 @@
                     }
                     .modal-footer{
                         border: none;
+                        #AI-modal-chat-input-field{
+                            .container{
+                                .content{
+                                    .input{
+                                        width: 100%;
+                                        input{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

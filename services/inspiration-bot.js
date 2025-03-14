@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal')); // Bootstrap modal instance
 
     // OpenAI API Configuration
-    const OPENAI_API_KEY = '';
-    const OPENAI_API_URL = 'https://altitude.openai.azure.com/';
+    const OPENAI_API_KEY = ''; 
+    const OPENAI_API_URL = 'https://altitude.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview';
 
     let conversationHistory = [
         { 
@@ -49,7 +49,7 @@ Be friendly, concise, and positive! 😊
                 conversationHistory.push({ role: 'user', content: userInput });
                 displayMessage('user', userInput);  
                 askAiModal.show();  // Open the modal
-                getAIResponse(userInput); // Continue the conversation
+                getAIResponse(userInput, true); // Continue the conversation with profile name
             }
         }
     });
@@ -68,7 +68,7 @@ Be friendly, concise, and positive! 😊
             conversationHistory.push({ role: 'user', content: userInput });
             displayMessage('user', userInput);  // Display user's initial input
             askAiModal.show(); // Open the modal
-            getAIResponse(userInput);
+            getAIResponse(userInput, true); // Ensure profile name appears in the first response
         }
     }
 
@@ -80,16 +80,17 @@ Be friendly, concise, and positive! 😊
         displayMessage('user', userInput);
 
         userInputField.value = ''; // Clear input field
-        getAIResponse(userInput);
+        getAIResponse(userInput, false);
     }
 
     async function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    async function getAIResponse(message, retries = 3, delayTime = 2000) {
+    async function getAIResponse(message, isFirstResponse = false, retries = 3, delayTime = 2000) {
         const profileData = JSON.parse(localStorage.getItem('loggedInUser'));
         const userSegment = profileData?.segmentData || {};
+        const userName = profileData?.user?.name || 'Guest';
 
         const destinationData = await fetch('../business-data/destinations.json')
             .then(res => res.json())
@@ -99,16 +100,21 @@ Be friendly, concise, and positive! 😊
             .then(res => res.json())
             .catch(() => []);
 
+        const profileIntro = isFirstResponse 
+            ? `Hi ${userName}! I'm here to inspire you with amazing travel ideas. Let's explore! 😊\n\n` 
+            : '';
+
         const fullPrompt = `
+${profileIntro}
 User Info:
-- Name: ${profileData?.user?.name || 'Guest'}
+- Name: ${userName}
 - Segment: ${profileData?.segmentData?.profile || 'Unknown'}
 - Budget: ${profileData?.user?.averagePNRValue || 'Not Specified'}
 - Preferred Device: ${profileData?.user?.preferredDevice || 'Any'}
 
 Travel Preferences:
-- Popular Destinations: Paris, Tokyo, New York, Rome
-- Offer types: Unusual, Balanced, Premium
+- Popular Destinations: Paris, Tokyo, New York, Rome, Sydney, Dubai, etc.
+- Offer types: Unusual, Tailored, Premium
 
 Question: ${message}
         `;
@@ -124,9 +130,9 @@ Question: ${message}
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        model: 'gpt-4-turbo',
+                        model: 'gpt-4o-mini',
                         messages: conversationHistory.concat({ role: 'user', content: fullPrompt }),
-                        max_tokens: 300  // Reduced for efficiency
+                        max_tokens: 250  // Reduced for concise responses
                     })
                 });
 

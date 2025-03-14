@@ -346,6 +346,12 @@ a:hover {
 #askAiModal .modal-dialog .modal-content .modal-footer {
   border: none;
 }
+#askAiModal .modal-dialog .modal-content .modal-footer #AI-modal-chat-input-field .container .content .input {
+  width: 100%;
+}
+#askAiModal .modal-dialog .modal-content .modal-footer #AI-modal-chat-input-field .container .content .input input {
+  width: 100%;
+}
 
 #rolling-info {
   background: #f1eeee;
