@@ -6,38 +6,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const userInputField = document.getElementById('inspiration-user-input');
 
     const letsGoButton = document.querySelector('#inspire-form button');
-    const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal')); // Bootstrap modal instance
+    const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal'));
 
     // OpenAI API Configuration
-    const OPENAI_API_KEY = ''; 
+    const OPENAI_API_KEY = '';
     const OPENAI_API_URL = 'https://altitude.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview';
 
-    let conversationHistory = [
-        { 
-            role: 'system', 
-            content: `
-You are a conversational travel expert designed to inspire users with personalized travel suggestions. 
-Ask thoughtful questions to refine their preferences (budget, travel dates, interests) and generate 3 tailored offers:
+    let conversationHistory = [];
+
+    // Ensure profile data is correctly loaded into the first system message
+    function initializeConversationHistory() {
+        const profileData = JSON.parse(localStorage.getItem('loggedInUser')) || {};
+        const userName = profileData?.user?.name || 'Guest';
+
+        conversationHistory = [
+            { 
+                role: 'system', 
+                content: `
+Hi ${userName}! 😊 I'm here to inspire you with personalized travel ideas.
+
+I'll ask you a few questions to understand your preferences, and then I'll create three tailored offers:
 
 1️⃣ **Creative Adventure**: A unique destination or experience.
-2️⃣ **Perfect Match**: A well-balanced option based on their details.
+2️⃣ **Perfect Match**: A well-balanced option based on your details.
 3️⃣ **Luxury Choice**: An upscale, high-end experience.
 
-For each:
+For each, I'll include:
 - Destination
 - Image URL
 - Flight details & price
 - Hotel details & price
-- Extra service tailored to their travel profile.
+- An extra service tailored to your profile.
 
-Be friendly, concise, and positive! 😊
-`
-        }
-    ];
+Let's get started! 🚀
+                `
+            }
+        ];
+    }
 
     // Event Listeners
     inspireForm.addEventListener('submit', startConversation);
-    letsGoButton.addEventListener('click', startConversation); // Handles "Let's Go"
+    letsGoButton.addEventListener('click', startConversation);
     sendButton.addEventListener('click', handleUserMessage);
 
     // Open modal and add initial message when "Enter" is pressed
@@ -46,10 +55,11 @@ Be friendly, concise, and positive! 😊
             e.preventDefault();
             const userInput = inspireInput.value.trim();
             if (userInput) {
+                initializeConversationHistory();  // Ensure profile data is fresh
                 conversationHistory.push({ role: 'user', content: userInput });
                 displayMessage('user', userInput);  
-                askAiModal.show();  // Open the modal
-                getAIResponse(userInput, true); // Continue the conversation with profile name
+                askAiModal.show();  
+                getAIResponse(userInput, true);
             }
         }
     });
@@ -62,13 +72,13 @@ Be friendly, concise, and positive! 😊
 
     function startConversation(event) {
         event.preventDefault();
-
         const userInput = inspireInput.value.trim();
         if (userInput) {
+            initializeConversationHistory();  // Ensure profile data is fresh
             conversationHistory.push({ role: 'user', content: userInput });
-            displayMessage('user', userInput);  // Display user's initial input
-            askAiModal.show(); // Open the modal
-            getAIResponse(userInput, true); // Ensure profile name appears in the first response
+            displayMessage('user', userInput);
+            askAiModal.show();
+            getAIResponse(userInput, true);
         }
     }
 
@@ -79,7 +89,7 @@ Be friendly, concise, and positive! 😊
         conversationHistory.push({ role: 'user', content: userInput });
         displayMessage('user', userInput);
 
-        userInputField.value = ''; // Clear input field
+        userInputField.value = ''; 
         getAIResponse(userInput, false);
     }
 
@@ -88,8 +98,7 @@ Be friendly, concise, and positive! 😊
     }
 
     async function getAIResponse(message, isFirstResponse = false, retries = 3, delayTime = 2000) {
-        const profileData = JSON.parse(localStorage.getItem('loggedInUser'));
-        const userSegment = profileData?.segmentData || {};
+        const profileData = JSON.parse(localStorage.getItem('loggedInUser')) || {};
         const userName = profileData?.user?.name || 'Guest';
 
         const destinationData = await fetch('../business-data/destinations.json')
@@ -100,12 +109,7 @@ Be friendly, concise, and positive! 😊
             .then(res => res.json())
             .catch(() => []);
 
-        const profileIntro = isFirstResponse 
-            ? `Hi ${userName}! I'm here to inspire you with amazing travel ideas. Let's explore! 😊\n\n` 
-            : '';
-
         const fullPrompt = `
-${profileIntro}
 User Info:
 - Name: ${userName}
 - Segment: ${profileData?.segmentData?.profile || 'Unknown'}
@@ -121,7 +125,7 @@ Question: ${message}
 
         for (let i = 0; i < retries; i++) {
             try {
-                await delay(delayTime);  // Delay to prevent rate limits
+                await delay(delayTime);
 
                 const response = await fetch(OPENAI_API_URL, {
                     method: 'POST',
@@ -132,7 +136,7 @@ Question: ${message}
                     body: JSON.stringify({
                         model: 'gpt-4o-mini',
                         messages: conversationHistory.concat({ role: 'user', content: fullPrompt }),
-                        max_tokens: 250  // Reduced for concise responses
+                        max_tokens: 250
                     })
                 });
 
