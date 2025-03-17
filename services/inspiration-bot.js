@@ -1,135 +1,133 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // DOM references for the initial form (outside the modal)
     const inspireForm = document.getElementById('inspire-form');
-    const inspireInput = document.getElementById('inspire-ai-first-input');
+    const inspireFirstInput = document.getElementById('inspire-ai-first-input');
+  
+    // DOM references for the modal
     const aiModalChatContainer = document.getElementById('AI-modal-chat-container');
-    const sendButton = document.getElementById('send-inspiration-input');
     const userInputField = document.getElementById('inspiration-user-input');
-
-    const letsGoButton = document.querySelector('#inspire-form button');
-    const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal'));
-
-    // OpenAI API Configuration
-    const OPENAI_API_KEY = ''; 
-    const OPENAI_API_URL = ''; 
-
-
-    // In-memory conversation
+    const sendButton = document.getElementById('send-inspiration-input');
+  
+    // Track the conversation
     let conversationHistory = [];
-
-    // ----------------------------------
-    // 1) Initialize Conversation History
-    // ----------------------------------
-    async function initializeConversationHistory(userInput = '') {
-      const profileData = getUserProfile();
-      const userName = profileData?.user?.name || 'Guest';
-
-      // Fetch the airline data (destinations & offers)
-      const destinationsData = await fetchDestinationsData();
-      const offersData = await fetchOffersData();
-
-      // Create short summaries to keep token usage in check
-      const summarizedDestinations = summarizeDestinations(destinationsData);
-      const summarizedOffers = summarizeOffers(offersData);
-
-      // This system message sets the scene:
-      const systemMessage = `
-You are a helpful travel assistant for an airline. The user is logged in and has a known profile. 
-They want short, dialog-driven inspiration for new trips. 
-You must only recommend destinations and flight offers that appear in "Airline Destinations" and "Airline Offers."
-
-Be concise and interactive. Ask clarifying questions (e.g., about travel dates or budget) before listing final offers. 
-User Profile:
-  Name: ${userName}
-  Budget (approx): $${profileData?.user?.averagePNRValue || 'N/A'}
-  Segment: ${profileData?.segmentData?.profile || 'Unknown'}
-
-Airline Destinations (short summary):
-${summarizedDestinations}
-
-Airline Offers (short summary):
-${summarizedOffers}
-
-Please keep your conversation short, mention the user's name when appropriate, 
-and only display final offers once enough information is gathered. 
-      `;
-
-      // Initialize the conversation
-      conversationHistory = [
-        { role: 'system', content: systemMessage }
-      ];
-    }
-
-    // ----------------------------------
-    // 2) Event Listeners / Form Handling
-    // ----------------------------------
-    inspireForm.addEventListener('submit', startConversation);
-    letsGoButton.addEventListener('click', startConversation);
-    sendButton.addEventListener('click', handleUserMessage);
-
-    // If user presses Enter in the "first input" field
-    inspireInput.addEventListener('keypress', function (e) {
+    let userMessageCount = 0;   // We'll allow 4 total user messages
+  
+    // We'll store the user's chosen season (summer, winter, etc.) if detected
+    let userSelectedSeason = 'flexible';
+  
+    // OpenAI config
+    const OPENAI_API_KEY = '';
+    const OPENAI_API_URL = '';
+  
+    // ================================
+    // 1) Event Listeners
+    // ================================
+    // If user presses Enter in the first input
+    inspireFirstInput.addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
         e.preventDefault();
-        startConversation(e);
+        startConversation();
       }
     });
-
-    // If user presses Enter in the "inspiration-user-input" field (inside modal)
+  
+    // If user *clicks* the "Let’s go" button in the form (type="button"), 
+    // the modal opens via data-bs-toggle="modal", so we just start the conversation:
+    inspireForm.addEventListener('submit', function (e) {
+      // In case there's a submit event - we prevent form submission
+      e.preventDefault();
+    });
+    document.querySelector('#inspire-form button').addEventListener('click', startConversation);
+    // Inside the modal: user can press Enter or click "Send" (#send-inspiration-input)
+    sendButton.addEventListener('click', handleModalUserMessage);
     userInputField.addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
-        handleUserMessage();
+        e.preventDefault();
+        handleModalUserMessage();
       }
     });
-
-    // This function triggers when the user first interacts with the form
-    async function startConversation(event) {
-      event.preventDefault();
-      const userInput = inspireInput.value.trim();
-
-      if (userInput) {
-        // Setup system message + data
-        await initializeConversationHistory();
-        
-        // Add the user's prompt to the conversation
-        conversationHistory.push({ role: 'user', content: userInput });
-        displayMessage('user', userInput);
-
-        // Show the modal
-        askAiModal.show();
-
-        // Start AI response
-        getAIResponse(userInput);
-
-        // Clear the form input
-        inspireInput.value = '';
+  
+    // ================================
+    // 2) Start the Conversation
+    // ================================
+    async function startConversation() {
+      const userText = inspireFirstInput.value.trim();
+      if (!userText) return;
+  
+      // Re-initialize the conversation (system prompt)
+      await initializeConversationHistory();
+  
+      // Push the first user message
+      conversationHistory.push({ role: 'user', content: userText });
+      displayMessage('user', userText);
+      userMessageCount++;
+  
+      // Clear the input
+      inspireFirstInput.value = '';
+  
+      // Call the AI for a response
+      getAIResponse(userText);
+    }
+  
+    // ================================
+    // 3) Handle Messages in the Modal
+    // ================================
+    function handleModalUserMessage() {
+      const userText = userInputField.value.trim();
+      if (!userText) return;
+  
+      // Add user's message
+      conversationHistory.push({ role: 'user', content: userText });
+      displayMessage('user', userText);
+      userMessageCount++;
+      userInputField.value = '';
+  
+      // Attempt to detect season keywords in user’s text
+      detectSeason(userText);
+  
+      // If we've reached 4 total user messages, skip AI and show final offers
+      if (userMessageCount >= 4) {
+        displayMessage('assistant', "<em>Great! I have enough info to show you final offers.</em>");
+        showFinalOffers();
+      } else {
+        // Otherwise, continue the chat
+        getAIResponse(userText);
       }
     }
-
-    // ----------------------------------
-    // 3) Chat Flow (subsequent messages)
-    // ----------------------------------
-    function handleUserMessage() {
-      const userInput = userInputField.value.trim();
-      if (!userInput) return;
-
-      // Push user's message and display it
-      conversationHistory.push({ role: 'user', content: userInput });
-      displayMessage('user', userInput);
-
-      // Clear the field
-      userInputField.value = '';
-
-      // Send to AI
-      getAIResponse(userInput);
+  
+    // ================================
+    // 4) System Prompt & Conversation Reset
+    // ================================
+    async function initializeConversationHistory() {
+      // Grab user profile from localStorage
+      const userProfile = getUserProfile();
+      const nearestAirport = getNearestAirport();
+      const name = userProfile?.name || 'Guest';
+      const budget = userProfile?.averagePNRValue || 1500;
+  
+      // Optionally summarize some destinations for the system prompt
+      const destinationsData = await fetchDestinationsData();
+      const shortList = destinationsData.slice(0,5).map(d => d.city_name).join(', ');
+  
+      // System message
+      const systemMessage = `
+  You are a helpful travel assistant. 
+  User: ${name}, approximate budget $${budget}, nearest airport: ${nearestAirport?.name || '???'}.
+  Ask up to 4 user messages total, then the front end will produce final offers.
+  Potential destinations: ${shortList}.
+      `;
+      conversationHistory = [{ role: 'system', content: systemMessage }];
+      userMessageCount = 0;
+      userSelectedSeason = 'flexible';
     }
-
-    // Send entire conversation to OpenAI
-    async function getAIResponse(userQuery, retries = 3, delayTime = 2000) {
+  
+    // ================================
+    // 5) Fetch AI Response
+    // ================================
+    async function getAIResponse(userText, retries = 3, delayTime = 1000) {
       for (let i = 0; i < retries; i++) {
         try {
-          // Optional small delay
           await delay(delayTime);
-
+  
           const response = await fetch(OPENAI_API_URL, {
             method: 'POST',
             headers: {
@@ -137,99 +135,202 @@ and only display final offers once enough information is gathered.
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              model: 'gpt-4', // or your deployment name
+              model: 'gpt-4o-mini',
               messages: conversationHistory,
               max_tokens: 300,
               temperature: 0.9
             })
           });
-
+  
           const data = await response.json();
-          const aiResponse = data.choices?.[0]?.message?.content;
-
-          if (!aiResponse) {
+          const aiText = data?.choices?.[0]?.message?.content;
+          if (!aiText) {
             displayMessage('assistant', "I'm still thinking... please try again.");
             return;
           }
-
-          // Save AI response and display
-          conversationHistory.push({ role: 'assistant', content: aiResponse });
-          displayMessage('assistant', aiResponse);
-
-          break; // no need to retry if successful
-        } catch (error) {
-          console.error('Error fetching AI response:', error);
+  
+          conversationHistory.push({ role: 'assistant', content: aiText });
+          displayMessage('assistant', aiText);
+  
+          break;
+        } catch (err) {
+          console.error('Error calling AI:', err);
           if (i < retries - 1) {
-            console.warn(`Retrying... (attempt ${i + 2} of ${retries})`);
+            console.warn(`Retrying AI call (attempt ${i+2})...`);
           } else {
-            displayMessage('assistant', "Oops! Something went wrong. Please try again.");
+            displayMessage('assistant', "Sorry, something went wrong. Please try again later.");
           }
         }
       }
     }
-
-    // ----------------------------------
-    // 4) Utility Functions
-    // ----------------------------------
-    function displayMessage(sender, message) {
-      const messageElement = document.createElement('div');
-      messageElement.className = `chat-message ${sender}`;
-      messageElement.innerHTML = `
-          <div class="message-content">${message}</div>
+  
+    // ================================
+    // 6) Show Final 3 Offers
+    // ================================
+    async function showFinalOffers() {
+      const userProfile = getUserProfile();
+      const nearest = getNearestAirport();
+  
+      // Fetch the full destinations data
+      const allDests = await fetchDestinationsData();
+      if (!allDests.length) {
+        displayMessage('assistant', "No destinations found in data!");
+        return;
+      }
+  
+      // Shuffle & pick 3
+      const finalThree = shuffleArray(allDests).slice(0,3);
+  
+      // Titles
+      const titles = ["Within Budget", "Surprise", "Premium"];
+      // Generate date range from userSelectedSeason
+      const dateRange = generateRoundTripDates(userSelectedSeason);
+  
+      finalThree.forEach((dest, idx) => {
+        let multiplier = 1;
+        if (idx === 1) multiplier = 1.2;  // surprise
+        if (idx === 2) multiplier = 1.5;  // premium
+  
+        const base = userProfile.averagePNRValue || 1500;
+        const fromPrice = Math.round(base * multiplier);
+  
+        // Build offer data
+        const offerCardData = {
+          title: titles[idx],
+          image: dest.city_img,
+          cityName: dest.city_name,
+          origin: `${nearest.name} (${nearest.iata_code})`,
+          destination: `${dest.city_airport || '???'}`,
+          dates: `${dateRange.start} → ${dateRange.end}`,
+          activities: (dest.city_poi || '').split(',').map(a => a.trim()),
+          fromPrice: `$${fromPrice}`
+        };
+  
+        // Display the card in the chat
+        displayOfferCard(offerCardData, idx);
+      });
+    }
+  
+    // Display the final offer card in chat
+    function displayOfferCard(data, idx) {
+      const html = `
+        <div class="offer-card">
+          <h5>Offer #${idx+1}: ${data.title}</h5>
+          <img src="${data.image}" alt="Destination" style="max-width:100%; border-radius:3px;">
+          <p><strong>Destination:</strong> ${data.cityName}</p>
+          <p><strong>Route:</strong> ${data.origin} → ${data.destination}</p>
+          <p><strong>Round Trip Dates:</strong> ${data.dates}</p>
+          <p><strong>Activities:</strong> ${data.activities.join(', ') || 'None'}</p>
+          <p><strong>From Price:</strong> ${data.fromPrice}</p>
+          <div class="offer-card-buttons" style="margin-top:10px;">
+            <button onclick="saveOfferForLater(${idx})">Save</button>
+            <button onclick="shareOffer(${idx})">Share</button>
+            <button onclick="bookNow(${idx})">Book</button>
+          </div>
+        </div>
       `;
-      aiModalChatContainer.appendChild(messageElement);
+      displayMessage('assistant', html);
+    }
+  
+    // ================================
+    // 7) Season Detection + Date Generation
+    // ================================
+    function detectSeason(text) {
+      const lower = text.toLowerCase();
+      if (lower.includes('summer') || lower.includes('july') || lower.includes('august')) {
+        userSelectedSeason = 'summer';
+      } else if (lower.includes('winter') || lower.includes('december') || lower.includes('january') || lower.includes('february')) {
+        userSelectedSeason = 'winter';
+      }
+    }
+  
+    function generateRoundTripDates(season) {
+      if (season === 'summer') {
+        return { start: '2025-07-10', end: '2025-07-20' };
+      } else if (season === 'winter') {
+        return { start: '2025-01-15', end: '2025-01-25' };
+      }
+      // fallback
+      return { start: '2025-06-01', end: '2025-06-10' };
+    }
+  
+    // ================================
+    // 8) Utility
+    // ================================
+    function displayMessage(role, text) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `chat-message ${role}`;
+      msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
+      aiModalChatContainer.appendChild(msgDiv);
       aiModalChatContainer.scrollTop = aiModalChatContainer.scrollHeight;
     }
-
+  
     function delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
-
-    // Fetch user profile from localStorage or use a default stub
-    function getUserProfile() {
-      // Adjust this as needed; the key might differ in real usage
-      return JSON.parse(localStorage.getItem('loggedInUser')) || {
-        user: { name: 'Guest', averagePNRValue: 1500 },
-        segmentData: { profile: 'family_traveler' }
-      };
+  
+    function shuffleArray(arr) {
+      const array = [...arr];
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     }
-
-    // Fetch airline destinations data
+  
+    // Stub for "Save", "Share", "Book" actions
+    window.saveOfferForLater = function(idx) {
+      alert(`Offer #${idx+1} saved for later!`);
+    };
+    window.shareOffer = function(idx) {
+      alert(`Offer #${idx+1} shared with friends!`);
+    };
+    window.bookNow = function(idx) {
+      alert(`Proceeding to booking for Offer #${idx+1}...`);
+    };
+  
+    // ================================
+    // 9) LocalStorage + Data
+    // ================================
+    function getUserProfile() {
+      /* 
+        localStorage key: "loggedInUser" => JSON like:
+        {
+          "name":"Jane", "averagePNRValue":1500, ...
+        }
+      */
+      const raw = localStorage.getItem('loggedInUser');
+      if (!raw) {
+        return {
+          name: "Guest",
+          averagePNRValue: 1500
+        };
+      }
+      return JSON.parse(raw);
+    }
+  
+    function getNearestAirport() {
+      /* 
+        localStorage key: "nearest_airport" => JSON like:
+        {
+          "name": "Nice Côte d'Azur Airport",
+          "iata_code": "NCE"
+        }
+      */
+      const raw = localStorage.getItem('nearest_airport');
+      if (!raw) {
+        return { name: "Nice Côte d'Azur Airport", iata_code: "NCE" };
+      }
+      return JSON.parse(raw);
+    }
+  
     async function fetchDestinationsData() {
       try {
-        const res = await fetch('../business-data/destinations.json');
+        const res = await fetch('../business-data/airline-data/destinations.json');
         return await res.json();
       } catch (err) {
-        console.error('Failed to load destinations.json:', err);
+        console.error('Failed to fetch destinations.json:', err);
         return [];
       }
-    }
-
-    // Fetch airline offers data
-    async function fetchOffersData() {
-      try {
-        const res = await fetch('../business-data/offers.json');
-        return await res.json();
-      } catch (err) {
-        console.error('Failed to load offers.json:', err);
-        return [];
-      }
-    }
-
-    // Summarize for the system message (to keep it short)
-    function summarizeDestinations(data) {
-      if (!Array.isArray(data) || data.length === 0) return 'No destinations found.';
-      return data
-        .slice(0, 5)
-        .map(d => `${d.city} (${d.iata || 'N/A'})`)
-        .join(', ');
-    }
-
-    function summarizeOffers(data) {
-      if (!Array.isArray(data) || data.length === 0) return 'No offers found.';
-      return data
-        .slice(0, 3)
-        .map(o => `${o.offer_id}: ${o.title || 'Untitled Offer'}`)
-        .join('; ');
     }
   });

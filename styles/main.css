@@ -349,6 +349,23 @@ a:hover {
 #askAiModal .modal-dialog .modal-content .modal-body .toast-message.error {
   background-color: #ED254E;
 }
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-card-buttons {
+  margin-top: 10px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-card-buttons button {
+  margin-right: 10px;
+}
 #askAiModal .modal-dialog .modal-content .modal-footer {
   border: none;
 }

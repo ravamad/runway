@@ -380,6 +380,28 @@
                                 background-color: $error;
                             }
                         }
+                        // Offer card
+                        .offer-card {
+                            border: 1px solid #aaa;
+                            border-radius: 5px;
+                            padding: 10px;
+                            margin-bottom: 15px;
+                          
+                            img {
+                              max-width: 100%;
+                              height: auto;
+                              border-radius: 3px;
+                            }
+                          
+                            .offer-card-buttons {
+                              margin-top: 10px;
+                          
+                              button {
+                                margin-right: 10px;
+                              }
+                            }
+                          }
+
                     }
                     .modal-footer{
                         border: none;
