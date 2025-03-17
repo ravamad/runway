@@ -9,169 +9,227 @@ document.addEventListener('DOMContentLoaded', function () {
     const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal'));
 
     // OpenAI API Configuration
-    const OPENAI_API_KEY = '';
-    const OPENAI_API_URL = 'https://altitude.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview';
+    const OPENAI_API_KEY = ''; 
+    const OPENAI_API_URL = ''; 
 
+
+    // In-memory conversation
     let conversationHistory = [];
 
-    // Ensure profile data is correctly loaded into the first system message
-    function initializeConversationHistory() {
-        const profileData = JSON.parse(localStorage.getItem('loggedInUser')) || {};
-        const userName = profileData?.user?.name || 'Guest';
+    // ----------------------------------
+    // 1) Initialize Conversation History
+    // ----------------------------------
+    async function initializeConversationHistory(userInput = '') {
+      const profileData = getUserProfile();
+      const userName = profileData?.user?.name || 'Guest';
 
-        conversationHistory = [
-            { 
-                role: 'system', 
-                content: `
-Hi ${userName}! 😊 I'm here to inspire you with personalized travel ideas.
+      // Fetch the airline data (destinations & offers)
+      const destinationsData = await fetchDestinationsData();
+      const offersData = await fetchOffersData();
 
-I'll ask you a few questions to understand your preferences, and then I'll create three tailored offers:
+      // Create short summaries to keep token usage in check
+      const summarizedDestinations = summarizeDestinations(destinationsData);
+      const summarizedOffers = summarizeOffers(offersData);
 
-1️⃣ **Creative Adventure**: A unique destination or experience.
-2️⃣ **Perfect Match**: A well-balanced option based on your details.
-3️⃣ **Luxury Choice**: An upscale, high-end experience.
+      // This system message sets the scene:
+      const systemMessage = `
+You are a helpful travel assistant for an airline. The user is logged in and has a known profile. 
+They want short, dialog-driven inspiration for new trips. 
+You must only recommend destinations and flight offers that appear in "Airline Destinations" and "Airline Offers."
 
-For each, I'll include:
-- Destination
-- Image URL
-- Flight details & price
-- Hotel details & price
-- An extra service tailored to your profile.
+Be concise and interactive. Ask clarifying questions (e.g., about travel dates or budget) before listing final offers. 
+User Profile:
+  Name: ${userName}
+  Budget (approx): $${profileData?.user?.averagePNRValue || 'N/A'}
+  Segment: ${profileData?.segmentData?.profile || 'Unknown'}
 
-Let's get started! 🚀
-                `
-            }
-        ];
+Airline Destinations (short summary):
+${summarizedDestinations}
+
+Airline Offers (short summary):
+${summarizedOffers}
+
+Please keep your conversation short, mention the user's name when appropriate, 
+and only display final offers once enough information is gathered. 
+      `;
+
+      // Initialize the conversation
+      conversationHistory = [
+        { role: 'system', content: systemMessage }
+      ];
     }
 
-    // Event Listeners
+    // ----------------------------------
+    // 2) Event Listeners / Form Handling
+    // ----------------------------------
     inspireForm.addEventListener('submit', startConversation);
     letsGoButton.addEventListener('click', startConversation);
     sendButton.addEventListener('click', handleUserMessage);
 
-    // Open modal and add initial message when "Enter" is pressed
+    // If user presses Enter in the "first input" field
     inspireInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            const userInput = inspireInput.value.trim();
-            if (userInput) {
-                initializeConversationHistory();  // Ensure profile data is fresh
-                conversationHistory.push({ role: 'user', content: userInput });
-                displayMessage('user', userInput);  
-                askAiModal.show();  
-                getAIResponse(userInput, true);
-            }
-        }
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        startConversation(e);
+      }
     });
 
+    // If user presses Enter in the "inspiration-user-input" field (inside modal)
     userInputField.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            handleUserMessage();
-        }
+      if (e.key === 'Enter') {
+        handleUserMessage();
+      }
     });
 
-    function startConversation(event) {
-        event.preventDefault();
-        const userInput = inspireInput.value.trim();
-        if (userInput) {
-            initializeConversationHistory();  // Ensure profile data is fresh
-            conversationHistory.push({ role: 'user', content: userInput });
-            displayMessage('user', userInput);
-            askAiModal.show();
-            getAIResponse(userInput, true);
-        }
-    }
+    // This function triggers when the user first interacts with the form
+    async function startConversation(event) {
+      event.preventDefault();
+      const userInput = inspireInput.value.trim();
 
-    function handleUserMessage() {
-        const userInput = userInputField.value.trim();
-        if (!userInput) return;
-
+      if (userInput) {
+        // Setup system message + data
+        await initializeConversationHistory();
+        
+        // Add the user's prompt to the conversation
         conversationHistory.push({ role: 'user', content: userInput });
         displayMessage('user', userInput);
 
-        userInputField.value = ''; 
-        getAIResponse(userInput, false);
+        // Show the modal
+        askAiModal.show();
+
+        // Start AI response
+        getAIResponse(userInput);
+
+        // Clear the form input
+        inspireInput.value = '';
+      }
     }
 
-    async function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+    // ----------------------------------
+    // 3) Chat Flow (subsequent messages)
+    // ----------------------------------
+    function handleUserMessage() {
+      const userInput = userInputField.value.trim();
+      if (!userInput) return;
+
+      // Push user's message and display it
+      conversationHistory.push({ role: 'user', content: userInput });
+      displayMessage('user', userInput);
+
+      // Clear the field
+      userInputField.value = '';
+
+      // Send to AI
+      getAIResponse(userInput);
     }
 
-    async function getAIResponse(message, isFirstResponse = false, retries = 3, delayTime = 2000) {
-        const profileData = JSON.parse(localStorage.getItem('loggedInUser')) || {};
-        const userName = profileData?.user?.name || 'Guest';
+    // Send entire conversation to OpenAI
+    async function getAIResponse(userQuery, retries = 3, delayTime = 2000) {
+      for (let i = 0; i < retries; i++) {
+        try {
+          // Optional small delay
+          await delay(delayTime);
 
-        const destinationData = await fetch('../business-data/destinations.json')
-            .then(res => res.json())
-            .catch(() => []);
+          const response = await fetch(OPENAI_API_URL, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${OPENAI_API_KEY}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              model: 'gpt-4', // or your deployment name
+              messages: conversationHistory,
+              max_tokens: 300,
+              temperature: 0.9
+            })
+          });
 
-        const offerData = await fetch('../business-data/offers.json')
-            .then(res => res.json())
-            .catch(() => []);
+          const data = await response.json();
+          const aiResponse = data.choices?.[0]?.message?.content;
 
-        const fullPrompt = `
-User Info:
-- Name: ${userName}
-- Segment: ${profileData?.segmentData?.profile || 'Unknown'}
-- Budget: ${profileData?.user?.averagePNRValue || 'Not Specified'}
-- Preferred Device: ${profileData?.user?.preferredDevice || 'Any'}
+          if (!aiResponse) {
+            displayMessage('assistant', "I'm still thinking... please try again.");
+            return;
+          }
 
-Travel Preferences:
-- Popular Destinations: Paris, Tokyo, New York, Rome, Sydney, Dubai, etc.
-- Offer types: Unusual, Tailored, Premium
+          // Save AI response and display
+          conversationHistory.push({ role: 'assistant', content: aiResponse });
+          displayMessage('assistant', aiResponse);
 
-Question: ${message}
-        `;
-
-        for (let i = 0; i < retries; i++) {
-            try {
-                await delay(delayTime);
-
-                const response = await fetch(OPENAI_API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        model: 'gpt-4o-mini',
-                        messages: conversationHistory.concat({ role: 'user', content: fullPrompt }),
-                        max_tokens: 250
-                    })
-                });
-
-                const data = await response.json();
-                const aiResponse = data.choices && data.choices[0]?.message?.content;
-
-                if (!aiResponse) {
-                    displayMessage('assistant', "I'm still thinking... please try again in a moment.");
-                    return;
-                }
-
-                conversationHistory.push({ role: 'assistant', content: aiResponse });
-                displayMessage('assistant', aiResponse);
-
-                break;
-
-            } catch (error) {
-                if (error.response?.status === 429 && i < retries - 1) {
-                    console.warn(`Rate limit hit. Retrying in ${delayTime / 1000} seconds...`);
-                } else {
-                    console.error('Error fetching AI response:', error);
-                    displayMessage('assistant', "Oops! Something went wrong. Please try again.");
-                    break;
-                }
-            }
+          break; // no need to retry if successful
+        } catch (error) {
+          console.error('Error fetching AI response:', error);
+          if (i < retries - 1) {
+            console.warn(`Retrying... (attempt ${i + 2} of ${retries})`);
+          } else {
+            displayMessage('assistant', "Oops! Something went wrong. Please try again.");
+          }
         }
+      }
     }
 
+    // ----------------------------------
+    // 4) Utility Functions
+    // ----------------------------------
     function displayMessage(sender, message) {
-        const messageElement = document.createElement('div');
-        messageElement.className = `chat-message ${sender}`;
-        messageElement.innerHTML = `
-            <div class="message-content">${message}</div>
-        `;
-        aiModalChatContainer.appendChild(messageElement);
-        aiModalChatContainer.scrollTop = aiModalChatContainer.scrollHeight;
+      const messageElement = document.createElement('div');
+      messageElement.className = `chat-message ${sender}`;
+      messageElement.innerHTML = `
+          <div class="message-content">${message}</div>
+      `;
+      aiModalChatContainer.appendChild(messageElement);
+      aiModalChatContainer.scrollTop = aiModalChatContainer.scrollHeight;
     }
-});
+
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Fetch user profile from localStorage or use a default stub
+    function getUserProfile() {
+      // Adjust this as needed; the key might differ in real usage
+      return JSON.parse(localStorage.getItem('loggedInUser')) || {
+        user: { name: 'Guest', averagePNRValue: 1500 },
+        segmentData: { profile: 'family_traveler' }
+      };
+    }
+
+    // Fetch airline destinations data
+    async function fetchDestinationsData() {
+      try {
+        const res = await fetch('../business-data/destinations.json');
+        return await res.json();
+      } catch (err) {
+        console.error('Failed to load destinations.json:', err);
+        return [];
+      }
+    }
+
+    // Fetch airline offers data
+    async function fetchOffersData() {
+      try {
+        const res = await fetch('../business-data/offers.json');
+        return await res.json();
+      } catch (err) {
+        console.error('Failed to load offers.json:', err);
+        return [];
+      }
+    }
+
+    // Summarize for the system message (to keep it short)
+    function summarizeDestinations(data) {
+      if (!Array.isArray(data) || data.length === 0) return 'No destinations found.';
+      return data
+        .slice(0, 5)
+        .map(d => `${d.city} (${d.iata || 'N/A'})`)
+        .join(', ');
+    }
+
+    function summarizeOffers(data) {
+      if (!Array.isArray(data) || data.length === 0) return 'No offers found.';
+      return data
+        .slice(0, 3)
+        .map(o => `${o.offer_id}: ${o.title || 'Untitled Offer'}`)
+        .join('; ');
+    }
+  });

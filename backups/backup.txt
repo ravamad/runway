@@ -267,3 +267,263 @@ document.addEventListener("DOMContentLoaded", fetchData);
                                         <li><a class="no-dec" href="#">Explore</a></li>
                                         <li><a class="no-dec" href="#"><span class="loyalty-id"></span></a></li>
                                     </ul>
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const inspireForm = document.getElementById('inspire-form');
+    const inspireInput = document.getElementById('inspire-ai-first-input');
+    const aiModalChatContainer = document.getElementById('AI-modal-chat-container');
+    const sendButton = document.getElementById('send-inspiration-input');
+    const userInputField = document.getElementById('inspiration-user-input');
+
+    const letsGoButton = document.querySelector('#inspire-form button');
+    const askAiModal = new bootstrap.Modal(document.getElementById('askAiModal'));
+
+    // ----------------------------------
+    // OpenAI API Configuration
+    // ----------------------------------
+    const OPENAI_API_KEY = '2C0nX8buCT7PVN6XoIqSxJR6UBEF5Z9ByjHnrzYcZF9cFFm1KeBbJQQJ99BBAC5RqLJXJ3w3AAABACOGVIVO'; 
+    const OPENAI_API_URL = 'https://altitude.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview';
+
+    // Store conversation for the Chat Completion request
+    let conversationHistory = [];
+
+    // ----------------------------------
+    // 1) Initialize Conversation History
+    // ----------------------------------
+    async function initializeConversationHistory() {
+        const profileData = getUserProfile();
+        const userName = profileData?.name || 'Guest';
+
+        // Pre-fetch your JSON data to pass it to the system message
+        const destinationData = await fetchDestinationsData();
+        const offerData = await fetchOffersData();
+
+        // Convert JSON arrays/objects into shorter strings or partial data 
+        // if they are too big to feed in entirely.
+        const destinationsText = summarizeDestinations(destinationData); 
+        const offersText = summarizeOffers(offerData);
+
+        // Construct an improved system message: 
+        // - Provide the model with context about user’s profile, 
+        // - Summaries of available destinations/offers, 
+        // - And instructions on how to carry the conversation. 
+        const systemMessage = `
+You are a helpful travel assistant for an airline. The user is logged in and has a known profile. You must only recommend destinations that exist within the airline's network (see "Airline Destinations"). You also have a list of possible offers (see "Airline Offers"). 
+
+Aim for a concise, natural conversation. Ask clarifying questions about travel dates, budget flexibility, number of travelers, etc., before proposing specific offers. Use the user's name in conversation. The user is a family traveler and might want child-friendly destinations. They have a budget of approximately $${profileData.averagePNRValue}, but are open to going higher if you see good value.
+
+If the user explicitly asks for final recommendations (or it's clear they are ready), propose up to three relevant options from the "Airline Destinations," each with:
+
+- Destination Name (must be in the official list)
+- Short reason it suits the user
+- A suggested flight (with price if appropriate)
+- A suggested hotel (with approximate nightly cost if possible)
+- One personalized extra service from their profile preference
+
+Wrap up each offer in a concise 2-3 line summary.
+
+User Profile:
+Name: ${userName}
+Loyalty Tier: ${profileData.loyaltyTier}
+Age Range: ${profileData.age_range}
+Frequent Destinations: ${profileData.frequent_destinations?.join(', ') || 'N/A'}
+Preferred Services: ${profileData.preferred_services?.join(', ') || 'N/A'}
+Budget (approx per ticket): $${profileData.averagePNRValue || 'Not specified'}
+
+Airline Destinations (shortened):
+${destinationsText}
+
+Airline Offers (shortened):
+${offersText}
+
+Please keep your conversation short, friendly, and interactive. Do not dump all info at once—engage in dialogue and only propose final offers when you have enough information.
+
+---
+
+Now begin. 
+        `;
+
+        conversationHistory = [
+            {
+                role: 'system',
+                content: systemMessage
+            }
+        ];
+    }
+
+    // ----------------------------------
+    // 2) Event Listeners
+    // ----------------------------------
+    inspireForm.addEventListener('submit', startConversation);
+    letsGoButton.addEventListener('click', startConversation);
+    sendButton.addEventListener('click', handleUserMessage);
+
+    // Trigger modal and conversation on ENTER in the first input
+    inspireInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            startConversation(e);
+        }
+    });
+
+    // If user hits ENTER inside the modal input
+    userInputField.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            handleUserMessage();
+        }
+    });
+
+    // Start conversation when user presses the "Let's Go" button or enters text
+    async function startConversation(event) {
+        event.preventDefault();
+        const userInput = inspireInput.value.trim();
+        if (userInput) {
+            await initializeConversationHistory();  // reload the system message with fresh data
+            conversationHistory.push({ role: 'user', content: userInput });
+            displayMessage('user', userInput);
+            askAiModal.show();
+            getAIResponse(userInput);
+        }
+    }
+
+    // ----------------------------------
+    // 3) Core Chat Flow
+    // ----------------------------------
+    function handleUserMessage() {
+        const userInput = userInputField.value.trim();
+        if (!userInput) return;
+
+        conversationHistory.push({ role: 'user', content: userInput });
+        displayMessage('user', userInput);
+
+        userInputField.value = '';
+        getAIResponse(userInput);
+    }
+
+    async function getAIResponse(message, retries = 3, delayTime = 2000) {
+        // We already have conversationHistory, so we just send it.
+        for (let i = 0; i < retries; i++) {
+            try {
+                // Optionally: small delay to avoid hitting rate limits too fast
+                await delay(delayTime);
+
+                const response = await fetch(OPENAI_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-4-32k', // or your specific model/deployment
+                        messages: conversationHistory,
+                        max_tokens: 500,
+                        temperature: 0.9
+                    })
+                });
+
+                const data = await response.json();
+                const aiResponse = data.choices?.[0]?.message?.content;
+
+                if (!aiResponse) {
+                    displayMessage('assistant', "I'm still thinking... please try again in a moment.");
+                    return;
+                }
+
+                // Add the AI response to our conversation
+                conversationHistory.push({ role: 'assistant', content: aiResponse });
+
+                // Display in the UI
+                displayMessage('assistant', aiResponse);
+
+                break; // done
+            } catch (error) {
+                console.error('Error fetching AI response:', error);
+                if (i < retries - 1) {
+                    console.warn(`Retrying... attempt ${i + 2}`);
+                } else {
+                    displayMessage('assistant', "Oops! Something went wrong. Please try again later.");
+                }
+            }
+        }
+    }
+
+    // ----------------------------------
+    // 4) Utility / Helper Functions
+    // ----------------------------------
+    function displayMessage(sender, message) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `chat-message ${sender}`;
+        messageElement.innerHTML = `
+            <div class="message-content">${message}</div>
+        `;
+        aiModalChatContainer.appendChild(messageElement);
+        aiModalChatContainer.scrollTop = aiModalChatContainer.scrollHeight;
+    }
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Mock function to get user profile data from localStorage or anywhere
+    function getUserProfile() {
+        // Or real: JSON.parse(localStorage.getItem('loggedInUser'))?.user
+        // For demonstration, we return a sample:
+        return {
+            name: 'Jane',
+            loyaltyTier: 'Silver',
+            age_range: '30-50',
+            frequent_destinations: ['family resorts', 'theme parks'],
+            preferred_services: ['kids meals', 'bulkhead seating'],
+            averagePNRValue: 1500
+            // ... other fields ...
+        };
+    }
+
+    async function fetchDestinationsData() {
+        try {
+            const response = await fetch('../business-data/airline-data/destinations.json');
+            return response.json();
+        } catch (err) {
+            console.error('Failed to fetch destinations.json:', err);
+            return [];
+        }
+    }
+
+    async function fetchOffersData() {
+        try {
+            const response = await fetch('../business-data/airline-data/offers.json');
+            return response.json();
+        } catch (err) {
+            console.error('Failed to fetch offers.json:', err);
+            return [];
+        }
+    }
+
+    // Summaries to avoid feeding huge JSON directly 
+    function summarizeDestinations(data) {
+        // If data is large, just build a short bullet list or string 
+        // containing name, code, or main highlights
+        // Example:
+        return data
+            .slice(0, 15) // limit to 15 for demonstration
+            .map(dest => `- ${dest.city} (${dest.iata})`)
+            .join('\n');
+    }
+
+    function summarizeOffers(data) {
+        // Similarly limit
+        return data
+            .slice(0, 5)
+            .map(offer => `OfferID: ${offer.offer_id}, Dest: ${offer.destination}, Title: ${offer.title}`)
+            .join('\n');
+    }
+});

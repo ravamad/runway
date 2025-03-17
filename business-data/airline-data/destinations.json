@@ -1,0 +1,1287 @@
+[
+    {
+        "city_name": "New York City, USA",
+        "city_img": "https://images.unsplash.com/photo-1518235506717-e1ed3306a89b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "John F. Kennedy International Airport",
+        "airport_code": "JFK",
+        "city_description": "New York City is known for its iconic skyline, bustling streets, and cultural landmarks such as Times Square, Central Park, and the Statue of Liberty.",
+        "city_poi": "Times Square, Central Park, Statue of Liberty, Empire State Building, Broadway"
+    },
+    {
+        "city_name": "Los Angeles, USA",
+        "city_img": "https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Los Angeles International Airport",
+        "airport_code": "LAX",
+        "city_description": "Los Angeles is famous for its entertainment industry, beautiful beaches, and cultural attractions like Hollywood, Venice Beach, and the Getty Center.",
+        "city_poi": "Hollywood, Venice Beach, Getty Center, Griffith Observatory, Santa Monica Pier"
+    },
+    {
+        "city_name": "Chicago, USA",
+        "city_img": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "O'Hare International Airport",
+        "airport_code": "ORD",
+        "city_description": "Chicago is known for its impressive architecture, vibrant arts scene, and deep-dish pizza. Key attractions include Millennium Park, Navy Pier, and the Art Institute of Chicago.",
+        "city_poi": "Millennium Park, Navy Pier, Art Institute of Chicago, Willis Tower, Magnificent Mile"
+    },
+    {
+        "city_name": "Miami, USA",
+        "city_img": "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Miami International Airport",
+        "airport_code": "MIA",
+        "city_description": "Miami is known for its beautiful beaches, vibrant nightlife, and cultural diversity. Popular spots include South Beach, Little Havana, and the Art Deco Historic District.",
+        "city_poi": "South Beach, Little Havana, Art Deco Historic District, Wynwood Walls, Miami Seaquarium"
+    },
+    {
+        "city_name": "San Francisco, USA",
+        "city_img": "https://images.unsplash.com/photo-1500111709600-7761aa8216c7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "San Francisco International Airport",
+        "airport_code": "SFO",
+        "city_description": "San Francisco is famous for its iconic Golden Gate Bridge, historic cable cars, and diverse neighborhoods. Key attractions include Alcatraz Island, Fisherman's Wharf, and Chinatown.",
+        "city_poi": "Golden Gate Bridge, Alcatraz Island, Fisherman's Wharf, Chinatown, Golden Gate Park"
+    },
+    {
+        "city_name": "Las Vegas, USA",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "McCarran International Airport",
+        "airport_code": "LAS",
+        "city_description": "Las Vegas is known for its vibrant nightlife, world-class entertainment, and luxurious casinos. Popular attractions include the Las Vegas Strip, Bellagio Fountains, and Fremont Street Experience.",
+        "city_poi": "Las Vegas Strip, Bellagio Fountains, Fremont Street Experience, The Venetian, Red Rock Canyon"
+    },
+    {
+        "city_name": "Orlando, USA",
+        "city_img": "https://images.unsplash.com/photo-1618945372420-2470ece5277c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Orlando International Airport",
+        "city_description": "Orlando is famous for its theme parks, including Walt Disney World, Universal Studios, and SeaWorld. The city also offers a variety of shopping, dining, and entertainment options.",
+        "city_poi": "Walt Disney World, Universal Studios, SeaWorld, ICON Park, Kennedy Space Center"
+    },
+    {
+        "city_name": "Dallas, USA",
+        "city_img": "https://images.unsplash.com/photo-1621904878414-d4ca4756bd7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Dallas/Fort Worth International Airport",
+        "airport_code": "DFW",
+        "city_description": "Dallas is known for its rich history, cultural attractions, and vibrant arts scene. Key attractions include the Sixth Floor Museum, Dallas Arboretum, and Reunion Tower.",
+        "city_poi": "Sixth Floor Museum, Dallas Arboretum, Reunion Tower, Dallas Museum of Art, Klyde Warren Park"
+    },
+    {
+        "city_name": "Atlanta, USA",
+        "city_img": "https://images.unsplash.com/photo-1473042904451-00171c69419d?q=80&w=2099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Hartsfield-Jackson Atlanta International Airport",
+        "airport_code": "ATL",
+        "city_description": "Atlanta is known for its rich history, diverse culture, and southern hospitality. Popular attractions include the Georgia Aquarium, World of Coca-Cola, and Martin Luther King Jr. National Historical Park.",
+        "city_poi": "Georgia Aquarium, World of Coca-Cola, Martin Luther King Jr. National Historical Park, Atlanta Botanical Garden, Piedmont Park"
+    },
+    {
+        "city_name": "Denver, USA",
+        "city_img": "https://images.unsplash.com/photo-1709689702529-6fa1f343e108?q=80&w=1909&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Denver International Airport",
+        "airport_code": "DEN",
+        "city_description": "Denver is known for its stunning mountain views, outdoor activities, and vibrant arts scene. Key attractions include the Denver Art Museum, Red Rocks Amphitheatre, and Denver Botanic Gardens.",
+        "city_poi": "Denver Art Museum, Red Rocks Amphitheatre, Denver Botanic Gardens, Union Station, Coors Field"
+    },
+    {
+        "city_name": "Houston, USA",
+        "city_img": "https://images.unsplash.com/photo-1470082719408-b2843ab5c9ab?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "George Bush Intercontinental Airport",
+        "airport_code": "IAH",
+        "city_description": "Houston is known for its diverse culture, space exploration, and culinary scene. Popular attractions include the Space Center Houston, Houston Museum of Natural Science, and Houston Zoo.",
+        "city_poi": "Space Center Houston, Houston Museum of Natural Science, Houston Zoo, Museum of Fine Arts, Hermann Park"
+    },
+    {
+        "city_name": "Seattle, USA",
+        "city_img": "https://images.unsplash.com/photo-1589481169991-40ee02888551?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Seattle-Tacoma International Airport",
+        "airport_code": "SEA",
+        "city_description": "Seattle is known for its stunning waterfront, tech industry, and coffee culture. Key attractions include the Space Needle, Pike Place Market, and Chihuly Garden and Glass.",
+        "city_poi": "Space Needle, Pike Place Market, Chihuly Garden and Glass, Museum of Pop Culture, Seattle Aquarium"
+    },
+    {
+        "city_name": "Boston, USA",
+        "city_img": "https://images.unsplash.com/photo-1573524949339-b830334a31ee?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Logan International Airport",
+        "airport_code": "BOS",
+        "city_description": "Boston is known for its rich history, prestigious universities, and vibrant cultural scene. Popular attractions include the Freedom Trail, Fenway Park, and the Museum of Fine Arts.",
+        "city_poi": "Freedom Trail, Fenway Park, Museum of Fine Arts, Boston Common, New England Aquarium"
+    },
+    {
+        "city_name": "Washington, D.C., USA",
+        "city_img": "https://images.unsplash.com/photo-1520525003249-2b9cdda513bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Ronald Reagan Washington National Airport",
+        "airport_code": "DCA",
+        "city_description": "Washington, D.C. is the capital of the United States, known for its historic landmarks, museums, and political significance. Key attractions include the National Mall, White House, and Smithsonian museums.",
+        "city_poi": "National Mall, White House, Smithsonian museums, Lincoln Memorial, United States Capitol"
+    },
+    {
+        "city_name": "Toronto, Canada",
+        "city_img": "https://images.unsplash.com/photo-1507992781348-310259076fe0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Toronto Pearson International Airport",
+        "airport_code": "YYZ",
+        "city_description": "Toronto is known for its diverse culture, iconic skyline, and vibrant arts scene. Popular attractions include the CN Tower, Royal Ontario Museum, and Toronto Islands.",
+        "city_poi": "CN Tower, Royal Ontario Museum, Toronto Islands, Ripley's Aquarium of Canada, Distillery District"
+    },
+    {
+        "city_name": "Vancouver, Canada",
+        "city_img": "https://images.unsplash.com/photo-1559511260-66a654ae982a?q=80&w=2118&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Vancouver International Airport",
+        "airport_code": "YVR",
+        "city_description": "Vancouver is known for its stunning natural beauty, outdoor activities, and diverse culture. Key attractions include Stanley Park, Granville Island, and Capilano Suspension Bridge.",
+        "city_poi": "Stanley Park, Granville Island, Capilano Suspension Bridge, Vancouver Aquarium, Grouse Mountain"
+    },
+    {
+        "city_name": "Montreal, Canada",
+        "city_img": "https://images.unsplash.com/photo-1559682468-a6a29e7d9517?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Montréal-Pierre Elliott Trudeau International Airport",
+        "airport_code": "YUL",
+        "city_description": "Montreal is known for its rich history, vibrant arts scene, and French influence. Popular attractions include Old Montreal, Mount Royal, and the Montreal Museum of Fine Arts.",
+        "city_poi": "Old Montreal, Mount Royal, Montreal Museum of Fine Arts, Notre-Dame Basilica, Jean-Talon Market"
+    },
+    {
+        "city_name": "Calgary, Canada",
+        "city_img": "https://images.unsplash.com/photo-1526863336296-fac32d550655?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Calgary International Airport",
+        "airport_code": "YYC",
+        "city_description": "Calgary is known for its proximity to the Rocky Mountains, vibrant arts scene, and annual Calgary Stampede. Key attractions include the Calgary Tower, Glenbow Museum, and Prince's Island Park.",
+        "city_poi": "Calgary Tower, Glenbow Museum, Prince's Island Park, Calgary Zoo, Heritage Park Historical Village"
+    },
+    {
+        "city_name": "Mexico City, Mexico",
+        "city_img": "https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Mexico City International Airport",
+        "airport_code": "MEX",
+        "city_description": "Mexico City is known for its rich history, vibrant culture, and delicious cuisine. Popular attractions include the Zócalo, Chapultepec Park, and the National Museum of Anthropology.",
+        "city_poi": "Zócalo, Chapultepec Park, National Museum of Anthropology, Frida Kahlo Museum, Palacio de Bellas Artes"
+    },
+    {
+        "city_name": "Cancun, Mexico",
+        "city_img": "https://images.unsplash.com/photo-1612454882173-3d6c04b82131?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Cancun International Airport",
+        "airport_code": "CUN",
+        "city_description": "Cancun is known for its beautiful beaches, vibrant nightlife, and ancient Mayan ruins. Key attractions include the Hotel Zone, Chichen Itza, and Xcaret Park.",
+        "city_poi": "Hotel Zone, Chichen Itza, Xcaret Park, Isla Mujeres, Tulum"
+    },
+    {
+        "city_name": "Guadalajara, Mexico",
+        "city_img": "https://images.unsplash.com/photo-1708733968596-b5a5b1cdfdd0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Guadalajara International Airport",
+        "airport_code": "GDL",
+        "city_description": "Guadalajara is known for its rich cultural heritage, mariachi music, and tequila. Popular attractions include the Guadalajara Cathedral, Hospicio Cabañas, and Tlaquepaque.",
+        "city_poi": "Guadalajara Cathedral, Hospicio Cabañas, Tlaquepaque, Teatro Degollado, Plaza de Armas"
+    },
+    {
+        "city_name": "Portland, USA",
+        "city_img": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Portland International Airport",
+        "airport_code": "PDX",
+        "city_description": "Portland is known for its vibrant arts scene, eco-friendliness, and coffee culture. Key attractions include the Portland Art Museum, Washington Park, and Powell's City of Books.",
+        "city_poi": "Portland Art Museum, Washington Park, Powell's City of Books, International Rose Test Garden, Oregon Zoo"
+    },
+    {
+        "city_name": "Honolulu, USA",
+        "city_img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Daniel K. Inouye International Airport",
+        "airport_code": "HNL",
+        "city_description": "Honolulu is known for its stunning beaches, rich history, and vibrant culture. Popular attractions include Waikiki Beach, Pearl Harbor, and Diamond Head.",
+        "city_poi": "Waikiki Beach, Pearl Harbor, Diamond Head, Honolulu Museum of Art, Iolani Palace"
+    },
+    {
+        "city_name": "San Juan, Puerto Rico",
+        "city_img": "https://images.unsplash.com/photo-1582719478144-1d1e9b8f6c4b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Luis Muñoz Marín International Airport",
+        "airport_code": "SJU",
+        "city_description": "San Juan is known for its historic architecture, vibrant culture, and beautiful beaches. Key attractions include Old San Juan, El Yunque National Forest, and Castillo San Felipe del Morro.",
+        "city_poi": "Old San Juan, El Yunque National Forest, Castillo San Felipe del Morro, Condado Beach, La Fortaleza"
+    },
+    {
+        "city_name": "San Jose, Costa Rica",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Juan Santamaría International Airport",
+        "airport_code": "SJO",
+        "city_description": "San Jose is known for its rich history, vibrant culture, and beautiful landscapes. Popular attractions include the National Museum of Costa Rica, La Sabana Metropolitan Park, and the Pre-Columbian Gold Museum.",
+        "city_poi": "National Museum of Costa Rica, La Sabana Metropolitan Park, Pre-Columbian Gold Museum, National Theater of Costa Rica, Central Market"
+    },
+    {
+        "city_name": "Panama City, Panama",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Tocumen International Airport",
+        "airport_code": "PTY",
+        "city_description": "Panama City is known for its modern skyline, historic sites, and the Panama Canal. Key attractions include Casco Viejo, the Panama Canal, and the Biomuseo.",
+        "city_poi": "Casco Viejo, Panama Canal, Biomuseo, Metropolitan Natural Park, Amador Causeway"
+    },
+    {
+        "city_name": "Santo Domingo, Dominican Republic",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Las Américas International Airport",
+        "airport_code": "SDQ",
+        "city_description": "Santo Domingo is known for its rich history, vibrant culture, and beautiful beaches. Popular attractions include the Colonial Zone, Los Tres Ojos, and the National Palace.",
+        "city_poi": "Colonial Zone, Los Tres Ojos, National Palace, Alcázar de Colón, Malecón"
+    },
+    {
+        "city_name": "Punta Cana, Dominican Republic",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Punta Cana International Airport",
+        "airport_code": "PUJ",
+        "city_description": "Punta Cana is known for its stunning beaches, luxurious resorts, and vibrant nightlife. Key attractions include Bávaro Beach, Scape Park, and Hoyo Azul.",
+        "city_poi": "Bávaro Beach, Scape Park, Hoyo Azul, Indigenous Eyes Ecological Park, Macao Beach"
+    },
+    {
+        "city_name": "Nassau, Bahamas",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Lynden Pindling International Airport",
+        "airport_code": "NAS",
+        "city_description": "Nassau is known for its beautiful beaches, vibrant culture, and historic sites. Popular attractions include Cable Beach, the Queen's Staircase, and the Atlantis Paradise Island Resort.",
+        "city_poi": "Cable Beach, Queen's Staircase, Atlantis Paradise Island Resort, Nassau Straw Market, Fort Fincastle"
+    },
+    {
+        "city_name": "Havana, Cuba",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "José Martí International Airport",
+        "airport_code": "HAV",
+        "city_description": "Havana is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include Old Havana, the Malecón, and the Museum of the Revolution.",
+        "city_poi": "Old Havana, Malecón, Museum of the Revolution, El Capitolio, Plaza de la Revolución"
+    },
+    {
+        "city_name": "Bogota, Colombia",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "El Dorado International Airport",
+        "airport_code": "BOG",
+        "city_description": "Bogota is known for its rich history, vibrant culture, and beautiful landscapes. Popular attractions include Monserrate, the Gold Museum, and the Botero Museum.",
+        "city_poi": "Monserrate, Gold Museum, Botero Museum, Plaza Bolívar, La Candelaria"
+    },
+    {
+        "city_name": "Medellin, Colombia",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "José María Córdova International Airport",
+        "airport_code": "MDE",
+        "city_description": "Medellin is known for its pleasant climate, vibrant culture, and beautiful landscapes. Key attractions include the Medellin Metrocable, Plaza Botero, and the Museum of Antioquia.",
+        "city_poi": "Medellin Metrocable, Plaza Botero, Museum of Antioquia, Parque Arví, El Poblado"
+    },
+    {
+        "city_name": "Cartagena, Colombia",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Rafael Núñez International Airport",
+        "city_description": "Cartagena is known for its rich history, vibrant culture, and beautiful beaches. Popular attractions include the Walled City, Castillo San Felipe de Barajas, and Playa Blanca.",
+        "city_poi": "Walled City, Castillo San Felipe de Barajas, Playa Blanca, Rosario Islands, Getsemaní"
+    },
+    {
+        "city_name": "Lima, Peru",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Jorge Chávez International Airport",
+        "airport_code": "LIM",
+        "city_description": "Lima is known for its rich history, vibrant culture, and delicious cuisine. Key attractions include the Historic Centre of Lima, Miraflores, and the Larco Museum.",
+        "city_poi": "Historic Centre of Lima, Miraflores, Larco Museum, Barranco, Huaca Pucllana"
+    },
+    {
+        "city_name": "Quito, Ecuador",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Mariscal Sucre International Airport",
+        "airport_code": "UIO",
+        "city_description": "Quito is known for its rich history, vibrant culture, and beautiful landscapes. Popular attractions include the Historic Centre of Quito, the Middle of the World, and the Teleférico.",
+        "city_poi": "Historic Centre of Quito, Middle of the World, Teleférico, Basilica del Voto Nacional, La Ronda"
+    },
+    {
+        "city_name": "Guayaquil, Ecuador",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "José Joaquín de Olmedo International Airport",
+        "airport_code": "GYE",
+        "city_description": "Guayaquil is known for its rich history, vibrant culture, and beautiful landscapes. Key attractions include the Malecón 2000, Las Peñas, and the Parque Histórico.",
+        "city_poi": "Malecón 2000, Las Peñas, Parque Histórico, Cerro Santa Ana, Guayaquil Metropolitan Cathedral"
+    },
+    {
+        "city_name": "Buenos Aires, Argentina",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Ministro Pistarini International Airport",
+        "airport_code": "EZE",
+        "city_description": "Buenos Aires is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Obelisk, La Boca, and the Teatro Colón.",
+        "city_poi": "Obelisk, La Boca, Teatro Colón, Recoleta Cemetery, Plaza de Mayo"
+    },
+    {
+        "city_name": "Santiago, Chile",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Comodoro Arturo Merino Benítez International Airport",
+        "airport_code": "SCL",
+        "city_description": "Santiago is known for its rich history, vibrant culture, and beautiful landscapes. Key attractions include Cerro San Cristóbal, Plaza de Armas, and the Chilean National Museum of Fine Arts.",
+        "city_poi": "Cerro San Cristóbal, Plaza de Armas, Chilean National Museum of Fine Arts, La Moneda Palace, Bellavista"
+    },
+    {
+        "city_name": "Sao Paulo, Brazil",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "São Paulo/Guarulhos International Airport",
+        "airport_code": "GRU",
+        "city_description": "Sao Paulo is known for its rich history, vibrant culture, and beautiful landscapes. Popular attractions include Ibirapuera Park, the São Paulo Museum of Art, and the Municipal Market.",
+        "city_poi": "Ibirapuera Park, São Paulo Museum of Art, Municipal Market, Paulista Avenue, Pinacoteca do Estado"
+    },
+    {
+        "city_name": "Rio de Janeiro, Brazil",
+        "city_img": "https://images.unsplash.com/photo-1572276596233-6b1d2b1d1b1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Rio de Janeiro/Galeão International Airport",
+        "airport_code": "GIG",
+        "city_description": "Rio de Janeiro is known for its stunning beaches, vibrant culture, and beautiful landscapes. Key attractions include Christ the Redeemer, Copacabana Beach, and Sugarloaf Mountain.",
+        "city_poi": "Christ the Redeemer, Copacabana Beach, Sugarloaf Mountain, Ipanema Beach, Maracanã Stadium"
+    },
+    {
+        "city_name": "Brasilia, Brazil",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Brasília International Airport",
+        "airport_code": "BSB",
+        "city_description": "Brasilia is known for its modernist architecture, cultural institutions, and political significance. Key attractions include the National Congress, Cathedral of Brasília, and Itamaraty Palace.",
+        "city_poi": "National Congress, Cathedral of Brasília, Itamaraty Palace, Juscelino Kubitschek Memorial, Parque da Cidade"
+    },
+    {
+        "city_name": "Montevideo, Uruguay",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Carrasco International Airport",
+        "airport_code": "MVD",
+        "city_description": "Montevideo is known for its rich history, vibrant culture, and beautiful beaches. Popular attractions include Ciudad Vieja, Rambla of Montevideo, and Mercado del Puerto.",
+        "city_poi": "Ciudad Vieja, Rambla of Montevideo, Mercado del Puerto, Teatro Solís, Pocitos Beach"
+    },
+    {
+        "city_name": "London, United Kingdom",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Heathrow Airport",
+        "airport_code": "LHR",
+        "city_description": "London is known for its rich history, iconic landmarks, and vibrant cultural scene. Key attractions include the British Museum, Tower of London, and Buckingham Palace.",
+        "city_poi": "British Museum, Tower of London, Buckingham Palace, London Eye, Big Ben"
+    },
+    {
+        "city_name": "Paris, France",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Charles de Gaulle Airport",
+        "airport_code": "CDG",
+        "city_description": "Paris is known for its romantic ambiance, iconic landmarks, and rich cultural heritage. Popular attractions include the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.",
+        "city_poi": "Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, Champs-Élysées, Montmartre"
+    },
+    {
+        "city_name": "Rome, Italy",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Leonardo da Vinci–Fiumicino Airport",
+        "airport_code": "FCO",
+        "city_description": "Rome is known for its rich history, ancient ruins, and vibrant culture. Key attractions include the Colosseum, Vatican City, and the Roman Forum.",
+        "city_poi": "Colosseum, Vatican City, Roman Forum, Trevi Fountain, Pantheon"
+    },
+    {
+        "city_name": "Milan, Italy",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Malpensa Airport",
+        "airport_code": "MXP",
+        "city_description": "Milan is known for its fashion, design, and cultural heritage. Popular attractions include the Duomo di Milano, Sforza Castle, and the Last Supper by Leonardo da Vinci.",
+        "city_poi": "Duomo di Milano, Sforza Castle, The Last Supper, Galleria Vittorio Emanuele II, La Scala"
+    },
+    {
+        "city_name": "Venice, Italy",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Venice Marco Polo Airport",
+        "airport_code": "VCE",
+        "city_description": "Venice is known for its canals, historic architecture, and romantic ambiance. Key attractions include St. Mark's Basilica, the Grand Canal, and the Rialto Bridge.",
+        "city_poi": "St. Mark's Basilica, Grand Canal, Rialto Bridge, Doge's Palace, Piazza San Marco"
+    },
+    {
+        "city_name": "Florence, Italy",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Florence Airport, Peretola",
+        "airport_code": "FLR",
+        "city_description": "Florence is known for its rich history, art, and architecture. Popular attractions include the Uffizi Gallery, Florence Cathedral, and the Ponte Vecchio.",
+        "city_poi": "Uffizi Gallery, Florence Cathedral, Ponte Vecchio, Palazzo Vecchio, Boboli Gardens"
+    },
+    {
+        "city_name": "Madrid, Spain",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Adolfo Suárez Madrid–Barajas Airport",
+        "airport_code": "MAD",
+        "city_description": "Madrid is known for its vibrant culture, historic landmarks, and lively nightlife. Key attractions include the Royal Palace, Prado Museum, and Plaza Mayor.",
+        "city_poi": "Royal Palace, Prado Museum, Plaza Mayor, Retiro Park, Gran Vía"
+    },
+    {
+        "city_name": "Barcelona, Spain",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Barcelona–El Prat Airport",
+        "airport_code": "BCN",
+        "city_description": "Barcelona is known for its unique architecture, vibrant culture, and beautiful beaches. Popular attractions include the Sagrada Família, Park Güell, and La Rambla.",
+        "city_poi": "Sagrada Família, Park Güell, La Rambla, Casa Batlló, Gothic Quarter"
+    },
+    {
+        "city_name": "Valencia, Spain",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Valencia Airport",
+        "airport_code": "VLC",
+        "city_description": "Valencia is known for its futuristic architecture, vibrant culture, and beautiful beaches. Key attractions include the City of Arts and Sciences, Valencia Cathedral, and the Central Market.",
+        "city_poi": "City of Arts and Sciences, Valencia Cathedral, Central Market, Turia Gardens, La Lonja de la Seda"
+    },
+    {
+        "city_name": "Seville, Spain",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Seville Airport",
+        "airport_code": "SVQ",
+        "city_description": "Seville is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Seville Cathedral, Alcázar of Seville, and Plaza de España.",
+        "city_poi": "Seville Cathedral, Alcázar of Seville, Plaza de España, Metropol Parasol, Barrio Santa Cruz"
+    },
+    {
+        "city_name": "Lisbon, Portugal",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Humberto Delgado Airport",
+        "airport_code": "LIS",
+        "city_description": "Lisbon is known for its rich history, vibrant culture, and stunning views. Key attractions include Belém Tower, Jerónimos Monastery, and the Alfama district.",
+        "city_poi": "Belém Tower, Jerónimos Monastery, Alfama, São Jorge Castle, Praça do Comércio"
+    },
+    {
+        "city_name": "Porto, Portugal",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Francisco Sá Carneiro Airport",
+        "airport_code": "OPO",
+        "city_description": "Porto is known for its rich history, vibrant culture, and stunning views. Popular attractions include the Dom Luís I Bridge, Livraria Lello, and the Ribeira district.",
+        "city_poi": "Dom Luís I Bridge, Livraria Lello, Ribeira, Clérigos Tower, São Bento Station"
+    },
+    {
+        "city_name": "Berlin, Germany",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Berlin Brandenburg Airport",
+        "airport_code": "BER",
+        "city_description": "Berlin is known for its rich history, vibrant culture, and modern architecture. Key attractions include the Brandenburg Gate, Berlin Wall, and Museum Island.",
+        "city_poi": "Brandenburg Gate, Berlin Wall, Museum Island, Reichstag Building, Alexanderplatz"
+    },
+    {
+        "city_name": "Frankfurt, Germany",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Frankfurt Airport",
+        "airport_code": "FRA",
+        "city_description": "Frankfurt is known for its modern skyline, financial district, and cultural institutions. Popular attractions include the Römer, Städel Museum, and Palmengarten.",
+        "city_poi": "Römer, Städel Museum, Palmengarten, Goethe House, Main Tower"
+    },
+    {
+        "city_name": "Munich, Germany",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Munich Airport",
+        "airport_code": "MUC",
+        "city_description": "Munich is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include Marienplatz, Nymphenburg Palace, and the English Garden.",
+        "city_poi": "Marienplatz, Nymphenburg Palace, English Garden, Deutsches Museum, BMW Museum"
+    },
+    {
+        "city_name": "Hamburg, Germany",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Hamburg Airport",
+        "airport_code": "HAM",
+        "city_description": "Hamburg is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Elbphilharmonie, Miniatur Wunderland, and the Port of Hamburg.",
+        "city_poi": "Elbphilharmonie, Miniatur Wunderland, Port of Hamburg, St. Michael's Church, Speicherstadt"
+    },
+    {
+        "city_name": "Zurich, Switzerland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Zurich Airport",
+        "airport_code": "ZRH",
+        "city_description": "Zurich is known for its financial district, cultural institutions, and beautiful landscapes. Key attractions include Lake Zurich, the Old Town, and the Swiss National Museum.",
+        "city_poi": "Lake Zurich, Old Town, Swiss National Museum, Bahnhofstrasse, Uetliberg"
+    },
+    {
+        "city_name": "Geneva, Switzerland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Geneva Airport",
+        "airport_code": "GVA",
+        "city_description": "Geneva is known for its international organizations, cultural institutions, and beautiful landscapes. Popular attractions include Lake Geneva, Jet d'Eau, and the United Nations Office.",
+        "city_poi": "Lake Geneva, Jet d'Eau, United Nations Office, St. Pierre Cathedral, Parc des Bastions"
+    },
+    {
+        "city_name": "Vienna, Austria",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Vienna International Airport",
+        "airport_code": "VIE",
+        "city_description": "Vienna is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include Schönbrunn Palace, St. Stephen's Cathedral, and the Belvedere.",
+        "city_poi": "Schönbrunn Palace, St. Stephen's Cathedral, Belvedere, Hofburg Palace, Vienna State Opera"
+    },
+    {
+        "city_name": "Brussels, Belgium",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Brussels Airport",
+        "airport_code": "BRU",
+        "city_description": "Brussels is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include the Grand Place, Atomium, and Manneken Pis.",
+        "city_poi": "Grand Place, Atomium, Manneken Pis, Royal Palace of Brussels, Magritte Museum"
+    },
+    {
+        "city_name": "Amsterdam, Netherlands",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Amsterdam Airport Schiphol",
+        "airport_code": "AMS",
+        "city_description": "Amsterdam is known for its picturesque canals, vibrant culture, and historic sites. Popular attractions include the Anne Frank House, Van Gogh Museum, and Rijksmuseum.",
+        "city_poi": "Anne Frank House, Van Gogh Museum, Rijksmuseum, Vondelpark, Dam Square"
+    },
+    {
+        "city_name": "Prague, Czech Republic",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Václav Havel Airport Prague",
+        "airport_code": "PRG",
+        "city_description": "Prague is known for its stunning architecture, rich history, and vibrant culture. Key attractions include Prague Castle, Charles Bridge, and Old Town Square.",
+        "city_poi": "Prague Castle, Charles Bridge, Old Town Square, St. Vitus Cathedral, Astronomical Clock"
+    },
+    {
+        "city_name": "Budapest, Hungary",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Budapest Ferenc Liszt International Airport",
+        "airport_code": "BUD",
+        "city_description": "Budapest is known for its stunning architecture, thermal baths, and vibrant culture. Popular attractions include Buda Castle, Széchenyi Thermal Bath, and the Hungarian Parliament Building.",
+        "city_poi": "Buda Castle, Széchenyi Thermal Bath, Hungarian Parliament Building, Fisherman's Bastion, St. Stephen's Basilica"
+    },
+    {
+        "city_name": "Warsaw, Poland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Warsaw Chopin Airport",
+        "airport_code": "WAW",
+        "city_description": "Warsaw is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include the Royal Castle, Old Town, and the Warsaw Uprising Museum.",
+        "city_poi": "Royal Castle, Old Town, Warsaw Uprising Museum, Łazienki Park, Palace of Culture and Science"
+    },
+    {
+        "city_name": "Krakow, Poland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "John Paul II Kraków-Balice International Airport",
+        "airport_code": "KRK",
+        "city_description": "Krakow is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include Wawel Castle, Main Market Square, and the Wieliczka Salt Mine.",
+        "city_poi": "Wawel Castle, Main Market Square, Wieliczka Salt Mine, St. Mary's Basilica, Kazimierz"
+    },
+    {
+        "city_name": "Copenhagen, Denmark",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Copenhagen Airport",
+        "airport_code": "CPH",
+        "city_description": "Copenhagen is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include Tivoli Gardens, Nyhavn, and the Little Mermaid statue.",
+        "city_poi": "Tivoli Gardens, Nyhavn, Little Mermaid statue, Rosenborg Castle, Amalienborg Palace"
+    },
+    {
+        "city_name": "Stockholm, Sweden",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Stockholm Arlanda Airport",
+        "airport_code": "ARN",
+        "city_description": "Stockholm is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Vasa Museum, Gamla Stan, and the Royal Palace.",
+        "city_poi": "Vasa Museum, Gamla Stan, Royal Palace, Skansen, ABBA The Museum"
+    },
+    {
+        "city_name": "Oslo, Norway",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Oslo Airport",
+        "airport_code": "OSL",
+        "city_description": "Oslo is known for its rich history, vibrant culture, and beautiful landscapes. Key attractions include the Viking Ship Museum, Vigeland Park, and the Oslo Opera House.",
+        "city_poi": "Viking Ship Museum, Vigeland Park, Oslo Opera House, Akershus Fortress, Munch Museum"
+    },
+    {
+        "city_name": "Helsinki, Finland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Helsinki-Vantaa Airport",
+        "airport_code": "HEL",
+        "city_description": "Helsinki is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Helsinki Cathedral, Suomenlinna, and the Temppeliaukio Church.",
+        "city_poi": "Helsinki Cathedral, Suomenlinna, Temppeliaukio Church, Market Square, Uspenski Cathedral"
+    },
+    {
+        "city_name": "Reykjavik, Iceland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Keflavík International Airport",
+        "airport_code": "KEF",
+        "city_description": "Reykjavik is known for its stunning natural beauty, vibrant culture, and unique architecture. Key attractions include the Blue Lagoon, Hallgrímskirkja, and the Golden Circle.",
+        "city_poi": "Blue Lagoon, Hallgrímskirkja, Golden Circle, Harpa Concert Hall, Perlan"
+    },
+    {
+        "city_name": "Athens, Greece",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Athens International Airport",
+        "airport_code": "ATH",
+        "city_description": "Athens is known for its rich history, ancient ruins, and vibrant culture. Popular attractions include the Acropolis, Parthenon, and the National Archaeological Museum.",
+        "city_poi": "Acropolis, Parthenon, National Archaeological Museum, Plaka, Temple of Olympian Zeus"
+    },
+    {
+        "city_name": "Santorini, Greece",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Santorini (Thira) National Airport",
+        "airport_code": "JTR",
+        "city_description": "Santorini is known for its stunning sunsets, white-washed buildings, and beautiful beaches. Key attractions include Oia, Fira, and the Red Beach.",
+        "city_poi": "Oia, Fira, Red Beach, Akrotiri, Perissa Beach"
+    },
+    {
+        "city_name": "Mykonos, Greece",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Mykonos Island National Airport",
+        "airport_code": "JMK",
+        "city_description": "Mykonos is known for its vibrant nightlife, stunning beaches, and charming villages. Popular attractions include Mykonos Town, Paradise Beach, and the Windmills of Mykonos.",
+        "city_poi": "Mykonos Town, Paradise Beach, Windmills of Mykonos, Little Venice, Delos"
+    },
+    {
+        "city_name": "Dubrovnik, Croatia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Dubrovnik Airport",
+        "airport_code": "DBV",
+        "city_description": "Dubrovnik is known for its stunning medieval architecture, beautiful coastline, and vibrant culture. Key attractions include the Old Town, Dubrovnik Walls, and Lokrum Island.",
+        "city_poi": "Old Town, Dubrovnik Walls, Lokrum Island, Rector's Palace, Stradun"
+    },
+    {
+        "city_name": "Split, Croatia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Split Airport",
+        "airport_code": "SPU",
+        "city_description": "Split is known for its rich history, beautiful coastline, and vibrant culture. Popular attractions include Diocletian's Palace, Marjan Hill, and the Riva promenade.",
+        "city_poi": "Diocletian's Palace, Marjan Hill, Riva promenade, Cathedral of Saint Domnius, Bacvice Beach"
+    },
+    {
+        "city_name": "Belgrade, Serbia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Belgrade Nikola Tesla Airport",
+        "airport_code": "BEG",
+        "city_description": "Belgrade is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include the Belgrade Fortress, Knez Mihailova Street, and the Church of Saint Sava.",
+        "city_poi": "Belgrade Fortress, Knez Mihailova Street, Church of Saint Sava, Skadarlija, Republic Square"
+    },
+    {
+        "city_name": "Sofia, Bulgaria",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Sofia Airport",
+        "airport_code": "SOF",
+        "city_description": "Sofia is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include Alexander Nevsky Cathedral, Vitosha Boulevard, and the National Palace of Culture.",
+        "city_poi": "Alexander Nevsky Cathedral, Vitosha Boulevard, National Palace of Culture, Boyana Church, Sofia Central Mineral Baths"
+    },
+    {
+        "city_name": "Bucharest, Romania",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Henri Coandă International Airport",
+        "airport_code": "OTP",
+        "city_description": "Bucharest is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include the Palace of the Parliament, Romanian Athenaeum, and Herastrau Park.",
+        "city_poi": "Palace of the Parliament, Romanian Athenaeum, Herastrau Park, Old Town, Village Museum"
+    },
+    {
+        "city_name": "Istanbul, Turkey",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Istanbul Airport",
+        "airport_code": "IST",
+        "city_description": "Istanbul is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the Hagia Sophia, Blue Mosque, and Topkapi Palace.",
+        "city_poi": "Hagia Sophia, Blue Mosque, Topkapi Palace, Grand Bazaar, Bosphorus Strait"
+    },
+    {
+        "city_name": "Antalya, Turkey",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Antalya Airport",
+        "airport_code": "AYT",
+        "city_description": "Antalya is known for its stunning beaches, rich history, and vibrant culture. Key attractions include the Old Town (Kaleiçi), Düden Waterfalls, and the Antalya Museum.",
+        "city_poi": "Old Town (Kaleiçi), Düden Waterfalls, Antalya Museum, Konyaaltı Beach, Hadrian's Gate"
+    },
+    {
+        "city_name": "Bodrum, Turkey",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Milas-Bodrum Airport",
+        "airport_code": "BJV",
+        "city_description": "Bodrum is known for its stunning beaches, vibrant nightlife, and rich history. Key attractions include Bodrum Castle, the Mausoleum at Halicarnassus, and the Bodrum Marina.",
+        "city_poi": "Bodrum Castle, Mausoleum at Halicarnassus, Bodrum Marina, Bodrum Amphitheatre, Myndos Gate"
+    },
+    {
+        "city_name": "Moscow, Russia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Sheremetyevo International Airport",
+        "airport_code": "SVO",
+        "city_description": "Moscow is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the Red Square, Kremlin, and St. Basil's Cathedral.",
+        "city_poi": "Red Square, Kremlin, St. Basil's Cathedral, Bolshoi Theatre, Gorky Park"
+    },
+    {
+        "city_name": "Saint Petersburg, Russia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Pulkovo Airport",
+        "airport_code": "LED",
+        "city_description": "Saint Petersburg is known for its rich history, vibrant culture, and stunning architecture. Key attractions include the Hermitage Museum, Peterhof Palace, and the Church of the Savior on Spilled Blood.",
+        "city_poi": "Hermitage Museum, Peterhof Palace, Church of the Savior on Spilled Blood, Nevsky Prospect, Winter Palace"
+    },
+    {
+        "city_name": "Kyiv, Ukraine",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Boryspil International Airport",
+        "airport_code": "KBP",
+        "city_description": "Kyiv is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the Kyiv Pechersk Lavra, Saint Sophia's Cathedral, and the Independence Square.",
+        "city_poi": "Kyiv Pechersk Lavra, Saint Sophia's Cathedral, Independence Square, Golden Gate, Andriyivskyy Descent"
+    },
+    {
+        "city_name": "Tbilisi, Georgia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Tbilisi International Airport",
+        "airport_code": "TBS",
+        "city_description": "Tbilisi is known for its rich history, vibrant culture, and stunning architecture. Key attractions include the Narikala Fortress, Tbilisi Old Town, and the Holy Trinity Cathedral.",
+        "city_poi": "Narikala Fortress, Tbilisi Old Town, Holy Trinity Cathedral, Freedom Square, Mtatsminda Park"
+    },
+    {
+        "city_name": "Yerevan, Armenia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Zvartnots International Airport",
+        "airport_code": "EVN",
+        "city_description": "Yerevan is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the Republic Square, Cascade Complex, and the Armenian Genocide Museum.",
+        "city_poi": "Republic Square, Cascade Complex, Armenian Genocide Museum, Matenadaran, Yerevan Opera Theatre"
+    },
+    {
+        "city_name": "Baku, Azerbaijan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Heydar Aliyev International Airport",
+        "airport_code": "GYD",
+        "city_description": "Baku is known for its rich history, vibrant culture, and stunning architecture. Key attractions include the Flame Towers, Baku Old City, and the Heydar Aliyev Center.",
+        "city_poi": "Flame Towers, Baku Old City, Heydar Aliyev Center, Maiden Tower, Baku Boulevard"
+    },
+    {
+        "city_name": "Thessaloniki, Greece",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Thessaloniki Airport",
+        "airport_code": "SKG",
+        "city_description": "Thessaloniki is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the White Tower, Rotunda, and the Archaeological Museum of Thessaloniki.",
+        "city_poi": "White Tower, Rotunda, Archaeological Museum of Thessaloniki, Aristotelous Square, Ano Poli"
+    },
+    {
+        "city_name": "Malaga, Spain",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Málaga-Costa del Sol Airport",
+        "airport_code": "AGP",
+        "city_description": "Malaga is known for its beautiful beaches, rich history, and vibrant culture. Key attractions include the Alcazaba, Picasso Museum, and the Malaga Cathedral.",
+        "city_poi": "Alcazaba, Picasso Museum, Malaga Cathedral, Gibralfaro Castle, La Malagueta Beach"
+    },
+    {
+        "city_name": "Nice, France",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Nice Côte d'Azur Airport",
+        "airport_code": "NCE",
+        "city_description": "Nice is known for its stunning beaches, vibrant culture, and beautiful architecture. Popular attractions include the Promenade des Anglais, Castle Hill, and the Marc Chagall National Museum.",
+        "city_poi": "Promenade des Anglais, Castle Hill, Marc Chagall National Museum, Old Town, Nice Cathedral"
+    },
+    {
+        "city_name": "Edinburgh, United Kingdom",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Edinburgh Airport",
+        "airport_code": "EDI",
+        "city_description": "Edinburgh is known for its rich history, vibrant culture, and stunning architecture. Key attractions include Edinburgh Castle, the Royal Mile, and Arthur's Seat.",
+        "city_poi": "Edinburgh Castle, Royal Mile, Arthur's Seat, Holyrood Palace, National Museum of Scotland"
+    },
+    {
+        "city_name": "Dublin, Ireland",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Dublin Airport",
+        "airport_code": "DUB",
+        "city_description": "Dublin is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include Trinity College, Dublin Castle, and the Guinness Storehouse.",
+        "city_poi": "Trinity College, Dublin Castle, Guinness Storehouse, Temple Bar, St. Patrick's Cathedral"
+    },
+    {
+        "city_name": "Dubai, UAE",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Dubai International Airport",
+        "airport_code": "DXB",
+        "city_description": "Dubai is known for its modern architecture, luxury shopping, and vibrant nightlife. Key attractions include the Burj Khalifa, Dubai Mall, and the Palm Jumeirah.",
+        "city_poi": "Burj Khalifa, Dubai Mall, Palm Jumeirah, Dubai Marina, Burj Al Arab"
+    },
+    {
+        "city_name": "Abu Dhabi, UAE",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Abu Dhabi International Airport",
+        "airport_code": "AUH",
+        "city_description": "Abu Dhabi is known for its modern architecture, luxury shopping, and vibrant culture. Popular attractions include the Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, and the Corniche.",
+        "city_poi": "Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Corniche, Emirates Palace, Yas Island"
+    },
+    {
+        "city_name": "Doha, Qatar",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Hamad International Airport",
+        "airport_code": "DOH",
+        "city_description": "Doha is known for its modern architecture, luxury shopping, and vibrant culture. Key attractions include the Museum of Islamic Art, Souq Waqif, and the Pearl-Qatar.",
+        "city_poi": "Museum of Islamic Art, Souq Waqif, Pearl-Qatar, Katara Cultural Village, Aspire Park"
+    },
+    {
+        "city_name": "Riyadh, Saudi Arabia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "King Khalid International Airport",
+        "airport_code": "RUH",
+        "city_description": "Riyadh is known for its rich history, vibrant culture, and modern architecture. Popular attractions include the Kingdom Centre, National Museum, and Al Masmak Fortress.",
+        "city_poi": "Kingdom Centre, National Museum, Al Masmak Fortress, Diriyah, King Abdullah Park"
+    },
+    {
+        "city_name": "Jeddah, Saudi Arabia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "King Abdulaziz International Airport",
+        "airport_code": "JED",
+        "city_description": "Jeddah is known for its beautiful beaches, rich history, and vibrant culture. Key attractions include the Jeddah Corniche, Al-Balad, and the King Fahd Fountain.",
+        "city_poi": "Jeddah Corniche, Al-Balad, King Fahd Fountain, Red Sea Mall, Floating Mosque"
+    },
+    {
+        "city_name": "Tehran, Iran",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Tehran Imam Khomeini International Airport",
+        "airport_code": "IKA",
+        "city_description": "Tehran is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the Golestan Palace, Azadi Tower, and the National Museum of Iran.",
+        "city_poi": "Golestan Palace, Azadi Tower, National Museum of Iran, Milad Tower, Grand Bazaar"
+    },
+    {
+        "city_name": "Tel Aviv, Israel",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Ben Gurion Airport",
+        "airport_code": "TLV",
+        "city_description": "Tel Aviv is known for its beautiful beaches, vibrant nightlife, and rich history. Key attractions include the Tel Aviv Museum of Art, Jaffa Old City, and the Carmel Market.",
+        "city_poi": "Tel Aviv Museum of Art, Jaffa Old City, Carmel Market, Rothschild Boulevard, Yarkon Park"
+    },
+    {
+        "city_name": "Beirut, Lebanon",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Beirut-Rafic Hariri International Airport",
+        "airport_code": "BEY",
+        "city_description": "Beirut is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the National Museum of Beirut, Pigeon Rocks, and the Mohammad Al-Amin Mosque.",
+        "city_poi": "National Museum of Beirut, Pigeon Rocks, Mohammad Al-Amin Mosque, Zaitunay Bay, Martyrs' Square"
+    },
+    {
+        "city_name": "Amman, Jordan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Queen Alia International Airport",
+        "airport_code": "AMM",
+        "city_description": "Amman is known for its rich history, vibrant culture, and stunning architecture. Key attractions include the Amman Citadel, Roman Theatre, and the Jordan Museum.",
+        "city_poi": "Amman Citadel, Roman Theatre, Jordan Museum, Rainbow Street, King Abdullah I Mosque"
+    },
+    {
+        "city_name": "Cairo, Egypt",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Cairo International Airport",
+        "city_description": "Cairo is known for its rich history, ancient monuments, and vibrant culture. Key attractions include the Pyramids of Giza, the Egyptian Museum, and the Citadel of Cairo.",
+        "city_poi": "Pyramids of Giza, Egyptian Museum, Citadel of Cairo, Khan El Khalili, Al-Azhar Park"
+    },
+    {
+        "city_name": "New Delhi, India",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Indira Gandhi International Airport",
+        "airport_code": "DEL",
+        "city_description": "New Delhi is known for its rich history, vibrant culture, and stunning architecture. Popular attractions include the Red Fort, India Gate, and Qutub Minar.",
+        "city_poi": "Red Fort, India Gate, Qutub Minar, Humayun's Tomb, Lotus Temple"
+    },
+    {
+        "city_name": "Mumbai, India",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Chhatrapati Shivaji Maharaj International Airport",
+        "airport_code": "BOM",
+        "city_description": "Mumbai is known for its bustling streets, Bollywood film industry, and historic landmarks. Key attractions include the Gateway of India, Marine Drive, and Elephanta Caves.",
+        "city_poi": "Gateway of India, Marine Drive, Elephanta Caves, Chhatrapati Shivaji Maharaj Terminus, Haji Ali Dargah"
+    },
+    {
+        "city_name": "Bangalore, India",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Kempegowda International Airport",
+        "airport_code": "BLR",
+        "city_description": "Bangalore is known for its pleasant climate, tech industry, and vibrant culture. Popular attractions include Lalbagh Botanical Garden, Bangalore Palace, and Cubbon Park.",
+        "city_poi": "Lalbagh Botanical Garden, Bangalore Palace, Cubbon Park, Vidhana Soudha, ISKCON Temple"
+    },
+    {
+        "city_name": "Chennai, India",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Chennai International Airport",
+        "airport_code": "MAA",
+        "city_description": "Chennai is known for its rich history, vibrant culture, and beautiful beaches. Key attractions include Marina Beach, Fort St. George, and Kapaleeshwarar Temple.",
+        "city_poi": "Marina Beach, Fort St. George, Kapaleeshwarar Temple, San Thome Basilica, Government Museum"
+    },
+    {
+        "city_name": "Hyderabad, India",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Rajiv Gandhi International Airport",
+        "airport_code": "HYD",
+        "city_description": "Hyderabad is known for its rich history, vibrant culture, and delicious cuisine. Popular attractions include Charminar, Golconda Fort, and the Salar Jung Museum.",
+        "city_poi": "Charminar, Golconda Fort, Salar Jung Museum, Ramoji Film City, Hussain Sagar"
+    },
+    {
+        "city_name": "Kathmandu, Nepal",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Tribhuvan International Airport",
+        "airport_code": "KTM",
+        "city_description": "Kathmandu is known for its rich history, vibrant culture, and stunning temples. Key attractions include Swayambhunath, Boudhanath Stupa, and Pashupatinath Temple.",
+        "city_poi": "Swayambhunath, Boudhanath Stupa, Pashupatinath Temple, Durbar Square, Thamel"
+    },
+    {
+        "city_name": "Dhaka, Bangladesh",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Hazrat Shahjalal International Airport",
+        "airport_code": "DAC",
+        "city_description": "Dhaka is known for its rich history, vibrant culture, and bustling markets. Popular attractions include Lalbagh Fort, Ahsan Manzil, and the National Parliament House.",
+        "city_poi": "Lalbagh Fort, Ahsan Manzil, National Parliament House, Dhakeshwari Temple, Sadarghat"
+    },
+    {
+        "city_name": "Bangkok, Thailand",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Suvarnabhumi Airport",
+        "airport_code": "BKK",
+        "city_description": "Bangkok is known for its vibrant street life, ornate temples, and bustling markets. Key attractions include the Grand Palace, Wat Arun, and Chatuchak Market.",
+        "city_poi": "Grand Palace, Wat Arun, Chatuchak Market, Wat Phra Kaew, Khao San Road"
+    },
+    {
+        "city_name": "Phuket, Thailand",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Phuket International Airport",
+        "airport_code": "HKT",
+        "city_description": "Phuket is known for its stunning beaches, vibrant nightlife, and beautiful landscapes. Popular attractions include Patong Beach, Big Buddha, and Phi Phi Islands.",
+        "city_poi": "Patong Beach, Big Buddha, Phi Phi Islands, Phang Nga Bay, Old Phuket Town"
+    },
+    {
+        "city_name": "Chiang Mai, Thailand",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Chiang Mai International Airport",
+        "airport_code": "CNX",
+        "city_description": "Chiang Mai is known for its rich history, vibrant culture, and beautiful temples. Key attractions include Wat Phra That Doi Suthep, Chiang Mai Night Bazaar, and the Old City.",
+        "city_poi": "Wat Phra That Doi Suthep, Chiang Mai Night Bazaar, Old City, Elephant Nature Park, Wat Chedi Luang"
+    },
+    {
+        "city_name": "Singapore, Singapore",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Changi Airport",
+        "airport_code": "SIN",
+        "city_description": "Singapore is known for its modern architecture, vibrant culture, and beautiful gardens. Popular attractions include Marina Bay Sands, Gardens by the Bay, and Sentosa Island.",
+        "city_poi": "Marina Bay Sands, Gardens by the Bay, Sentosa Island, Merlion Park, Orchard Road"
+    },
+    {
+        "city_name": "Kuala Lumpur, Malaysia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Kuala Lumpur International Airport",
+        "airport_code": "KUL",
+        "city_description": "Kuala Lumpur is known for its modern skyline, vibrant culture, and delicious cuisine. Key attractions include the Petronas Twin Towers, Batu Caves, and Bukit Bintang.",
+        "city_poi": "Petronas Twin Towers, Batu Caves, Bukit Bintang, KL Tower, Merdeka Square"
+    },
+    {
+        "city_name": "Jakarta, Indonesia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Soekarno-Hatta International Airport",
+        "airport_code": "CGK",
+        "city_description": "Jakarta is known for its bustling streets, vibrant culture, and historic landmarks. Popular attractions include the National Monument, Istiqlal Mosque, and Taman Mini Indonesia Indah.",
+        "city_poi": "National Monument, Istiqlal Mosque, Taman Mini Indonesia Indah, Ancol Dreamland, Jakarta Cathedral"
+    },
+    {
+        "city_name": "Bali, Indonesia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Ngurah Rai International Airport",
+        "airport_code": "DPS",
+        "city_description": "Bali is known for its stunning beaches, vibrant culture, and beautiful temples. Key attractions include Uluwatu Temple, Ubud Monkey Forest, and Tanah Lot.",
+        "city_poi": "Uluwatu Temple, Ubud Monkey Forest, Tanah Lot, Seminyak Beach, Tegallalang Rice Terrace"
+    },
+    {
+        "city_name": "Hanoi, Vietnam",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Noi Bai International Airport",
+        "airport_code": "HAN",
+        "city_description": "Hanoi is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Old Quarter, Hoan Kiem Lake, and the Ho Chi Minh Mausoleum.",
+        "city_poi": "Old Quarter, Hoan Kiem Lake, Ho Chi Minh Mausoleum, Temple of Literature, One Pillar Pagoda"
+    },
+    {
+        "city_name": "Ho Chi Minh City, Vietnam",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Tan Son Nhat International Airport",
+        "airport_code": "SGN",
+        "city_description": "Ho Chi Minh City is known for its bustling streets, vibrant culture, and historic landmarks. Key attractions include the War Remnants Museum, Notre-Dame Cathedral Basilica of Saigon, and Ben Thanh Market.",
+        "city_poi": "War Remnants Museum, Notre-Dame Cathedral Basilica of Saigon, Ben Thanh Market, Independence Palace, Cu Chi Tunnels"
+    },
+    {
+        "city_name": "Manila, Philippines",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Ninoy Aquino International Airport",
+        "airport_code": "MNL",
+        "city_description": "Manila is known for its rich history, vibrant culture, and bustling markets. Popular attractions include Intramuros, Rizal Park, and the National Museum of the Philippines.",
+        "city_poi": "Intramuros, Rizal Park, National Museum of the Philippines, Manila Ocean Park, Fort Santiago"
+    },
+    {
+        "city_name": "Cebu, Philippines",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Mactan-Cebu International Airport",
+        "airport_code": "CEB",
+        "city_description": "Cebu is known for its beautiful beaches, vibrant culture, and historic landmarks. Key attractions include Magellan's Cross, Basilica del Santo Niño, and Kawasan Falls.",
+        "city_poi": "Magellan's Cross, Basilica del Santo Niño, Kawasan Falls, Cebu Taoist Temple, Fort San Pedro"
+    },
+    {
+        "city_name": "Taipei, Taiwan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Taiwan Taoyuan International Airport",
+        "airport_code": "TPE",
+        "city_description": "Taipei is known for its modern skyline, vibrant culture, and delicious street food. Popular attractions include Taipei 101, Shilin Night Market, and the National Palace Museum.",
+        "city_poi": "Taipei 101, Shilin Night Market, National Palace Museum, Chiang Kai-shek Memorial Hall, Longshan Temple"
+    },
+    {
+        "city_name": "Hong Kong, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Hong Kong International Airport",
+        "airport_code": "HKG",
+        "city_description": "Hong Kong is known for its stunning skyline, vibrant culture, and bustling markets. Key attractions include Victoria Peak, Hong Kong Disneyland, and the Star Ferry.",
+        "city_poi": "Victoria Peak, Hong Kong Disneyland, Star Ferry, Tian Tan Buddha, Temple Street Night Market"
+    },
+    {
+        "city_name": "Macau, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Macau International Airport",
+        "airport_code": "MFM",
+        "city_description": "Macau is known for its vibrant nightlife, luxury casinos, and rich history. Key attractions include the Ruins of St. Paul's, Senado Square, and the Macau Tower.",
+        "city_poi": "Ruins of St. Paul's, Senado Square, Macau Tower, A-Ma Temple, Venetian Macao"
+    },
+    {
+        "city_name": "Shanghai, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Shanghai Pudong International Airport",
+        "airport_code": "PVG",
+        "city_description": "Shanghai is known for its modern skyline, historic landmarks, and vibrant culture. Popular attractions include The Bund, Oriental Pearl Tower, and Yu Garden.",
+        "city_poi": "The Bund, Oriental Pearl Tower, Yu Garden, Nanjing Road, Shanghai Disneyland"
+    },
+    {
+        "city_name": "Beijing, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Beijing Capital International Airport",
+        "airport_code": "PEK",
+        "city_description": "Beijing is known for its rich history, ancient architecture, and vibrant culture. Key attractions include the Great Wall of China, Forbidden City, and Tiananmen Square.",
+        "city_poi": "Great Wall of China, Forbidden City, Tiananmen Square, Temple of Heaven, Summer Palace"
+    },
+    {
+        "city_name": "Guangzhou, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Guangzhou Baiyun International Airport",
+        "airport_code": "CAN",
+        "city_description": "Guangzhou is known for its modern architecture, vibrant culture, and delicious cuisine. Popular attractions include the Canton Tower, Chimelong Safari Park, and Shamian Island.",
+        "city_poi": "Canton Tower, Chimelong Safari Park, Shamian Island, Yuexiu Park, Temple of the Six Banyan Trees"
+    },
+    {
+        "city_name": "Shenzhen, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Shenzhen Bao'an International Airport",
+        "airport_code": "SZX",
+        "city_description": "Shenzhen is known for its modern skyline, vibrant culture, and theme parks. Key attractions include Window of the World, Splendid China Folk Village, and OCT East.",
+        "city_poi": "Window of the World, Splendid China Folk Village, OCT East, Shenzhen Museum, Lianhuashan Park"
+    },
+    {
+        "city_name": "Chengdu, China",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Chengdu Shuangliu International Airport",
+        "airport_code": "CTU",
+        "city_description": "Chengdu is known for its rich history, vibrant culture, and giant pandas. Popular attractions include the Chengdu Research Base of Giant Panda Breeding, Wuhou Shrine, and Jinli Ancient Street.",
+        "city_poi": "Chengdu Research Base of Giant Panda Breeding, Wuhou Shrine, Jinli Ancient Street, Mount Qingcheng, Dujiangyan Irrigation System"
+    },
+    {
+        "city_name": "Seoul, South Korea",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Incheon International Airport",
+        "airport_code": "ICN",
+        "city_description": "Seoul is known for its modern skyline, historic palaces, and vibrant culture. Key attractions include Gyeongbokgung Palace, N Seoul Tower, and Myeongdong Shopping Street.",
+        "city_poi": "Gyeongbokgung Palace, N Seoul Tower, Myeongdong Shopping Street, Bukchon Hanok Village, Changdeokgung Palace"
+    },
+    {
+        "city_name": "Tokyo, Japan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Narita International Airport",
+        "airport_code": "NRT",
+        "city_description": "Tokyo is known for its modern skyline, historic temples, and vibrant culture. Popular attractions include the Tokyo Tower, Senso-ji Temple, and Shibuya Crossing.",
+        "city_poi": "Tokyo Tower, Senso-ji Temple, Shibuya Crossing, Meiji Shrine, Tokyo Disneyland"
+    },
+    {
+        "city_name": "Osaka, Japan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Kansai International Airport",
+        "airport_code": "KIX",
+        "city_description": "Osaka is known for its modern architecture, vibrant nightlife, and delicious street food. Key attractions include Osaka Castle, Universal Studios Japan, and Dotonbori.",
+        "city_poi": "Osaka Castle, Universal Studios Japan, Dotonbori, Shinsaibashi, Umeda Sky Building"
+    },
+    {
+        "city_name": "Kyoto, Japan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Kansai International Airport",
+        "airport_code": "KIX",
+        "city_description": "Kyoto is known for its historic temples, traditional tea houses, and beautiful gardens. Popular attractions include Fushimi Inari Shrine, Kinkaku-ji, and Arashiyama Bamboo Grove.",
+        "city_poi": "Fushimi Inari Shrine, Kinkaku-ji, Arashiyama Bamboo Grove, Kiyomizu-dera, Nijo Castle"
+    },
+    {
+        "city_name": "Fukuoka, Japan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Fukuoka Airport",
+        "airport_code": "FUK",
+        "city_description": "Fukuoka is known for its modern architecture, vibrant culture, and delicious cuisine. Key attractions include Fukuoka Tower, Ohori Park, and the Fukuoka Art Museum.",
+        "city_poi": "Fukuoka Tower, Ohori Park, Fukuoka Art Museum, Canal City Hakata, Dazaifu Tenmangu"
+    },
+    {
+        "city_name": "Nagoya, Japan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Chubu Centrair International Airport",
+        "airport_code": "NGO",
+        "city_description": "Nagoya is known for its modern architecture, historic landmarks, and vibrant culture. Popular attractions include Nagoya Castle, Atsuta Shrine, and the Toyota Commemorative Museum of Industry and Technology.",
+        "city_poi": "Nagoya Castle, Atsuta Shrine, Toyota Commemorative Museum of Industry and Technology, Osu Kannon, Nagoya City Science Museum"
+    },
+    {
+        "city_name": "Sapporo, Japan",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "New Chitose Airport",
+        "airport_code": "CTS",
+        "city_description": "Sapporo is known for its winter sports, vibrant culture, and delicious cuisine. Key attractions include the Sapporo Snow Festival, Odori Park, and the Sapporo Beer Museum.",
+        "city_poi": "Sapporo Snow Festival, Odori Park, Sapporo Beer Museum, Mount Moiwa, Moerenuma Park"
+    },
+    {
+        "city_name": "Sydney, Australia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Sydney Kingsford Smith Airport",
+        "airport_code": "SYD",
+        "city_description": "Sydney is known for its iconic landmarks, beautiful beaches, and vibrant culture. Popular attractions include the Sydney Opera House, Sydney Harbour Bridge, and Bondi Beach.",
+        "city_poi": "Sydney Opera House, Sydney Harbour Bridge, Bondi Beach, Darling Harbour, Taronga Zoo"
+    },
+    {
+        "city_name": "Melbourne, Australia",
+        "city_img": "https://images.unsplash.com/photo-1514395462725-fb4566210144?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Melbourne Airport",
+        "airport_code": "MEL",
+        "city_description": "Melbourne is known for its vibrant arts scene, diverse culture, and beautiful gardens. Key attractions include Federation Square, Royal Botanic Gardens, and Queen Victoria Market.",
+        "city_poi": "Federation Square, Royal Botanic Gardens, Queen Victoria Market, Melbourne Zoo, National Gallery of Victoria"
+    },
+    {
+        "city_name": "Brisbane, Australia",
+        "city_img": "https://images.unsplash.com/photo-1452859030887-bb96ef08d051?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Brisbane Airport",
+        "airport_code": "BNE",
+        "city_description": "Brisbane is known for its vibrant culture, beautiful riverfront, and outdoor activities. Popular attractions include South Bank Parklands, Lone Pine Koala Sanctuary, and the Story Bridge.",
+        "city_poi": "South Bank Parklands, Lone Pine Koala Sanctuary, Story Bridge, Brisbane Botanic Gardens, Queensland Art Gallery"
+    },
+    {
+        "city_name": "Perth, Australia",
+        "city_img": "https://images.unsplash.com/photo-1524586410818-196d249560e4?q=80&w=1652&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Perth Airport",
+        "airport_code": "PER",
+        "city_description": "Perth is known for its stunning beaches, vibrant culture, and beautiful landscapes. Key attractions include Kings Park, Cottesloe Beach, and the Perth Mint.",
+        "city_poi": "Kings Park, Cottesloe Beach, Perth Mint, Fremantle Prison, Swan River"
+    },
+    {
+        "city_name": "Auckland, New Zealand",
+        "city_img": "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Auckland Airport",
+        "airport_code": "AKL",
+        "city_description": "Auckland is known for its stunning harbors, vibrant culture, and outdoor activities. Popular attractions include the Sky Tower, Auckland War Memorial Museum, and Waiheke Island.",
+        "city_poi": "Sky Tower, Auckland War Memorial Museum, Waiheke Island, Auckland Zoo, Viaduct Harbour"
+    },
+    {
+        "city_name": "Wellington, New Zealand",
+        "city_img": "https://images.unsplash.com/photo-1442483221814-59f7d8b22739?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Wellington International Airport",
+        "airport_code": "WLG",
+        "city_description": "Wellington is known for its vibrant arts scene, beautiful harbor, and rich history. Key attractions include the Museum of New Zealand Te Papa Tongarewa, Wellington Cable Car, and Zealandia.",
+        "city_poi": "Museum of New Zealand Te Papa Tongarewa, Wellington Cable Car, Zealandia, Mount Victoria, Wellington Botanic Garden"
+    },
+    {
+        "city_name": "Christchurch, New Zealand",
+        "city_img": "https://images.unsplash.com/photo-1704669324636-4b50020d0ce8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Christchurch International Airport",
+        "airport_code": "CHC",
+        "city_description": "Christchurch is known for its beautiful gardens, vibrant culture, and outdoor activities. Popular attractions include the Christchurch Botanic Gardens, Canterbury Museum, and the TranzAlpine Train.",
+        "city_poi": "Christchurch Botanic Gardens, Canterbury Museum, TranzAlpine Train, Hagley Park, Christchurch Gondola"
+    },
+    {
+        "city_name": "Suva, Fiji",
+        "city_img": "https://images.unsplash.com/photo-1552294784-0342648ac419?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Nausori International Airport",
+        "airport_code": "SUV",
+        "city_description": "Suva is known for its vibrant culture, beautiful landscapes, and rich history. Key attractions include the Fiji Museum, Thurston Gardens, and Colo-i-Suva Forest Park.",
+        "city_poi": "Fiji Museum, Thurston Gardens, Colo-i-Suva Forest Park, Suva Municipal Market, Albert Park"
+    },
+    {
+        "city_name": "Papeete, French Polynesia",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Faa'a International Airport",
+        "airport_code": "PPT",
+        "city_description": "Papeete is known for its vibrant culture, stunning landscapes, and beautiful beaches. Key attractions include the Papeete Market, Tahiti Lagoonarium, and the Museum of Tahiti and Her Islands.",
+        "city_poi": "Papeete Market, Tahiti Lagoonarium, Museum of Tahiti and Her Islands, Fautaua Waterfall, Paofai Gardens"
+    },
+    {
+        "city_name": "Noumea, New Caledonia",
+        "city_img": "https://images.unsplash.com/photo-1589668765615-625fdcf6c641?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "La Tontouta International Airport",
+        "airport_code": "NOU",
+        "city_description": "Noumea is known for its beautiful beaches, vibrant culture, and French influence. Popular attractions include Anse Vata Beach, Jean-Marie Tjibaou Cultural Centre, and the Aquarium des Lagons.",
+        "city_poi": "Anse Vata Beach, Jean-Marie Tjibaou Cultural Centre, Aquarium des Lagons, Noumea Cathedral, Place des Cocotiers"
+    },
+    {
+        "city_name": "Johannesburg, South Africa",
+        "city_img": "https://images.unsplash.com/photo-1654575998971-4f467c8a89c1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "O.R. Tambo International Airport",
+        "airport_code": "JNB",
+        "city_description": "Johannesburg is known for its rich history, vibrant culture, and modern skyline. Key attractions include the Apartheid Museum, Gold Reef City, and the Johannesburg Zoo.",
+        "city_poi": "Apartheid Museum, Gold Reef City, Johannesburg Zoo, Constitution Hill, Nelson Mandela Square"
+    },
+    {
+        "city_name": "Cape Town, South Africa",
+        "city_img": "https://images.unsplash.com/photo-1583207884889-d79abf0d0aa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Cape Town International Airport",
+        "airport_code": "CPT",
+        "city_description": "Cape Town is known for its stunning landscapes, vibrant culture, and historic landmarks. Popular attractions include Table Mountain, Robben Island, and the V&A Waterfront.",
+        "city_poi": "Table Mountain, Robben Island, V&A Waterfront, Kirstenbosch National Botanical Garden, Cape Point"
+    },
+    {
+        "city_name": "Nairobi, Kenya",
+        "city_img": "https://images.unsplash.com/photo-1635595358293-03620e36be48?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Jomo Kenyatta International Airport",
+        "airport_code": "NBO",
+        "city_description": "Nairobi is known for its rich history, vibrant culture, and wildlife. Key attractions include Nairobi National Park, David Sheldrick Wildlife Trust, and the Giraffe Centre.",
+        "city_poi": "Nairobi National Park, David Sheldrick Wildlife Trust, Giraffe Centre, Karen Blixen Museum, Nairobi National Museum"
+    },
+    {
+        "city_name": "Mombasa, Kenya",
+        "city_img": "https://images.unsplash.com/photo-1579005318686-5a86bbb3bf03?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Moi International Airport",
+        "airport_code": "MBA",
+        "city_description": "Mombasa is known for its beautiful beaches, rich history, and vibrant culture. Popular attractions include Fort Jesus, Haller Park, and the Mombasa Marine National Park.",
+        "city_poi": "Fort Jesus, Haller Park, Mombasa Marine National Park, Old Town, Nyali Beach"
+    },
+    {
+        "city_name": "Addis Ababa, Ethiopia",
+        "city_img": "https://images.unsplash.com/photo-1624314138470-5a2f24623f10?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Addis Ababa Bole International Airport",
+        "airport_code": "ADD",
+        "city_description": "Addis Ababa is known for its rich history, vibrant culture, and beautiful landscapes. Key attractions include the National Museum of Ethiopia, Holy Trinity Cathedral, and Mount Entoto.",
+        "city_poi": "National Museum of Ethiopia, Holy Trinity Cathedral, Mount Entoto, Meskel Square, Ethnological Museum"
+    },
+    {
+        "city_name": "Accra, Ghana",
+        "city_img": "https://images.unsplash.com/photo-1630386226447-af0a955c1009?q=80&w=1648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Kotoka International Airport",
+        "airport_code": "ACC",
+        "city_description": "Accra is known for its vibrant culture, rich history, and beautiful beaches. Popular attractions include the Kwame Nkrumah Memorial Park, Labadi Beach, and the W.E.B. Du Bois Center.",
+        "city_poi": "Kwame Nkrumah Memorial Park, Labadi Beach, W.E.B. Du Bois Center, Osu Castle, Makola Market"
+    },
+    {
+        "city_name": "Lagos, Nigeria",
+        "city_img": "https://images.unsplash.com/photo-1594538756542-8c88bda491c5?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Murtala Muhammed International Airport",
+        "airport_code": "LOS",
+        "city_description": "Lagos is known for its vibrant culture, bustling markets, and beautiful beaches. Key attractions include Lekki Conservation Centre, Nike Art Gallery, and Tarkwa Bay Beach.",
+        "city_poi": "Lekki Conservation Centre, Nike Art Gallery, Tarkwa Bay Beach, National Museum Lagos, Freedom Park"
+    },
+    {
+        "city_name": "Dakar, Senegal",
+        "city_img": "https://images.unsplash.com/photo-1721013244188-5c4f4593ee72?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Blaise Diagne International Airport",
+        "airport_code": "DSS",
+        "city_description": "Dakar is known for its vibrant culture, rich history, and beautiful beaches. Popular attractions include Goree Island, African Renaissance Monument, and the IFAN Museum of African Arts.",
+        "city_poi": "Goree Island, African Renaissance Monument, IFAN Museum of African Arts, Dakar Grand Mosque, Lake Retba"
+    },
+    {
+        "city_name": "Victoria, Seychelles",
+        "city_img": "https://images.unsplash.com/photo-1553829176-61484f865ac3?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Seychelles International Airport",
+        "airport_code": "SEZ",
+        "city_description": "Victoria is known for its stunning beaches, vibrant culture, and beautiful landscapes. Key attractions include the Seychelles National Botanical Gardens, Victoria Market, and Beau Vallon Beach.",
+        "city_poi": "Seychelles National Botanical Gardens, Victoria Market, Beau Vallon Beach, Morne Seychellois National Park, Sir Selwyn Selwyn-Clarke Market"
+    },
+    {
+        "city_name": "Zanzibar, Tanzania",
+        "city_img": "https://images.unsplash.com/photo-1549035092-33b2937b075a?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Abeid Amani Karume International Airport",
+        "airport_code": "ZNZ",
+        "city_description": "Zanzibar is known for its stunning beaches, rich history, and vibrant culture. Popular attractions include Stone Town, Jozani Forest, and Nungwi Beach.",
+        "city_poi": "Stone Town, Jozani Forest, Nungwi Beach, Prison Island, Forodhani Gardens"
+    },
+    {
+        "city_name": "Tunis, Tunisia",
+        "city_img": "https://images.unsplash.com/photo-1594495293394-d1073510bf22?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Tunis-Carthage International Airport",
+        "airport_code": "TUN",
+        "city_description": "Tunis is known for its rich history, vibrant culture, and beautiful architecture. Key attractions include the Medina of Tunis, Bardo National Museum, and Carthage.",
+        "city_poi": "Medina of Tunis, Bardo National Museum, Carthage, Sidi Bou Said, Zitouna Mosque"
+    },
+    {
+        "city_name": "Algiers, Algeria",
+        "city_img": "https://images.unsplash.com/photo-1652614706616-a49396a2ee29?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Houari Boumediene Airport",
+        "airport_code": "ALG",
+        "city_description": "Algiers is known for its rich history, vibrant culture, and beautiful architecture. Popular attractions include the Casbah of Algiers, Notre Dame d'Afrique, and the Martyrs' Memorial.",
+        "city_poi": "Casbah of Algiers, Notre Dame d'Afrique, Martyrs' Memorial, Jardin d'Essai, Ketchaoua Mosque"
+    },
+    {
+        "city_name": "Windhoek, Namibia",
+        "city_img": "https://images.unsplash.com/photo-1586100810957-e4a1fed8c645?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Hosea Kutako International Airport",
+        "airport_code": "WDH",
+        "city_description": "Windhoek is known for its rich history, vibrant culture, and beautiful landscapes. Key attractions include the Christuskirche, Independence Memorial Museum, and Daan Viljoen Game Reserve.",
+        "city_poi": "Christuskirche, Independence Memorial Museum, Daan Viljoen Game Reserve, National Botanic Garden of Namibia, Katutura Township"
+    },
+    {
+        "city_name": "Kigali, Rwanda",
+        "city_img": "https://images.unsplash.com/photo-1579518874869-1ad294d2596f?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "city_airport": "Kigali International Airport",
+        "airport_code": "KGL",
+        "city_description": "Kigali is known for its rich history, vibrant culture, and beautiful landscapes. Popular attractions include the Kigali Genocide Memorial, Inema Arts Centre, and Mount Kigali.",
+        "city_poi": "Kigali Genocide Memorial, Inema Arts Centre, Mount Kigali, Nyamirambo Women's Centre, Kimironko Market"
+    }
+]

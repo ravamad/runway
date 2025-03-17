@@ -334,10 +334,15 @@
                         border: none;
                     }
                     .modal-body{
+                        #AI-modal-chat-container{
+                            @media screen and (min-width: 1400px) {
+                                width: 70%;
+                                margin: 0rem auto;
+                            }
+                        }
                         .chat-message {
                             display: flex;
                             margin-bottom: 10px;
-
                             &.user {
                                 justify-content: flex-end;
                                 text-align: right;
