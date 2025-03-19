@@ -47,6 +47,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     // ================================
+    // 9) LocalStorage + Data
+    // ================================
+    function getUserProfile() {
+
+      const raw = localStorage.getItem('loggedInUser');
+      if (!raw) {
+        return {
+          name: "Guest",
+          averagePNRValue: 1500
+        };
+      }
+      return JSON.parse(raw);
+    }
+    
+    function getNearestAirport() {
+      const raw = localStorage.getItem('nearest_airport');
+      if (!raw) {
+        return { name: "Nice Côte d'Azur Airport", iata_code: "NCE" };
+      }
+      return JSON.parse(raw);
+    }
+  
+    async function fetchDestinationsData() {
+      try {
+        const res = await fetch('../business-data/airline-data/destinations.json');
+        return await res.json();
+      } catch (err) {
+        console.error('Failed to fetch destinations.json:', err);
+        return [];
+      }
+    }
+
+    // ================================
     // 2) Start the Conversation
     // ================================
     async function startConversation() {
@@ -110,9 +143,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // System message
       const systemMessage = `
-  You are a helpful travel assistant. 
-  User: ${name}, approximate budget $${budget}, nearest airport: ${nearestAirport?.name || '???'}.
-  Ask up to 4 user messages total, then the front end will produce final offers.
+  You are a helpful travel assistant, friendly and concise in your replies.
+  User: ${name} (very important), approximate budget $${budget}, nearest airport: ${nearestAirport?.name || '???'}.
+  Ask up to 4 user messages total, then the front end will produce final offersn that need to be relevant to user intent. Depending on the answers, capture the continent, the countries, the season, and the activities when mentioned.
   Potential destinations: ${shortList}.
       `;
       conversationHistory = [{ role: 'system', content: systemMessage }];
@@ -215,17 +248,32 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayOfferCard(data, idx) {
       const html = `
         <div class="offer-card">
-          <h5>Offer #${idx+1}: ${data.title}</h5>
-          <img src="${data.image}" alt="Destination" style="max-width:100%; border-radius:3px;">
-          <p><strong>Destination:</strong> ${data.cityName}</p>
-          <p><strong>Route:</strong> ${data.origin} → ${data.destination}</p>
-          <p><strong>Round Trip Dates:</strong> ${data.dates}</p>
-          <p><strong>Activities:</strong> ${data.activities.join(', ') || 'None'}</p>
-          <p><strong>From Price:</strong> ${data.fromPrice}</p>
-          <div class="offer-card-buttons" style="margin-top:10px;">
-            <button onclick="saveOfferForLater(${idx})">Save</button>
-            <button onclick="shareOffer(${idx})">Share</button>
-            <button onclick="bookNow(${idx})">Book</button>
+          <div class="offer-container">
+            <div class="offer-content">
+              <div class="offer-type">${data.title}</div>
+              <div class="offer-OnD">${data.origin} → ${data.destination}</div>
+              <div class="destination-title">${data.cityName}</div>
+              <div class="destination-description">${data.city_description}</div>
+              <div class="offer-details-container">
+                <div class="offer-details-content">
+                  <div class="trip-dates-container">
+                    <div class="trip-dates-content">${data.dates}</div>
+                  </div>
+                  <div class="trip-activities-container">
+                    <div class="trip-activities-content">${data.activities.join(', ')}</div>
+                  </div>
+                  <div class="offer-call-to-actions">
+                    <button onclick="saveOfferForLater(${idx})" class="primary-filled"><i class="ri-heart-add-fill"></i> Save</button>
+                    <button onclick="shareOffer(${idx})" class="primary-filled"> <i class="ri-share-forward-fill"></i> Share</button>
+                    <button onclick="bookNow(${idx})" class="primary-filled"><i class="ri-shopping-cart-fill"></i> Book</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="destination-image">
+              <div class="image-overlay"></div>
+              <img src="${data.image}" alt="Destination">
+            </div>
           </div>
         </div>
       `;
@@ -289,48 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
       alert(`Proceeding to booking for Offer #${idx+1}...`);
     };
   
-    // ================================
-    // 9) LocalStorage + Data
-    // ================================
-    function getUserProfile() {
-      /* 
-        localStorage key: "loggedInUser" => JSON like:
-        {
-          "name":"Jane", "averagePNRValue":1500, ...
-        }
-      */
-      const raw = localStorage.getItem('loggedInUser');
-      if (!raw) {
-        return {
-          name: "Guest",
-          averagePNRValue: 1500
-        };
-      }
-      return JSON.parse(raw);
-    }
-  
-    function getNearestAirport() {
-      /* 
-        localStorage key: "nearest_airport" => JSON like:
-        {
-          "name": "Nice Côte d'Azur Airport",
-          "iata_code": "NCE"
-        }
-      */
-      const raw = localStorage.getItem('nearest_airport');
-      if (!raw) {
-        return { name: "Nice Côte d'Azur Airport", iata_code: "NCE" };
-      }
-      return JSON.parse(raw);
-    }
-  
-    async function fetchDestinationsData() {
-      try {
-        const res = await fetch('../business-data/airline-data/destinations.json');
-        return await res.json();
-      } catch (err) {
-        console.error('Failed to fetch destinations.json:', err);
-        return [];
-      }
-    }
   });
+
+
+  

@@ -388,7 +388,7 @@
                         </div>
                     </div>
             <!-- ======================================== -->
-            <!-- MAIN (Best Deals, Stopover, Ancillary Services Carousel, Experience Carousel, Loyalty Banner) -->
+            <!-- MAIN (Best Deals, Stopover, Ancillary Services Carousel, Destination of the day, Loyalty Banner) -->
             <!-- ======================================== -->
                     <div class="section fw flex-column" id="main">
                         <!-- Deals -->
@@ -418,6 +418,33 @@
                                     <div class="banner-media-content">
                                         <div class="overlay"></div>
                                         <img src="" alt="">    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Moisaic component -->
+                        <div class="container mt-5" id="mosaic">
+                            <div class="row d-flex">
+                                <!-- Mosaic content will be injected here by mosaic.js -->
+                            </div>
+                        </div>
+                        <!-- Destination of the day -->
+                        <div class="container destination-container" id="destination-of-the-day">
+                            <div class="destination-content">
+                                <div class="destination-text">
+                                    <div class="chip">Daily inspiration digest</div>
+                                    <div class="destination-name" id="destination-name"></div>
+                                    <div class="destination-description" id="destination-description"></div>
+                                    <div class="destination-activities">
+                                        <div class="destination-activities-subtitle">What to do in</div>
+                                        <div class="destination-activities-list" id="destination-activities-list"></div>
+                                    </div>
+                                </div>
+                                <div class="destination-media">
+                                    <img src="" alt="" id="destination-image">
+                                    <div class="ctas">
+                                        <button class="primary-outlined" id="another-destination">Another one</button>
+                                        <button class="primary-filled" id="book-destination">Take me there</button>
                                     </div>
                                 </div>
                             </div>
@@ -581,7 +608,7 @@
     <script src="../services/business-config.js"></script>
     <script src="../services/languages.js"></script>
     <script src="../services/faqs.js"></script>
-    <script src="../services/chatbot.js"></script>
+    <script src="../services/chatbot_OAI.js"></script>
 
     <!-- Component services -->
     <script src="../services/menu.js"></script>
@@ -590,6 +617,8 @@
     <script src="../services/deals.js"></script>
     <script src="../services/rolling-info.js"></script>
     <script src="../services/banners.js"></script>
+    <script src="../services/mosaic.js"></script>
+    <script src="../services/destination_OTD.js"></script>
     <script src="../services/footer.js"></script>
 
     <!-- Personalization services -->

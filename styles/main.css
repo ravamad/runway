@@ -350,21 +350,157 @@ a:hover {
   background-color: #ED254E;
 }
 #askAiModal .modal-dialog .modal-content .modal-body .offer-card {
-  border: 1px solid #aaa;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26rem;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+  overflow: hidden;
+  width: 100%;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-type {
+  background-color: #3030ab;
+  color: #e4f5ff;
+  padding: 5px 10px;
   border-radius: 5px;
+  font-size: 0.9rem;
+  margin: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  width: fit-content;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-OnD {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  padding: 0rem 1.5rem;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .destination-title {
+  font-size: 2.4rem;
+  line-height: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0rem 1.5rem;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .destination-description {
+  font-size: 0.8rem;
+  padding: 0rem 1.5rem;
+  margin-bottom: 3rem;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
   padding: 10px;
-  margin-bottom: 15px;
+  color: #333;
 }
-#askAiModal .modal-dialog .modal-content .modal-body .offer-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 3px;
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-details-content {
+  padding: 1.5rem;
 }
-#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-card-buttons {
-  margin-top: 10px;
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .trip-dates-container {
+  margin-bottom: 10px;
 }
-#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-card-buttons button {
-  margin-right: 10px;
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .trip-dates-container .trip-dates-content {
+  font-size: 1rem;
+  color: #ffffff;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .trip-activities-container {
+  margin-bottom: 10px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .trip-activities-container .trip-activities-content {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions {
+  display: flex;
+  gap: 10px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions button:hover {
+  background-color: #0056b3;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions button i {
+  font-size: 1.2rem;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions button.primary-outlined {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions button.primary-outlined:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions #save {
+  background-color: #28a745;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions #save:hover {
+  background-color: #218838;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions #share {
+  background-color: #17a2b8;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions #share:hover {
+  background-color: #117a8b;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions #buy {
+  background-color: #ffc107;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .offer-content .offer-details-container .offer-call-to-actions #buy:hover {
+  background-color: #e0a800;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .destination-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .destination-image .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+#askAiModal .modal-dialog .modal-content .modal-body .offer-card .destination-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 #askAiModal .modal-dialog .modal-content .modal-footer {
   border: none;
@@ -1084,7 +1220,7 @@ a:hover {
 .banner {
   width: 85%;
   height: 300px;
-  margin: 2rem auto;
+  margin: 4rem auto;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
 }
@@ -1174,6 +1310,117 @@ a:hover {
 }
 .banner:hover {
   transform: scale(1.01);
+}
+
+#mosaic {
+  width: 85%;
+  margin: 8rem auto;
+}
+#mosaic h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+#mosaic .card {
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(186, 181, 181, 0.41);
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+#mosaic .card img {
+  width: 100%;
+  height: auto;
+  border-radius: radius;
+  object-fit: cover;
+  filter: saturate(0.5) grayscale(0.2);
+}
+#mosaic .card-body .button {
+  margin: 0;
+  justify-content: flex-start !important;
+}
+
+.destination-container {
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.destination-container .destination-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .destination-container .destination-content {
+    flex-direction: column;
+  }
+}
+.destination-container .destination-content .destination-text {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.destination-container .destination-content .destination-text .chip {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+.destination-container .destination-content .destination-text .destination-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.destination-container .destination-content .destination-text .destination-description {
+  font-size: 1.2rem;
+  color: #423d3d;
+  margin-bottom: 20px;
+}
+.destination-container .destination-content .destination-text .destination-activities .destination-activities-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.destination-container .destination-content .destination-text .destination-activities .destination-activities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+.destination-container .destination-content .destination-text .destination-activities .destination-activities-list li {
+  background-color: #f1eeee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+.destination-container .destination-content .destination-media {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.destination-container .destination-content .destination-media img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.destination-container .destination-content .destination-media .ctas {
+  display: flex;
+  gap: 10px;
+}
+.destination-container .destination-content .destination-media .ctas button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .newsletter {

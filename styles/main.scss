@@ -382,22 +382,179 @@
                         }
                         // Offer card
                         .offer-card {
-                            border: 1px solid #aaa;
-                            border-radius: 5px;
-                            padding: 10px;
-                            margin-bottom: 15px;
-                          
-                            img {
-                              max-width: 100%;
-                              height: auto;
-                              border-radius: 3px;
+                            margin-top: 50px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 26rem;
+                            .offer-container {
+                              position: relative;
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: space-between;
+                              border-radius: $radius;
+                              box-shadow: $shadow;
+                              overflow: hidden;
+                              width: 100%;
                             }
                           
-                            .offer-card-buttons {
-                              margin-top: 10px;
+                            .offer-content {
+                              position: relative;
+                              z-index: 2;
+                              color: #fff;
                           
-                              button {
-                                margin-right: 10px;
+                              .offer-type {
+                                background-color: $primary-color;
+                                color: $lighter-secondary-color;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                                font-size: 0.9rem;
+                                margin: 1rem;
+                                margin-bottom: 3rem;
+                                display: flex;
+                                justify-content: flex-end;
+                                width: fit-content;
+                              }
+                          
+                              .offer-OnD {
+                                font-size: 0.9rem;
+                                margin-bottom: 10px;
+                                padding: 0rem 1.5rem;
+                              }
+                          
+                              .destination-title {
+                                font-size: $xxl;
+                                line-height: $xl;
+                                font-weight: bold;
+                                margin-bottom: 10px;
+                                padding: 0rem 1.5rem;
+                              }
+                          
+                              .destination-description {
+                                font-size: $small;
+                                padding: 0rem 1.5rem;
+                                margin-bottom: 3rem;
+                              }
+                          
+                              .offer-details-container {
+                                background-color: rgba(255, 255, 255, 0.3);
+                                border-radius: 10px;
+                                backdrop-filter: blur(20px);
+                                padding: 10px;
+                                color: #333;
+                                .offer-details-content{
+                                    padding: 1.5rem;
+                                }
+                                .trip-dates-container {
+                                  margin-bottom: 10px;
+                          
+                                  .trip-dates-content {
+                                    font-size: 1rem;
+                                    color: $white;
+                                  }
+                                }
+                          
+                                .trip-activities-container {
+                                  margin-bottom: 10px;
+                          
+                                  .trip-activities-content {
+                                    font-size: 1rem;
+                                    color: $white;
+                                    margin-bottom: 2rem;
+                                  }
+                                }
+                          
+                                .offer-call-to-actions {
+                                  display: flex;
+                                  gap: 10px;
+                          
+                                  button {
+                                    padding: 10px 20px;
+                                    border: none;
+                                    border-radius: 5px;
+                                    font-size: 1rem;
+                                    cursor: pointer;
+                                    background-color: #007bff;
+                                    color: #fff;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                          
+                                    &:hover {
+                                      background-color: #0056b3;
+                                    }
+                          
+                                    i {
+                                      font-size: 1.2rem;
+                                    }
+                          
+                                    &.primary-outlined {
+                                      background-color: transparent;
+                                      border: 2px solid #007bff;
+                                      color: #007bff;
+                          
+                                      &:hover {
+                                        background-color: #007bff;
+                                        color: #fff;
+                                      }
+                                    }
+                                  }
+                          
+                                  #save {
+                                    background-color: #28a745;
+                          
+                                    &:hover {
+                                      background-color: #218838;
+                                    }
+                                  }
+                          
+                                  #share {
+                                    background-color: #17a2b8;
+                          
+                                    &:hover {
+                                      background-color: #117a8b;
+                                    }
+                                  }
+                          
+                                  #buy {
+                                    background-color: #ffc107;
+                          
+                                    &:hover {
+                                      background-color: #e0a800;
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          
+                            .destination-image {
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              width: 100%;
+                              height: 100%;
+                              z-index: 1;
+                              overflow: hidden;
+                              border-radius: 10px;
+                          
+                              .image-overlay {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: rgba(0, 0, 0, 0.5);
+                                z-index: 1;
+                              }
+                          
+                              img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                z-index: 0;
                               }
                             }
                           }
@@ -1168,7 +1325,7 @@
         .banner{
             width: 85%;
             height: 300px;
-            margin: 2rem auto;
+            margin: 4rem auto;
             overflow: hidden;
             transition: transform 0.5s ease-in-out;
             .banner-container{
@@ -1256,6 +1413,130 @@
                 transform: scale(1.01);
             }
         }
+    // Mosaic
+        #mosaic {
+            width: 85%;
+            margin: 8rem auto;
+            h2{
+                font-size: $xl;
+                font-weight: $bold;
+            }
+            .card {
+                background: $white;
+                box-shadow: $shadow;
+                border: none;
+                border-radius: $radius;
+                margin-bottom: 1rem;
+            }
+            .card img {
+                width: 100%;
+                height: auto;
+                border-radius: radius;
+                object-fit: cover;
+                filter: saturate(.5) grayscale(.2);
+            }
+            .card-body {
+                .button{
+                    margin: 0;
+                    justify-content: flex-start !important;
+                }
+            }
+        }
+    // Destination of the day
+        .destination-container {
+            margin: 5rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .destination-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: #fff;
+                border-radius: 10px;
+                overflow: hidden;
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;
+                    
+                }
+                .destination-text {
+                    flex: 1;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                
+                    .chip {
+                    font-size: 0.9rem;
+                    color: #999;
+                    margin-bottom: 10px;
+                    }
+                
+                    .destination-name {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    }
+                
+                    .destination-description {
+                    font-size: 1.2rem;
+                    color: $dark-grey;
+                    margin-bottom: 20px;
+                    }
+                
+                    .destination-activities {
+                    .destination-activities-subtitle {
+                        font-size: 1rem;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+                
+                    .destination-activities-list {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        list-style: none;
+                
+                        li {
+                        background-color: $light-grey;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        font-size: 0.9rem;
+                        }
+                    }
+                    }
+                }
+                .destination-media {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px;
+                
+                    img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: $bigradius;
+                    margin-bottom: 20px;
+                    }
+                
+                    .ctas {
+                    display: flex;
+                    gap: 10px;
+                
+                    button {
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
+                
+                    }
+                }
+            }
+        }     
     // Newsletter
         .newsletter{
             width: 100%;

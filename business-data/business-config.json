@@ -17,6 +17,7 @@
 
       "profiles":"../business-data/airline-data/profiles.json",
       "segments":"../business-data/airline-data/segments.json",
-      "offers":"../business-data/airline-data/offers.json"
+      "offers":"../business-data/airline-data/offers.json",
+      "destinations": "../business-data/airline-data/destinations.json"
     }
 ]

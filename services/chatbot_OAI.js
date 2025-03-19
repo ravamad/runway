@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             return "I'm unable to fetch AI-generated responses at the moment.";
         }
 
-        const url = "https://api.openai.com/v1/chat/completions";
+        const url = "";
         const headers = {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${API_KEY}`

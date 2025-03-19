@@ -56,5 +56,29 @@
         "url": "https://www.example.com/stopover"
       }
     }
-  ]
+  ],
+  "mosaic": {
+    "title": "Plan your next trip",
+    "subtitle": "Let us inspire your next adventure",
+    "items": [
+      {
+        "title": "Get inspired, book, enjoy!",
+        "description": "Check our latest offers and destinations, book, and live the adventure! ✈️",
+        "imagery_key": "mosaic_image1",
+        "link": "#"
+      },
+      {
+        "title": "Your travel companion, all along",
+        "description": "Download our travel companion app, powered with AI ✨ ",
+        "imagery_key": "mosaic_image2",
+        "link": "#"
+      },
+      {
+        "title": "Travel with your pets",
+        "description": "Enjoy all along the trip the company of your best friends 🐶🐱",
+        "imagery_key": "mosaic_image3",
+        "link": "#"
+      }
+    ]
+  }
 }
