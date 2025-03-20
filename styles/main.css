@@ -333,14 +333,31 @@ a:hover {
   text-align: left;
 }
 #askAiModal .modal-dialog .modal-content .modal-body .chat-message.assistant .message-content {
-  background-color: #f1eeee;
-  color: #423d3d;
+  background-color: transparent;
+  color: white;
 }
 #askAiModal .modal-dialog .modal-content .modal-body .message-content {
-  background-color: #e4f5ff;
+  background-color: transparent;
   border-radius: 12px;
   padding: 10px 15px;
   max-width: 70%;
+}
+#askAiModal .modal-dialog .modal-content .modal-body #message-content-offers {
+  display: flex;
+  gap: 1rem; /* Adds spacing between the cards */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding: 1rem 0; /* Adds padding for better spacing */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+#askAiModal .modal-dialog .modal-content .modal-body #message-content-offers::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+#askAiModal .modal-dialog .modal-content .modal-body #message-content-offers::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+#askAiModal .modal-dialog .modal-content .modal-body #message-content-offers::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track */
 }
 #askAiModal .modal-dialog .modal-content .modal-body .toast-message {
   background-color: #2EBFA5;
@@ -1166,6 +1183,7 @@ a:hover {
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  filter: saturate(0.8) grayscale(0.2);
 }
 .deals-section .deal-card .deal-content {
   padding: 1rem;
@@ -1410,6 +1428,11 @@ a:hover {
   height: auto;
   border-radius: 16px;
   margin-bottom: 20px;
+  filter: saturate(0.5) grayscale(0.4);
+  transition: transform ease-in-out 0.15s;
+}
+.destination-container .destination-content .destination-media img:hover {
+  transform: scale(1.01);
 }
 .destination-container .destination-content .destination-media .ctas {
   display: flex;

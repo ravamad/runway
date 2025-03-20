@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const API_KEY = ""; // Replace with your actual OpenAI API key
 
-    triggerButton?.addEventListener("click", () => chatContainer.style.display = "block");
+    triggerButton?.addEventListener("click", () => {
+        chatContainer.style.display = "block";
+        displayAIMessage("How can I help you?");
+    });
     hideButton?.addEventListener("click", () => chatContainer.style.display = "none");
 
-    // ✅ FIX: Added `fetchBusinessConfig()` back
     async function fetchBusinessConfig() {
         try {
             const response = await fetch("../business-data/business-config.json");
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const loader = showLoadingAnimation();
 
         setTimeout(async () => {
-            const faqsUrl = await fetchBusinessConfig(); // ✅ NOW IT EXISTS!
+            const faqsUrl = await fetchBusinessConfig();
             if (!faqsUrl) {
                 removeLoadingAnimation(loader);
                 displayAIMessage("Sorry, I couldn't access FAQs at the moment.");
@@ -132,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 displayAIMessage(matchedFAQ.answer);
             } else {
                 console.log("No FAQ match, querying GPT-4o Mini...");
-                const gptResponse = await getAIResponse(userText, loader);
+                const gptResponse = await getAIResponse(userText, loader, allFAQs);
                 removeLoadingAnimation(loader);
                 displayAIMessage(gptResponse);
             }
@@ -143,7 +145,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    async function getAIResponse(userText, loader, attempt = 1) {
+    async function getAIResponse(userText, loader, allFAQs, attempt = 1) {
         if (attempt > 3) {
             removeLoadingAnimation(loader);
             return "I'm unable to fetch AI-generated responses at the moment.";
@@ -158,7 +160,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const body = JSON.stringify({
             model: "gpt-4o-mini",
             messages: [
-                { role: "system", content: "You are a customer support assistant." },
+                { role: "system", content: "You are a customer support assistant. Prioritize using the provided airline FAQs to answer the user's questions. If no relevant FAQ is found, generate a response using the AI model." },
                 { role: "user", content: userText }
             ],
             max_tokens: 150
@@ -171,7 +173,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (response.status === 429) {
                 console.warn(`Rate limited! Retrying in ${attempt * 2} seconds...`);
                 await new Promise(resolve => setTimeout(resolve, attempt * 2000));
-                return await getAIResponse(userText, loader, attempt + 1);
+                return await getAIResponse(userText, loader, allFAQs, attempt + 1);
             }
 
             if (!response.ok) throw new Error(`OpenAI API error: ${response.status}`);

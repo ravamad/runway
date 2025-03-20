@@ -358,18 +358,38 @@
                                 text-align: left;
 
                                 .message-content {
-                                    background-color: $light-grey;
-                                    color: $dark-grey;
+                                    background-color: transparent;
+                                    color: white;
                                 }
                             }
                         }
                         // Message Content Styles
                         .message-content {
-                            background-color: $lighter-secondary-color;
+                            background-color: transparent;
                             border-radius: 12px;
                             padding: 10px 15px;
                             max-width: 70%;
                         }
+                        #message-content-offers {
+                            display: flex;
+                            gap: 1rem; /* Adds spacing between the cards */
+                            overflow-x: auto; /* Enables horizontal scrolling */
+                            padding: 1rem 0; /* Adds padding for better spacing */
+                            scroll-behavior: smooth; /* Smooth scrolling effect */
+                          }
+                          
+                          #message-content-offers::-webkit-scrollbar {
+                            height: 8px; /* Height of the horizontal scrollbar */
+                          }
+                          
+                          #message-content-offers::-webkit-scrollbar-thumb {
+                            background-color: #ccc; /* Color of the scrollbar thumb */
+                            border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+                          }
+                          
+                          #message-content-offers::-webkit-scrollbar-track {
+                            background-color: #f1f1f1; /* Color of the scrollbar track */
+                          }
 
                         // Toast Messages for Success/Error
                         .toast-message {
@@ -934,7 +954,7 @@
                 }
             }
         }
-    // AI assistant
+    // FAQ assistant
         #AI-assistant-container{
             position: fixed;
             bottom: 0px;
@@ -1268,6 +1288,7 @@
                     object-fit: cover;
                     border-top-left-radius: $radius;
                     border-top-right-radius: $radius;
+                    filter: saturate(.8) grayscale(.2);
                 }
                 .deal-content {
                     padding: 1rem;
@@ -1519,6 +1540,11 @@
                     height: auto;
                     border-radius: $bigradius;
                     margin-bottom: 20px;
+                    filter: saturate(.5) grayscale(.4);
+                    transition: transform ease-in-out 0.15s;
+                        &:hover{
+                            transform: scale(1.01);
+                        }
                     }
                 
                     .ctas {
